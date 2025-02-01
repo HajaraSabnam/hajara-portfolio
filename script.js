@@ -24,7 +24,7 @@ function openProfileBox() {
     
 function closeProfileBox() {
     var profileBox = document.getElementById("myProfileBox");
-    profileBox.style.right = "-500px"; 
+    profileBox.style.right = "-600px"; 
 }
     
 function openmenu() {

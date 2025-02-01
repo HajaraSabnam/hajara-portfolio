@@ -254,7 +254,7 @@ header ul.aboutlist li a
     align-items: center;
     position: fixed;
     top: 25%;
-    right: -500px;
+    right: -600px;
     width: 400px;
     height: auto;
     background-color: #fff;
@@ -446,8 +446,8 @@ header ul.aboutlist li a
 
     .box {
         width: auto; 
-        max-width: 400px; 
         margin: auto; 
+        min-width: 315px;
     }
 }
 
