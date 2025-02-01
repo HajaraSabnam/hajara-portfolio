@@ -552,14 +552,14 @@ header ul.aboutlist li a
     font-weight: 100;
 }
 
-@media (max-width: 1300px) 
+/* @media (max-width: 1300px) 
 {
     .achievementsmallbox 
     {
         width: 50%;
         height: auto;
     }
-}
+} */
 
 /*ACHIEVEMENT PAGE*/
 
