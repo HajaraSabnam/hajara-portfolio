@@ -107,6 +107,10 @@ header ul.aboutlist li a
 
 @media (max-width: 950px) 
 {
+    .menuicon {
+        display: block; 
+    }
+
     .navbar 
     {
         position: absolute;
@@ -115,7 +119,8 @@ header ul.aboutlist li a
         width: 250px;
         min-height: 90vh;
         border: none;
-        background: rgba(192, 215, 248, 0.522);
+        /* background: rgba(192, 215, 248, 0.522); */
+        background: rgba(136, 173, 225, 0.905);
         transition: left 0.5s ease; 
         height: 100vh;
         z-index: 1000;
@@ -1092,9 +1097,12 @@ form input::placeholder, form textarea::placeholder
     justify-content: space-between;
 }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .contactbody {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding-left: 15px;
+        margin: 20px;
     }
 
 }
