@@ -6,11 +6,6 @@
     scroll-behavior: smooth;  
 }
 
-body 
-{
-    min-width: 1400px;
-}
-
 /*HEADER*/
 
 #head 
@@ -391,14 +386,35 @@ header ul.aboutlist li a
     align-items: center;
 }
 
-.skillboxes
+/* .skillboxes
 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     gap: 2.3rem;
     margin: 4.2rem;
+} */
+
+.skillboxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 2.3rem;
+    margin: 4.2rem;
 }
+
+@media (max-width: 768px) {
+    .skillboxes {
+        grid-template-columns: 1fr; 
+        margin: 2rem; 
+    }
+
+    .box {
+        width: 100%; 
+        max-width: 400px; 
+        margin: auto; 
+    }
+}
+
 
 .box 
 {
@@ -496,10 +512,10 @@ header ul.aboutlist li a
 .achievementlinebox
 {
     display: flex;
-    justify-content: space-around;
-    gap: 4%;
-    margin: 25px 15px;
+    justify-content: center;
     align-items: center;
+    gap: 2rem;
+    margin: 25px 15px;
 }
 
 .achievementsmallbox
@@ -553,15 +569,17 @@ header ul.aboutlist li a
     font-weight: 100;
 }
 
-/* @media (max-width: 1300px) 
-{
-    .achievementsmallbox 
-    {
-        width: 50%;
-        height: auto;
+@media (max-width: 768px) {
+    .achievementlinebox {
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center; /* Center the boxes */
     }
-} */
 
+    .achievementsmallbox {
+        width: 100%; /* Full width */
+        max-width: 400px; /* Optional: limit max width */
+    }
+}
 /*ACHIEVEMENT PAGE*/
 
 
@@ -658,6 +676,19 @@ header ul.aboutlist li a
     background-attachment: fixed;
 }
 
+
+@media (max-width: 1200px) {
+    .context {
+        grid-template-columns: 1fr; /* Switch to a single-column layout */
+        text-align: center;
+    }
+
+    .headline {
+        order: -1; /* Moves the headline to the top */
+    }
+}
+
+
 /*POETRY*/
 
 .homepic
@@ -742,6 +773,20 @@ header ul.aboutlist li a
     background-image: url(images/bg4.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+@media (max-width: 1200px) {
+    .poetry {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .poembox {
+        padding: 25px
+    }
+    .homepic {
+        font-size: 20px;
+    }
+
 }
 
 
@@ -875,6 +920,8 @@ header ul.aboutlist li a
 {
     background-color: #707bf3;
 }
+
+
 
 /*CONTACT*/
 
@@ -1045,3 +1092,9 @@ form input::placeholder, form textarea::placeholder
     justify-content: space-between;
 }
 
+@media (max-width: 1200px) {
+    .contactbody {
+        grid-template-columns: 1fr;
+    }
+
+}
