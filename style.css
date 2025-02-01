@@ -402,7 +402,7 @@ header ul.aboutlist li a
     margin: 4.2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .skillboxes {
         grid-template-columns: 1fr; 
         margin: 2rem; 
@@ -569,7 +569,7 @@ header ul.aboutlist li a
     font-weight: 100;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .achievementlinebox {
         flex-direction: column; /* Stack boxes vertically */
         align-items: center; /* Center the boxes */
