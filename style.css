@@ -105,52 +105,71 @@ header ul.aboutlist li a
     padding: 10px 0;
 }
 
-@media (max-width: 950px) {
-    /* Hide top navigation bar on mobile */
-    header .navbar {
-        display: none;
-    }
-
-    /* Show menu icon in mobile */
+@media (max-width: 950px) 
+{
     .menuicon {
-        display: block;
+        display: block; 
     }
 
-    /* Style the vertical left menu in mobile view */
-    .navbar.vertical {
-        display: none;  /* Initially hide the left menu */
-        position: fixed;
+    .navbar 
+    {
+        position: absolute;
         top: 0;
-        left: -250px; /* Hide off-screen by default */
+        left: -100%; 
         width: 250px;
-        height: 100%;
-        background-color: rgba(136, 173, 225, 0.905);
-        transition: left 0.3s ease;
+        min-height: 90vh;
+        border: none;
+        /* background: rgba(192, 215, 248, 0.522); */
+        background: rgba(136, 173, 225, 0.905);
+        transition: left 0.5s ease; 
+        height: 100vh;
         z-index: 1000;
-        margin-top: 50px; /* Adjust for top space */
     }
 
-    /* Make navbar visible when 'active' class is added */
-    .navbar.active {
-        left: 0;
+    .navbar.active 
+    {
+        left: 0; 
     }
 
-    /* Optional: Style the list inside the left sidebar */
-    .navbar.vertical ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .navbar ul 
+    {
+        list-style-type: none;
         padding: 0;
     }
 
-    .navbar.vertical ul li {
-        padding: 14px 0;
+    .navbar ul li 
+    {
+        padding: 14px;
     }
 
-    .navbar.vertical ul li a {
+    .navbar ul li a 
+    {
         text-decoration: none;
         color: black;
         font-size: 18px;
+    }
+
+    .navbar ul li a:hover 
+    {
+        border-bottom: 1.5px solid rgb(36, 5, 120);
+        text-shadow: 1px 1px 1px rgb(176, 174, 245);
+    }
+
+    header .aboutlist li a
+    {
+        display: none;
+    }
+}
+
+@media (min-width: 951px) 
+{
+    .menuicon 
+    {
+        display: none; 
+    }
+    header 
+    {
+        margin: 6px;
     }
 }
 
