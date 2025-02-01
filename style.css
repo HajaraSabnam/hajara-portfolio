@@ -462,7 +462,7 @@ header ul.aboutlist li a
     transition: all 0.5s ease;
     cursor: pointer;
     height: auto;
-    min-width: 300px;
+    min-width: 315px;
 }
 
 .box img
