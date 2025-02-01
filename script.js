@@ -17,9 +17,33 @@ var typingEffect = new Typed(".anim", {
 
 //Profile Box Animation//
 
+function openProfileBox() {
+    var profileBox = document.getElementById("myProfileBox");
+    profileBox.style.right = "40px";
+}
+    
+function closeProfileBox() {
+    var profileBox = document.getElementById("myProfileBox");
+    profileBox.style.right = "-500px"; 
+}
+    
+function openmenu() {
+    var navbar = document.getElementById("navbar");
+    navbar.classList.toggle("active");
+    
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth;
+    
+    if (screenWidth <= 950) {
+        navbar.classList.toggle("vertical");
+    } else {
+        navbar.classList.remove("vertical");
+    }
+}
+    
 // Form Validation
 
-function validateForm() {
+function validateForm(event) {
+
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
@@ -51,18 +75,14 @@ function validateForm() {
 
     if (isValid) {
         alert('Thank you for your message!');
-        
-        return false;  
     }
 
-    return false; 
+    return isValid;  
 }
 
-document.querySelector("form").addEventListener("submit", function(event) {
+document.getElementById("contactForm").addEventListener("submit", function(event) {
     
-    if (!validateForm()) {
+    if (!validateForm(event)) {
         event.preventDefault();  
     }
 });
-
-
