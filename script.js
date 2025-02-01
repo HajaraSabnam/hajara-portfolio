@@ -19,7 +19,7 @@ var typingEffect = new Typed(".anim", {
 
 function openProfileBox() {
     var profileBox = document.getElementById("myProfileBox");
-    profileBox.style.right = "40px";
+    profileBox.style.right = "3%";
 }
     
 function closeProfileBox() {

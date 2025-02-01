@@ -115,7 +115,7 @@ header ul.aboutlist li a
     {
         position: absolute;
         top: 0;
-        left: -100%; 
+        left: -200%; 
         width: 250px;
         min-height: 90vh;
         border: none;
@@ -179,10 +179,10 @@ header ul.aboutlist li a
 {
     background-image: url(images/bg.avif);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; 
     width: 100%;
-    height: auto;
-    min-width: 900px;
+    height: 100vh;
+    /* min-width: auto; */
 }
 
 
@@ -254,7 +254,7 @@ header ul.aboutlist li a
     align-items: center;
     position: fixed;
     top: 25%;
-    right: -500px; 
+    right: -500px;
     width: 400px;
     height: auto;
     background-color: #fff;
@@ -293,6 +293,12 @@ header ul.aboutlist li a
     cursor: pointer;
 }
 
+@media (max-width: 700px) {
+    .myprofile {
+        width: 90%;
+    }
+}
+
 /*ABOUT ME*/
 
 
@@ -302,6 +308,7 @@ header ul.aboutlist li a
     height: 100vh;
     align-items: center;
 }
+
 
 .aboutbody
 {
@@ -314,11 +321,10 @@ header ul.aboutlist li a
 {    
     gap: 4%;
     margin: 45px 0px 40px 0px;
-    padding: 1% 4%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 }
 
 .abouttop img
@@ -354,7 +360,7 @@ header ul.aboutlist li a
     color: rgb(0, 0, 0);
     padding: 15px 6px 10px 6px;
     line-height: 1.4;
-    width: 57%;
+    width: 100%;
 }
 
 .text h1
@@ -379,7 +385,7 @@ header ul.aboutlist li a
 
 .linebreak
 {
-    width: 80%;
+    width: 90%;
     margin: 3% auto;
     border: 1px solid black;
 }
@@ -402,19 +408,44 @@ header ul.aboutlist li a
 
 .skillboxes {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 2.3rem;
     margin: 4.2rem;
 }
 
 @media (max-width: 1200px) {
+    
+    #about_me 
+    {
+        width: 100%;
+    }
+
+    .abouttop {
+        grid-template-columns: 1fr; 
+        align-items: center;
+        padding-bottom: 40px;
+    }
+
+    .text h1 {
+        font-size:40px;
+    }
+
+    .text p {
+        font-size: 16px;
+    }
+
+    .abouttop img {
+        width: 100%;
+        height: auto;
+    }
+
     .skillboxes {
         grid-template-columns: 1fr; 
         margin: 2rem; 
     }
 
     .box {
-        width: 100%; 
+        width: auto; 
         max-width: 400px; 
         margin: auto; 
     }
@@ -431,7 +462,7 @@ header ul.aboutlist li a
     transition: all 0.5s ease;
     cursor: pointer;
     height: auto;
-    min-width: 400px;
+    min-width: 300px;
 }
 
 .box img
@@ -505,22 +536,21 @@ header ul.aboutlist li a
 
 .achievementboxes
 {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    margin: 30px 40px;
+    padding: 10px;
+    margin: 10px 20px;
 }
 
 .achievementlinebox
 {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 2rem;
-    margin: 25px 15px;
+    margin: 20px 10px;
 }
 
 .achievementsmallbox
@@ -533,11 +563,10 @@ header ul.aboutlist li a
     grid-template-columns: 0.5fr 2.5fr;
     gap: 5%;
     align-items: center;
-    width: 600px;
+    width: 100%;
     height: 200px;
     transition: all 0.3s ease-in-out;
     background-color: #ffffff70;
-    min-width: 600px;
 }
 
 .achievementsmallbox img
@@ -576,15 +605,32 @@ header ul.aboutlist li a
 
 @media (max-width: 1200px) {
     .achievementlinebox {
-        flex-direction: column; /* Stack boxes vertically */
-        align-items: center; /* Center the boxes */
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .achievementlinebox {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .achievementsmallbox h3, .achievementsmallbox p {
+        font-size: 18px;
+
     }
 
     .achievementsmallbox {
-        width: 100%; /* Full width */
-        max-width: 400px; /* Optional: limit max width */
+        width: 100%; 
+        height: auto;
+        grid-template-columns: 1fr;
+        gap: 8%;
+        padding: 20px;
     }
 }
+
+
 /*ACHIEVEMENT PAGE*/
 
 
@@ -621,7 +667,6 @@ header ul.aboutlist li a
     text-align: center;
     margin: 0;
     font-size: 22px;
-
 }
 
 .content
@@ -667,11 +712,9 @@ header ul.aboutlist li a
 
 .row
 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: 2%;
-    justify-content: space-evenly;
 }
 
 #nyuad, #thinktank, #unihack, #rta, #mdx, #bcc
@@ -684,12 +727,28 @@ header ul.aboutlist li a
 
 @media (max-width: 1200px) {
     .context {
-        grid-template-columns: 1fr; /* Switch to a single-column layout */
+        grid-template-columns: 1fr; 
+        text-align: center;
+    }
+
+    .row {
+        grid-template-columns: 1fr; 
         text-align: center;
     }
 
     .headline {
         order: -1; /* Moves the headline to the top */
+    }
+
+    .gallery img {
+        height: auto;
+        width: 80%;
+        border-radius: 10px;
+
+    }
+
+    .headline {
+        font-size: 15px;
     }
 }
 
@@ -698,15 +757,16 @@ header ul.aboutlist li a
 
 .homepic
 {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     align-items: center;
     background-color: rgb(248, 247, 251);
+    height: auto;
 }
 
 .pic
 {
     height: 700px;
-    width: 70%;
 }
 
 .homepic h2
@@ -718,7 +778,8 @@ header ul.aboutlist li a
 
 .homepic img
 {
-    width: 70%;
+    width: 100%;
+    height: 100%;
 }
 
 .rumispan
@@ -789,9 +850,27 @@ header ul.aboutlist li a
         padding: 25px
     }
     .homepic {
-        font-size: 20px;
+        grid-template-columns: 1fr;
+    }
+    .poemhead h2
+    {
+        font-size: 25px;
+    }
+    .poemspan
+    {
+        font-size: 30px;
     }
 
+    .poemhead p
+    {
+        margin-top: 2%;
+        font-size: 18px;
+    }
+    .homepic h2
+    {
+        font-size: 30px;
+
+    }
 }
 
 
@@ -917,7 +996,8 @@ header ul.aboutlist li a
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 20%;
+    width: 60%; 
+    max-width: 800px; 
     margin-top: 1%;
 }
 
@@ -932,12 +1012,10 @@ header ul.aboutlist li a
 
 #contact
 {
-    align-items: center;
     background-image: url(images/bg5.avif);
-    width: 100%;
+    height: auto; 
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 0;
 }
 
 .contactbody
@@ -1042,7 +1120,7 @@ header ul.aboutlist li a
 {
     height: 40px;
     border-radius: 10px;
-    width: 30%;
+    width: 100%;
     font-weight: 600;
     background-color: rgb(232, 209, 244);
     border-color: rgb(222, 187, 240);
@@ -1099,10 +1177,14 @@ form input::placeholder, form textarea::placeholder
 
 @media screen and (max-width: 1200px) {
     .contactbody {
+        display: grid;
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding-left: 15px;
-        margin: 20px;
+        padding: 10px;
+        margin: 25px;
+        height: auto; 
+    }
+    .contactinfo {
+        padding-bottom: 20px;
     }
 
 }
