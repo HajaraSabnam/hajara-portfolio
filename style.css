@@ -1,0 +1,1037 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;  
+}
+
+/*HEADER*/
+
+#head 
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuicon
+{
+    font-size: 20px;
+    margin: 25px;
+    cursor: pointer;
+}
+
+
+header
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    font-weight: 400;
+    gap: 8%;
+}
+
+header p:hover
+{
+    transform: scale(1.2);
+}
+
+.navbar ul 
+{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar ul li a
+{
+    text-decoration: none;
+    color: black;
+    margin: 0px 12px;
+    border-bottom: 1.5px solid transparent;
+    transition: 0.3s ease-in-out;
+    font-size: 18px;
+}
+
+.navbar ul li a:hover 
+{
+    border-bottom: 1.5px solid rgb(36, 5, 120);
+    text-shadow: 1px 1px 1px rgb(176, 174, 245);
+}
+
+
+ul.aboutlist
+{
+    display: none;
+    padding: 12px;
+    height: auto;
+    position: absolute;
+    list-style-type: none;
+}
+
+ul.aboutlist li 
+{
+    margin-top: 4px;
+    font-size: 16px;
+}
+
+header ul.aboutlist li a
+{ 
+    font-size: 16px;
+}
+
+.abt:hover + .aboutlist,
+.aboutlist:hover {
+    display: block;
+}
+
+/*Menu Bar*/
+
+.navbar.vertical ul 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px; 
+}
+
+.navbar.vertical ul li 
+{
+    padding: 10px 0;
+}
+
+@media (max-width: 950px) 
+{
+    .navbar 
+    {
+        position: absolute;
+        top: 0;
+        left: -100%; 
+        width: 250px;
+        min-height: 90vh;
+        border: none;
+        background: rgba(192, 215, 248, 0.522);
+        transition: left 0.5s ease; 
+        height: 100vh;
+        z-index: 1000;
+    }
+
+    .navbar.active 
+    {
+        left: 0; 
+    }
+
+    .navbar ul 
+    {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .navbar ul li 
+    {
+        padding: 14px;
+    }
+
+    .navbar ul li a 
+    {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+    }
+
+    .navbar ul li a:hover 
+    {
+        border-bottom: 1.5px solid rgb(36, 5, 120);
+        text-shadow: 1px 1px 1px rgb(176, 174, 245);
+    }
+
+    header .aboutlist li a
+    {
+        display: none;
+    }
+}
+
+@media (min-width: 951px) 
+{
+    .menuicon 
+    {
+        display: none; 
+    }
+    header 
+    {
+        margin: 6px;
+    }
+}
+
+/*HOME PAGE*/
+
+#home 
+{
+    background-image: url(images/bg.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    min-width: 900px;
+}
+
+
+.image1 
+{
+    display: block;
+    width: 100%;
+    height: 100vh;
+}
+
+.mainpage 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.maintext
+{
+    height: 90vh;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size:xx-large;
+    line-height: 1.1;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.anim
+{
+    color: rgb(5, 5, 86);
+}
+
+.probutton
+{
+    padding: 15px;
+    border: none;
+    text-decoration: none;
+    color: rgb(5, 5, 86);
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 20px;
+    transition: all 0.5s ease;
+    margin: 50px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.probutton:hover 
+{
+    background: transparent;
+    color: rgb(0, 208, 255);
+    box-shadow: 0 0 40px rgb(120, 219, 241);
+    border: 1px solid rgb(120, 219, 241);
+}
+
+
+.myprofile 
+{
+    padding: 25px;
+    align-items: center;
+    position: fixed;
+    top: 25%;
+    right: -500px; 
+    width: 400px;
+    height: 55%;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease-in-out; 
+    z-index: 1000; 
+    display: flex;
+    justify-content: center;
+    background-color: rgba(33, 135, 207, 0.688);
+    border-radius: 4%;
+}
+
+.myprofile h2 
+{
+    text-align: center;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.pro p
+{
+    font-weight: 500;
+    line-height: 1.3;
+    margin-top: 2%;
+    font-size: 16px;
+}
+
+
+.closebtn 
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/*ABOUT ME*/
+
+
+#about
+{
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+
+.aboutbody
+{
+    background-image: url(images/bg2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.abouttop
+{    
+    gap: 4%;
+    margin: 45px 0px 40px 0px;
+    padding: 1% 4%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.abouttop img
+{
+    height: 566px;
+    width: auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.who 
+{
+    color: rgb(9, 9, 177);
+}
+
+.who1
+{
+    color: rgb(177, 9, 129);
+}
+
+.who2 
+{
+    color: rgb(177, 45, 9);
+}
+
+.I 
+{
+    color:forestgreen;
+}
+
+.text
+{
+    color: rgb(0, 0, 0);
+    padding: 15px 6px 10px 6px;
+    line-height: 1.4;
+    width: 57%;
+}
+
+.text h1
+{
+    font-size: 60px;
+    margin-top: 0px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.text p
+{
+    margin-top: 5%;
+    font-size: 18px;
+    padding: 5% 5% 5% 5%;
+    text-align: justify;
+    box-shadow: -6px 5px 5px rgb(67, 67, 68);
+    border-radius: 3%;
+    font-weight: 500;
+}
+
+.linebreak
+{
+    width: 80%;
+    margin: 3% auto;
+    border: 1px solid black;
+}
+
+/*SKILLS*/
+
+#skills
+{
+    align-items: center;
+}
+
+.skillboxes
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 2.3rem;
+    margin: 4.2rem;
+}
+
+.box 
+{
+    padding: 80px 40px 66px;
+    border-radius: 28px;
+    border: 1px solid transparent;
+    background-color: rgba(250, 253, 244, 0.49);
+    box-shadow: 5px 5px 5px rgb(74, 73, 73);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.box img
+{
+    height: 70px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.box h2
+{
+    margin: 20px 0px;
+    font-size: 26px;
+}
+
+.box ul
+{
+    list-style-type: none;
+    font-size: 18px;
+}
+
+.box ul li
+{
+    list-style-type: none;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.box:hover
+{
+    transform: scale(1.07);
+}
+
+.spanabout
+{
+    color: rgb(9, 9, 205);
+}
+
+.skillspan
+{
+    color: rgb(72, 15, 145);
+    font-style: italic;
+}
+
+/*ACHIEVEMENTS*/
+
+.achievements
+{
+    margin-top: 20px;
+}
+
+.heading 
+{
+    text-align: center;
+    padding: 20px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size:x-large;
+}
+
+.heading h1
+{
+    font-size: 40px;
+}
+
+.heading p
+{
+    font-size: 20px;
+}
+
+.achievementboxes
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 30px 40px;
+}
+
+.achievementlinebox
+{
+    display: flex;
+    justify-content: space-around;
+    gap: 4%;
+    margin: 25px 15px;
+    align-items: center;
+}
+
+.achievementsmallbox
+{
+    padding: 23px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 4px 5px 8px 0px rgba(87, 131, 148, 0.753);
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr;
+    gap: 5%;
+    align-items: center;
+    width: 600px;
+    height: 200px;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff70;
+}
+
+.achievementsmallbox img
+{
+    height: 90px;
+    width: auto;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.achievementsmallbox h3
+{
+    font-size: 22px;
+}
+
+.achievementsmallbox p
+{
+    font-size: 22px;
+}
+
+.achievementsmallbox:hover
+{
+    transform: translateY(-5px) scale(1.05);
+}
+
+.achievementtext a
+{
+    position: relative;
+    padding: 15px;
+    cursor: pointer;
+    float: right;
+    text-decoration: none;
+    color: black;
+    font-weight: 100;
+}
+
+@media (max-width: 1300px) 
+{
+    .achievementsmallbox 
+    {
+        width: 50%;
+        height: auto;
+    }
+}
+
+/*ACHIEVEMENT PAGE*/
+
+
+.back
+{
+    margin-left: 5%;
+    margin-top: 3%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 35px;
+    height: 23px;
+    transition: all 0.3s ease;
+}
+
+.back:hover
+{
+    transform: scale(1.1);
+}
+
+.context
+{
+    margin: 2% 8% 2% 8%;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 1.8fr 2.2fr; 
+    grid-gap: 6%;
+    justify-content: center;
+    align-items: center;
+}
+
+.headline
+{
+    text-align: center;
+    margin: 0;
+    font-size: 22px;
+
+}
+
+.content
+{
+    height: auto;
+    padding: 5px;
+}   
+
+
+.content p
+{
+    line-height: 1.4;
+    font-size: 17px;
+}
+
+.achieveshortline
+{
+    border: 1px solid;
+    color: rgba(206, 151, 11, 0.775);
+    margin: 70px 12%;
+}
+
+
+.gallery
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.gallery img
+{
+    height: 420px;
+    width: auto;
+    border-radius: 20px;
+    margin: 22px;
+}
+
+.gallery img:hover
+{
+    transform: scale(1.05);
+}
+
+.row
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 2%;
+    justify-content: space-evenly;
+}
+
+#nyuad, #thinktank, #unihack, #rta, #mdx, #bcc
+{
+    background-image: url(images/bg3.avif);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*POETRY*/
+
+.homepic
+{
+    display: flex;
+    align-items: center;
+    background-color: rgb(248, 247, 251);
+}
+
+.pic
+{
+    height: 700px;
+    width: 70%;
+}
+
+.homepic h2
+{
+    padding: 40px;
+    font-size: 40px;
+    font-weight: 200;
+}
+
+.homepic img
+{
+    width: 70%;
+}
+
+.rumispan
+{
+    color: rgb(87, 9, 159);
+}
+
+.rumispan2
+{
+    color: rgb(216, 6, 198);
+}
+
+.rumi 
+{
+    color: rgb(131, 4, 57);
+    text-shadow: 1px 2px 2px rgb(231, 84, 248);
+}
+
+.poemhead 
+{
+    text-align: center;
+    margin: 3% 3%;
+}
+
+.poemhead h2
+{
+    font-size: 60px;
+}
+
+.poemhead p
+{
+    margin-top: 2%;
+    font-size: 28px;
+}
+
+.poemspan
+{
+    color: rgb(112, 29, 189);
+    font-size: 70px;
+}
+
+.poetry 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2%;
+}
+
+.poembox
+{
+    padding: 25px;
+    box-shadow: 5px 5px 10px rgba(119, 117, 120, 0.8);
+    border-radius: 10px;
+    margin: 4% 4% 8% 4%;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    background-image: url(images/bg4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.poembox h2
+{
+    font-weight: 700;
+    text-align: center;
+    font-size: 27px;
+}
+
+.color1
+{
+    color: rgb(139, 5, 110);
+}
+
+.color2
+{
+    color: rgb(90, 5, 139);
+}
+
+.color3
+{
+    color: rgb(5, 27, 139);
+}
+
+
+.poembox p
+{
+    font-weight: 500;
+    line-height: 1.5;
+    margin-top: 4%;
+    font-size: 17px;
+    text-align: center;
+}
+
+.poemsign
+{
+    padding: 15px;
+    box-shadow: 5px 5px 10px rgba(119, 117, 120, 0.8);
+    border-radius: 10px;
+    margin: -2% 4% 8% 4%;
+    background:linear-gradient(to right, rgba(248, 155, 240, 0.664), rgb(138, 97, 193));
+    align-items: center;
+    display: flex;
+    gap: 10%;
+}
+
+.poembox:hover
+{
+    transform: scale(1.06);
+}
+
+.poemsign h2
+{
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#sign
+{
+    height: 30%;
+    width: auto;
+}
+
+.reviewform
+{
+    margin: 4% 4% 4% 4%;
+}
+
+.reviewform h2 
+{
+    padding-bottom: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#reviewform
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.rev 
+{
+    color: rgb(90, 5, 139); 
+    font-style: italic;
+}
+
+#name2, #email2
+{
+    width: 60%;
+    max-width: 800px; 
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #534c4c;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    margin: 1%;
+}
+
+#review
+{
+    width: 60%; 
+    max-width: 800px; 
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #534c4c;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    margin: 1%;
+    height: 200px;
+}
+
+#submit2 
+{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #62076f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    margin-top: 1%;
+}
+
+#submit2:hover 
+{
+    background-color: #707bf3;
+}
+
+/*CONTACT*/
+
+#contact
+{
+    align-items: center;
+    background-image: url(images/bg5.avif);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.contactbody
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 3rem;
+    padding-left: 30px;
+    color: rgb(7, 7, 7);
+    margin: 45px;
+
+}
+
+.contactinfo h1
+{
+    font-size: 50px;
+}
+
+.talk
+{
+    color: rgb(30, 18, 104);
+}
+
+.contactinfo p
+{
+    margin: 30px 0px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.contactinfo li
+{
+    list-style: none;
+    font-size: 18px;
+}
+
+.contactinfo i
+{
+    margin-right: 20px;
+    font-size: 23px;
+    display: inline-flex; 
+    box-shadow: 0 0 20px transparent;
+    transition: all 0.5s ease;
+    height: 0px;
+}
+
+.contacticons i
+{
+    margin-right: 20px;
+    font-size: 40px;
+    transition: all 0.4s ease;
+    color: rgb(0, 0, 0);
+}
+
+.contacticons 
+{
+    margin-top: 60px;
+    text-decoration: none;
+}
+
+.contacticons i:hover
+{
+    transform: scale(1.01) translateY(-8px);  
+    box-shadow: 0 0 20px black;  
+}
+
+.contactform
+{
+    margin: 10%;
+    background: transparent;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+#name, #email
+{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    font-weight: 650;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgb(249, 251, 251);
+    box-shadow: 3px 3px 5px black;
+}
+
+#message
+{
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-weight: 650;
+    background-color: rgb(244, 247, 248);
+    box-shadow: 3px 3px 5px black;
+}
+
+#submit
+{
+    height: 40px;
+    border-radius: 10px;
+    width: 30%;
+    font-weight: 600;
+    background-color: rgb(232, 209, 244);
+    border-color: rgb(222, 187, 240);
+    transition: all 0.3s ease;
+}
+
+#submit:hover 
+{
+    transform: scale(1.04);
+    background: transparent;
+    box-shadow: 0 0 10px black;
+    color: rgb(49, 5, 75);;
+}
+
+form input::placeholder, form textarea::placeholder
+{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(46, 43, 43);
+}
+
+.error 
+{
+    color: red;
+    font-size: 15px;    
+    margin: 6px 0px;
+}
+
+
+.scrollup 
+{
+    position: fixed; 
+    bottom: 20px;
+    right: 20px; 
+    color: #fff; 
+    background-color: #000000; 
+    padding: 10px; 
+    border-radius: 50%; 
+    text-align: center; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 40px;
+    scroll-behavior: smooth;
+}
+
+.footer
+{
+    padding: 30px;
+    background: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+

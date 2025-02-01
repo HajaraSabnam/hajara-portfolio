@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, intitial-scale=1.0">
+        <title>Contact Me</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-***" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    </head>
+
+    <body>
+        <section id="contact">
+
+        <!--NAVIGATION BAR-->
+        
+            <div id="head">
+                <div class="menuicon" onclick="openmenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            
+                <header>
+                    <p><em>Hajara Sabnam</em></p>
+            
+                    <nav class="navbar" id="navbar">
+                        <ul class="mainlist">
+                            <li><a href="home.html">Home</a></li>
+                            <li><a href="aboutme.html">About Me</a></li>
+                            <li><a href="poetry.html">My Poetry</a></li>
+                            <li><a href="contactme.html">Contact Me</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+        
+        <!--CONTACT ME-->
+            <div class="contactbody">
+
+                <div class="contactinfo" data-aos="zoom-in-down">
+                    <h1>Let's <span class="talk"><em>Talk</span></em></h1>
+                    <p>If you have any questions or just want to say hello, feel free to reach out! I'm always open to connecting with new people. Drop me a message and I'll get back to you as soon as I can.</p>
+
+                    <li><i class="fa-solid fa-envelope"></i>hajarasabnam@gmail.com</li>
+                    <div class="contacticons">
+                        <a href="https://www.instagram.com/hajarasabnam" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/hajara-sabnam-kareem-navaz-32a11b234/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>                        
+                    </div>
+                </div>
+
+                <div class="contactform" data-aos="zoom-in-down">
+                    <form id="form" action="connect.php" method="post" onsubmit="return validateForm()">
+                        <input type="text" name="name" id="name" placeholder="Name">
+                        <div id="name-error" class="error"></div> <br>
+                        
+                        <input type="text" name="email" id="email" placeholder="Email ID">
+                        <div id="email-error" class="error"></div> <br>
+                        
+                        <textarea name="message" id="message" cols="40" rows="10" placeholder="Message"></textarea>
+                        <div id="message-error" class="error"></div> <br>
+                        
+                
+                        <input type="submit" value="Send Message" id="submit">
+                    </form>
+                </div>
+                
+            </div>
+
+            <div class="footer">
+                <p>2023 Hajara Sabnam, All Rights Reserved</p>
+                <a href="#" class="scrollup"><i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+            
+        </section>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
