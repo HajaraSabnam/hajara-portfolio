@@ -4,16 +4,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Work Experience</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">      
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-***" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
     </head>
 
-    <body class="aboutbody">
-        <section id="about">
-            <!--NAVIGATION BAR-->
+    <body class="experiencebody">
+        <section id="experience">
 
-            
+        <!--NAVIGATION BAR-->
+        
             <div id="head">
                 <div class="menuicon" onclick="openmenu()">
                     <i class="fa-solid fa-bars"></i>
@@ -21,23 +24,80 @@
             
                 <header>
                     <p><em>Hajara Sabnam</em></p>
+            
                     <nav class="navbar" id="navbar">
                         <ul class="mainlist">
-                            <li><a href="index.html" class="main">Home</a></li>
-                            <li><a href="aboutme.html" class="abt">About Me</a>
-                                <ul class="aboutlist">
-                                    <li><a href="#about_me">Who am I</a></li>
-                                    <li><a href="#skills">Skills</a></li>
-                                    <li><a href="#achievements">Achievements</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="aboutme.html">About Me</a></li>
                             <li><a href="experience.html">Work Experience</a></li>
-                            <li><a href="poetry.html" class="main">My Poetry</a></li>
-                            <li><a href="contactme.html" class="main">Contact Me</a></li>
+                            <li><a href="poetry.html">My Poetry</a></li>
+                            <li><a href="contactme.html">Contact Me</a></li>
                         </ul>
                     </nav>
                 </header>
             </div>
         </section>
+
+        <section id="work">
+            <div class="headingwork" data-aos="fade-down">
+                <h1><em>My <span class="spanwork">Work Experiences</span></em></h1><br>
+            </div>
+
+            <!-- <hr class="worklinebreak"> -->
+
+            <div class="worktimeline">
+                <div class="workline1">
+                <div class="work_1">
+                    <section class="work">
+                        <div class="work_details">
+                            <span>Present (From Feb 2025)</span>
+                            <h3>AI & IoT Research Intern </h3> <h4>DEWA R&D Center</h4>
+                            <!-- <a href="work_1.html"><h4>Read More</h4></a> -->
+                        </div>
+                        <img id="dewa" src="images/dewa.png">
+                    </section>              
+                </div>
+                 
+                <div class="work_2">
+                    <section class="work">
+                        <div class="work_details">
+                            <span>Feb 2024 - Sep 2024</span>
+                            <h3>Software Development Intern</h3> <h4>Digital Value Stream Dubai</h4>
+                            <!-- <a href="work_2.html"><h4>Read More</h4></a> -->
+                        </div>
+                        <img id="dvs"src="images/dvs.jpg">
+                    </section>
+                </div>
+            </div>
+                <div class="workline2">
+                <div class="work_3">
+                    <section class="work">
+                        <div class="work_details">
+                            <span>Jun 2024 - Aug 2024</span>
+                            <h3>IT Research Intern</h3> <h4>Beta Information Technology Dubai</h4>
+                            <!-- <a href="work_3.html"><h4>Read More</h4></a> -->
+                        </div>
+                        <img id="beta" src="images/betaIT.png">
+                    </section>
+                </div>
+
+                <div class="work_4">
+                    <section class="work">
+                        <div class="work_details">
+                            <span>May 2024 - June 2024</span>
+                            <h3>Data Analyst</h3> <h4>MeriSKILL</h4>
+                            <!-- <a href="work_4.html"><h4>Read More</h4></a> -->
+                        </div>
+                        <img id="meriskill" src="images/meriskill.png">
+                    </section>
+                </div>
+                </div>
+            </div>
+
+        </section>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="script.js"></script>
+
     </body>
 </html>

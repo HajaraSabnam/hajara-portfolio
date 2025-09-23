@@ -754,6 +754,163 @@ header ul.aboutlist li a
     }
 }
 
+/*EXPERIENCE*/
+
+.experiencebody
+{
+    background-image: url(images/bg2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#work 
+{
+    margin-top: 20px;
+}
+
+.headingwork
+{
+    text-align: center;
+    padding: 20px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size:x-large;
+}
+
+.headingwork h1
+{
+    font-size: 45px;
+}
+
+.headingwork p
+{
+    font-size: 20px;
+}
+
+.spanwork
+{
+    color: rgb(58, 165, 4);
+}
+
+.worklinebreak
+{
+    width: 90%;
+    margin: 0.5% auto;
+    border: 1px solid black;
+}
+
+.worktimeline 
+{
+    flex-direction: row;
+    gap: 50px;
+    margin: 60px;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.work {
+    /* display: flex;
+    flex-direction: column;    */
+    display: grid;
+    grid-template-columns: 2.5fr 0.5fr;
+    /* align-items: center;        */
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.542);
+    width: 650px;
+    height: 200px;
+    line-height: 1.6;
+    text-align: left;    
+    border-radius: 12px;  
+}
+
+.work:hover {
+    background-color: #ffffffb5;
+    transform: translateY(-5px) scale(1.00);
+
+}
+
+/* .work img {
+    margin-top: -65px; 
+    height: auto;             
+    width: 120px;
+    object-fit: cover;   
+    margin-bottom: 30px; 
+    background-color: rgba(255, 255, 255, 0.542);
+    padding-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin-left: -280px;
+    margin-left: 0;
+} */
+
+.work img {
+    border-radius: 12px;
+}
+
+#dewa {
+    height: auto;             
+    width: 220px;
+    object-fit: cover;   
+    margin-bottom: 30px; 
+    padding-top: 10px;
+    margin-left: 0;
+    margin-right: -30px;
+}
+
+#dvs {
+    height: auto;             
+    width: 120px;
+    object-fit: cover;   
+    margin-bottom: 0px; 
+    padding-top: 10px;
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+#beta {
+    height: auto;             
+    width: 120px;
+    object-fit: cover;   
+    margin-bottom: 30px; 
+    padding-top: 10px;
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+#meriskill {
+    height: auto;             
+    width: 120px;
+    object-fit: cover;   
+    margin-bottom: 30px; 
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+.work_details 
+{
+    margin-left: 15px;
+    /* font-family: "Cormorant Garamond", serif; */
+    font-style: normal;
+    font-size: 18px; 
+}
+
+.work_details a 
+{
+    position: relative;
+    padding: 15px;
+    cursor: pointer;
+    float: right;
+    text-decoration: none;
+    color: black;
+    font-weight: 100;
+}
+
+.work_details p
+{
+    margin-top: 20px;
+}
 
 /*POETRY*/
 
