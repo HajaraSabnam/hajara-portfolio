@@ -13,13 +13,15 @@ AOS.init({
 
 // Typing Effect Animation 
 
-var typingEffect = new Typed(".anim", {
-    strings: ["Hajara Sabnam", "A Tech Enthusiast", "A Coder"],
-    loop: true,
-    typeSpeed: 100,
-    backSpeed: 80,
-    backDelay: 1200
-});
+if (typeof Typed !== "undefined" && document.querySelector(".anim")) {
+    var typingEffect = new Typed(".anim", {
+        strings: ["Hajara Sabnam", "A Tech Enthusiast", "A Coder"],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 80,
+        backDelay: 1200
+    });
+}
 
 // Profile Box Animation 
 
