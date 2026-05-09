@@ -1,7 +1,7 @@
 const supabaseUrl = "https://jmxrcnxygyvbrbzxnher.supabase.co";
 const supabaseKey = "sb_publishable_JU_CiBRevCBpJ4Twk7Jddg_10keBxy9";
 
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+const client = supabase.createClient(supabaseUrl, supabaseKey);
 
 // Transition Animation 
 
@@ -203,10 +203,9 @@ document.getElementById("contactForm").addEventListener("submit", async function
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
 
-    // keep your existing validation
     if (!validateForm()) return;
 
-    const { error } = await supabase
+    const { error } = await client
         .from("contact_form")
         .insert([
             {
