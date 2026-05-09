@@ -50,7 +50,8 @@
                 </div>
 
                 <div class="contactform" data-aos="zoom-in-down">
-                    <form onsubmit="return validateForm()">
+                    <!-- <form onsubmit="return validateForm()"> -->
+                    <form id="contactForm">
                         <input type="text" name="name" id="name" placeholder="Name">
                         <div id="name-error" class="error"></div> <br>
                         
@@ -75,6 +76,7 @@
         </section>
 
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
         <script src="script.js"></script>
     </body>
 </html>

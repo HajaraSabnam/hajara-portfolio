@@ -1,3 +1,8 @@
+const supabaseUrl = "https://jmxrcnxygyvbrbzxnher.supabase.co";
+const supabaseKey = "sb_publishable_JU_CiBRevCBpJ4Twk7Jddg_10keBxy9";
+
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
 // Transition Animation 
 
 AOS.init({
@@ -184,9 +189,38 @@ function validateForm(event) {
     return isValid;  
 }
 
-document.getElementById("contactForm").addEventListener("submit", function(event) {
+// document.getElementById("contactForm").addEventListener("submit", function(event) {
     
-    if (!validateForm(event)) {
-        event.preventDefault();  
+//     if (!validateForm(event)) {
+//         event.preventDefault();  
+//     }
+// });
+
+document.getElementById("contactForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // keep your existing validation
+    if (!validateForm()) return;
+
+    const { error } = await supabase
+        .from("contact_form")
+        .insert([
+            {
+                name: name,
+                email: email,
+                message: message
+            }
+        ]);
+
+    if (error) {
+        console.log(error);
+        alert("Error sending message");
+    } else {
+        alert("Message sent successfully!");
+        document.getElementById("contactForm").reset();
     }
 });
