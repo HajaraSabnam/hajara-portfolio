@@ -1,6 +1,7 @@
 const supabaseUrl = "https://jmxrcnxygyvbrbzxnher.supabase.co";
 const supabaseKey = "sb_publishable_JU_CiBRevCBpJ4Twk7Jddg_10keBxy9";
 
+
 const client = supabase.createClient(supabaseUrl, supabaseKey);
 
 // Transition Animation 
