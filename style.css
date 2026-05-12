@@ -224,8 +224,9 @@ header ul.aboutlist li a
     background-image: url(images/bg.avif);
     background-repeat: no-repeat;
     background-size: cover; 
-    width: 100%;
-    height: 100vh;
+    background-attachment: fixed;
+    /* width: 100%;
+    height: 100vh; */
     /* min-width: auto; */
 }
 
@@ -1858,7 +1859,6 @@ header ul.aboutlist li a
 }
 
 
-
 /*CONTACT*/
 
 #contact
@@ -1866,6 +1866,7 @@ header ul.aboutlist li a
     background-image: url(images/bg5.avif);
     height: auto; 
     background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: fixed;
 }
 
