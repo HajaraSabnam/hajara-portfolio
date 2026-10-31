@@ -9,14 +9,13 @@ const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
 $("#year").textContent = new Date().getFullYear();
 
-// Header turns solid once the hero has scrolled away
+// Header gets a hairline once the page scrolls
 
 const header = $(".site-header");
-const hero = $(".hero");
+const updateHeader = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
 
-new IntersectionObserver(([entry]) => {
-    header.classList.toggle("is-solid", !entry.isIntersecting);
-}, { rootMargin: "-72px 0px 0px 0px" }).observe(hero);
+updateHeader();
+window.addEventListener("scroll", updateHeader, { passive: true });
 
 // Mobile menu
 
@@ -78,53 +77,6 @@ $$("[data-reveal]").forEach(el => {
     revealObserver.observe(el);
 });
 
-// Typing effect
-
-const typed = $("#typed");
-const words = ["Android apps", "machine learning models", "AI & IoT research", "poetry"];
-
-if (!reduceMotion) {
-    let word = 0;
-    let chars = words[0].length;
-    let deleting = true;
-    const pause = { typed: 1600, deleted: 350 };
-
-    setTimeout(function tick() {
-        const current = words[word];
-        chars += deleting ? -1 : 1;
-        typed.textContent = current.slice(0, chars);
-
-        let delay = deleting ? 40 : 75;
-        if (!deleting && chars === current.length) {
-            deleting = true;
-            delay = pause.typed;
-        } else if (deleting && chars === 0) {
-            deleting = false;
-            word = (word + 1) % words.length;
-            delay = pause.deleted;
-        }
-        setTimeout(tick, delay);
-    }, 2600);
-}
-
-// Gentle parallax on the portrait
-
-const portrait = $(".hero-photo img");
-
-if (!reduceMotion) {
-    let ticking = false;
-    window.addEventListener("scroll", () => {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(() => {
-            const y = Math.min(window.scrollY, window.innerHeight);
-            portrait.style.setProperty("--s", 1 + y / 4000);
-            portrait.style.setProperty("--py", y * 0.06 + "px");
-            ticking = false;
-        });
-    }, { passive: true });
-}
-
 // Achievements accordion; #a-<name> links open the matching entry
 
 function setAward(award, open) {
@@ -148,37 +100,6 @@ function openFromHash() {
 
 openFromHash();
 window.addEventListener("hashchange", openFromHash);
-
-// Poem reader tabs
-
-const tabs = $$('.poem-list [role="tab"]');
-
-function selectPoem(tab, focus) {
-    tabs.forEach(t => {
-        const selected = t === tab;
-        t.setAttribute("aria-selected", selected);
-        t.tabIndex = selected ? 0 : -1;
-        const panel = document.getElementById(t.getAttribute("aria-controls"));
-        panel.hidden = !selected;
-        if (selected) {
-            panel.classList.remove("is-entering");
-            void panel.offsetWidth;
-            panel.classList.add("is-entering");
-        }
-    });
-    if (focus) tab.focus();
-    tab.scrollIntoView({ block: "nearest", inline: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
-}
-
-tabs.forEach((tab, i) => {
-    tab.addEventListener("click", () => selectPoem(tab));
-    tab.addEventListener("keydown", e => {
-        const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
-        if (!step) return;
-        e.preventDefault();
-        selectPoem(tabs[(i + step + tabs.length) % tabs.length], true);
-    });
-});
 
 // Image viewer for certificates and achievement photos
 

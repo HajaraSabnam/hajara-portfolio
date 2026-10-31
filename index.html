@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hajara Sabnam</title>
-    <meta name="description" content="Hajara Sabnam: IT graduate, AI and IoT researcher, and poet based in Dubai.">
-    <meta name="theme-color" content="#3d1a33">
+    <meta name="description" content="Hajara Sabnam: AI Engineer at Elchai Group, based in Dubai.">
+    <meta name="theme-color" content="#fcfcfd">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -26,7 +26,6 @@
             <a href="#experience">Experience</a>
             <a href="#research">Research</a>
             <a href="#achievements">Achievements</a>
-            <a href="#poetry">Poetry</a>
             <a href="#contact">Contact</a>
             <span class="nav-indicator" aria-hidden="true"></span>
         </nav>
@@ -42,13 +41,12 @@
 
         <section class="hero" id="home">
             <div class="hero-text">
-                <p class="hero-hi" data-load>Hi there, I'm</p>
-                <h1 class="hero-name" data-load>Hajara <em>Sabnam</em></h1>
-                <p class="hero-role" data-load>I work on <span class="typed" id="typed">Android apps</span><span class="caret" aria-hidden="true"></span></p>
-                <p class="hero-lede" data-load>IT graduate and Silver Medalist from Amity University Dubai, AI &amp; IoT research intern at the DEWA R&amp;D Center, and a writer of poems in between.</p>
+                <p class="hero-role" data-load><span class="dot" aria-hidden="true"></span>AI Engineer at Elchai Group</p>
+                <h1 class="hero-name" data-load>Hajara Sabnam</h1>
+                <p class="hero-lede" data-load>I build machine learning models, Android apps and IoT systems, with published research in AI. IT graduate and Silver Medalist from Amity University Dubai.</p>
                 <div class="hero-actions" data-load>
-                    <a href="#research" class="btn btn-light">See my work</a>
-                    <a href="#contact" class="btn btn-ghost">Get in touch</a>
+                    <a href="#research" class="btn btn-primary">See my work</a>
+                    <a href="#contact" class="btn btn-secondary">Get in touch</a>
                 </div>
             </div>
 
@@ -66,11 +64,12 @@
                 <div class="about-grid">
                     <div class="about-text" data-reveal>
                         <p class="lead">I'm a tech enthusiast driven by an insatiable hunger for knowledge, working to build real expertise and a reputation for dedication and hard work.</p>
-                        <p>Beyond the digital landscape, I find solace in literature, particularly poetry, which I see as a profound expression of the human experience. To me, poetry adds a soulful rhythm to life, articulating emotions and thoughts in ways simple words cannot.</p>
+                        <p>Today I work as an AI Engineer at Elchai Group, building on research experience from the DEWA R&amp;D Center and published work in machine learning.</p>
                         <p>When I'm not exploring technology or lost in the pages of a novel, I'm out networking, traveling and embracing new experiences. Curiosity fuels my passion for discovery, and I'm always eager to connect with fellow enthusiasts. Let's connect and explore the world together!</p>
                     </div>
 
                     <dl class="facts" data-reveal>
+                        <div><dt>Role</dt><dd>AI Engineer, Elchai Group</dd></div>
                         <div><dt>Based in</dt><dd>Dubai, UAE</dd></div>
                         <div><dt>Studied</dt><dd>B.Sc. Information Technology</dd></div>
                         <div><dt>Interests</dt><dd>Coding, research projects, chess</dd></div>
@@ -132,7 +131,6 @@
                     <div data-reveal>
                         <h4>Beyond the screen</h4>
                         <ul class="tags">
-                            <li>Poetry Writing</li>
                             <li>Drawing</li>
                             <li>Painting</li>
                             <li>Badminton</li>
@@ -148,10 +146,17 @@
             <div class="wrap">
                 <div class="section-head" data-reveal>
                     <h2 class="section-title">Work experience</h2>
-                    <p class="section-note">1 year and 8 months</p>
                 </div>
 
                 <ol class="jobs">
+                    <li class="job" data-reveal>
+                        <span class="job-dates">Present</span>
+                        <div class="job-body">
+                            <h3>AI Engineer</h3>
+                            <p class="job-org">Elchai Group</p>
+                        </div>
+                    </li>
+
                     <li class="job" data-reveal>
                         <span class="job-dates">Feb 2025 to Nov 2025</span>
                         <div class="job-body">
@@ -519,220 +524,6 @@
             </div>
         </section>
 
-        <!--POETRY-->
-
-        <section class="poetry" id="poetry">
-            <div class="wrap">
-                <blockquote class="rumi" data-reveal>
-                    <p>&ldquo;Be silent now. Say fewer and fewer praise poems. Let yourself become living poetry.&rdquo;</p>
-                    <cite>Rumi</cite>
-                </blockquote>
-
-                <div class="section-head" data-reveal>
-                    <h2 class="section-title">I write poetry</h2>
-                    <p class="section-note">A few of my poems</p>
-                </div>
-
-                <div class="reader" data-reveal>
-                    <div class="poem-list" role="tablist" aria-label="Poems">
-                        <button role="tab" id="t-white" aria-controls="poem-white" aria-selected="true"><span>01</span>White</button>
-                        <button role="tab" id="t-spirit" aria-controls="poem-spirit" aria-selected="false" tabindex="-1"><span>02</span>Spirit</button>
-                        <button role="tab" id="t-time-a-saviour" aria-controls="poem-time-a-saviour" aria-selected="false" tabindex="-1"><span>03</span>Time, A Saviour</button>
-                        <button role="tab" id="t-melodies-of-the-wind" aria-controls="poem-melodies-of-the-wind" aria-selected="false" tabindex="-1"><span>04</span>Melodies of the Wind</button>
-                        <button role="tab" id="t-words" aria-controls="poem-words" aria-selected="false" tabindex="-1"><span>05</span>Words</button>
-                        <button role="tab" id="t-blue-hour" aria-controls="poem-blue-hour" aria-selected="false" tabindex="-1"><span>06</span>Blue Hour</button>
-                        <button role="tab" id="t-silenced" aria-controls="poem-silenced" aria-selected="false" tabindex="-1"><span>07</span>Silenced</button>
-                        <button role="tab" id="t-pace" aria-controls="poem-pace" aria-selected="false" tabindex="-1"><span>08</span>Pace</button>
-                    </div>
-                    <div class="poem-stage">
-                        <article class="poem" role="tabpanel" id="poem-white" aria-labelledby="t-white">
-                            <h3>White</h3>
-                            <p>I wonder,<br>
-                                What do these clouds hide?<br>
-                                The gloom it’s about to glaze me with<br>
-                                Or the glory to conceal the dark?<br>
-                                Like it does<br>
-                                With itself<br>
-                                One can never know, I suppose.<br>
-                                And perhaps, that’s the reason<br>
-                                It’s too appealing to the eyes<br>
-                                Yet so unreal to think about.</p>
-                        </article>
-                        <article class="poem" role="tabpanel" id="poem-spirit" aria-labelledby="t-spirit" hidden>
-                            <h3>Spirit</h3>
-                            <p>It feels like just yesterday<br>
-                                I came into this world in spring<br>
-                                But look, it’s already autumn.<br>
-                                Along with the petals of soft flowers,<br>
-                                I wished to fly away.<br>
-                                But if the flowers perished<br>
-                                Where is the beauty of the plant, I thought.<br>
-                                And so, I stayed.<br>
-                                For a pitied reason<br>
-                                Only to find that<br>
-                                The plant bore the flowers<br>
-                                And hence there is so much green<br>
-                                Than the glowing hue<br>
-                                To gracefully endow me<br>
-                                With a steady and placid life<br>
-                                Of opportunities to blossom<br>
-                                And not just fugitive flowers<br>
-                                That end up faded and forgotten.</p>
-                        </article>
-                        <article class="poem" role="tabpanel" id="poem-time-a-saviour" aria-labelledby="t-time-a-saviour" hidden>
-                            <h3>Time, A Saviour</h3>
-                            <p>Lamps of colors blinds the shades of those eyes<br>
-                                A beautiful little face<br>
-                                Sometimes, she smiles and several times, she frowns<br>
-                                Isn’t that how dubious life is?<br>
-                                Times filled with happiness and those with pain<br>
-                                Before I am done with one, here it is, another one.<br>
-                                Before I realize that my hair’s grown a few inches,<br>
-                                I feel the wrinkles on my face as I laugh<br>
-                                I sometimes look back at that beautiful face<br>
-                                That has withered with time<br>
-                                Such were the shades, dark and bright<br>
-                                Moments I am caged up<br>
-                                Now that I think about it,<br>
-                                Oh, how lucky am I<br>
-                                That you never let go of my hand<br>
-                                That you never let me stop<br>
-                                That you always made me run with you<br>
-                                A savior, I never realized I had<br>
-                                Before I put down this pen that I am holding<br>
-                                A thousand frowns have let go of me<br>
-                                A few smiles have come looking for me<br>
-                                Thanks to you, I am still running with you<br>
-                                Time changes everything<br>
-                                And yet life goes on, doesn’t it?</p>
-                        </article>
-                        <article class="poem" role="tabpanel" id="poem-melodies-of-the-wind" aria-labelledby="t-melodies-of-the-wind" hidden>
-                            <h3>Melodies of the Wind</h3>
-                            <p>As I put my ear close to the windowpane<br>
-                                I feel the breeze with a heavy heart<br>
-                                Warm and cold is the usual rhythm<br>
-                                But this time, it’s different<br>
-                                This wind holds onto stories of many<br>
-                                Among troubles, one speaks happiness<br>
-                                There’s one with tears too<br>
-                                Several throughout the night<br>
-                                To keep me well occupied<br>
-                                That night filled my ears with words<br>
-                                Some I never want to utter<br>
-                                Some I wish I had heard earlier<br>
-                                In the meantime, this heart forgot<br>
-                                What it had been holding the night before<br>
-                                Give some thought to it<br>
-                                Time passes and so does life, doesn’t it?<br>
-                                When there is so much weight in their hearts<br>
-                                What am I holding onto?<br>
-                                This little soul is blessed, I felt<br>
-                                They would feel the same, I thought<br>
-                                If they had heard each other<br>
-                                In a life filled with troubles<br>
-                                There is an ease in sharing<br>
-                                In a world filled with such souls<br>
-                                There are stories waiting to be shared<br>
-                                And this is the music<br>
-                                The wind plays every night<br>
-                                This time, listen closely<br>
-                                You will hear one too.</p>
-                        </article>
-                        <article class="poem" role="tabpanel" id="poem-words" aria-labelledby="t-words" hidden>
-                            <h3>Words</h3>
-                            <p>To be oneself, is to live at ease<br>
-                                To feel happy, embracing life like an evening breeze.<br>
-                                In every moment, shall find peace<br>
-                                To feel content, with one’s own feats.</p>
-                            <p>To laugh along, at life's subtle play<br>
-                                Forgetting little errors, ones of life's display.<br>
-                                In simple joys, to find one’s way<br>
-                                Is somehow, only to exist in words, like these convey.</p>
-                        </article>
-                        <article class="poem" role="tabpanel" id="poem-blue-hour" aria-labelledby="t-blue-hour" hidden>
-                            <h3>Blue Hour</h3>
-                            <p>When the blue hour hits<br>
-                                Midnight, when it's past 12<br>
-                                Even the daring waves<br>
-                                Look calm and quiet<br>
-                                Something about the blues of the nights<br>
-                                Watching the world rush<br>
-                                When my heart takes a little rest<br>
-                                Rich of calmness in a hush<br>
-                                Loaded with nostalgic beauty<br>
-                                How is it, you calm me so much? I asked<br>
-                                For that's when you see the world<br>
-                                With no expectations and no thoughts<br>
-                                Simply, when your world is quiet, it said.</p>
-                        </article>
-                        <article class="poem" role="tabpanel" id="poem-silenced" aria-labelledby="t-silenced" hidden>
-                            <h3>Silenced</h3>
-                            <p>In the dead of the night, when the world fell quiet<br>
-                                A voice spoke out of an uncertain conviction.<br>
-                                Yearning for a glint, the moonlight embraced her little face<br>
-                                A face that has withered over time<br>
-                                A heart that had battled itself<br>
-                                A mind that forced her to keep fighting<br>
-                                She had carried a lot, the miserable woman.<br>
-                                But who bothered to ask her, she thought<br>
-                                As she reminisced her life, she let out a laugh<br>
-                                Soaked in pain, her lips hardly curled<br>
-                                Just smile, be elegant.<br>
-                                You are a girl, they said.<br>
-                                As a sharp pain caught her throat<br>
-                                She screamed with tears.<br>
-                                Be polite, be quiet.<br>
-                                You are a girl, they said.<br>
-                                As she prepared to speak<br>
-                                Listen to him.<br>
-                                Again, you are the girl, they said.<br>
-                                And today, as the veil covered her pale face<br>
-                                She felt her dreams shatter into pieces<br>
-                                Amidst the voices of the unspoken,<br>
-                                Her voice stayed mute.<br>
-                                Amidst the rules of the unbothered,<br>
-                                Her thoughts stayed with her.<br>
-                                Amidst their system of life<br>
-                                She became a mere puppet.<br>
-                                In their world, filled with lights<br>
-                                She was devoid of one.<br>
-                                And that is how it was supposed to be, they said.<br>
-                                But who are they, she thought as she closed her eyes.<br>
-                                With filtered emotions, she lifted up her face<br>
-                                Hoping that her voice would echo in their unfiltered minds,<br>
-                                She opened her eyes.<br>
-                                A gentle breeze touched her slow<br>
-                                In the soft embrace of the light, she felt a power<br>
-                                Of a world that had truly fell silent.<br>
-                                And there she disappeared into the moonlight<br>
-                                Nowhere to be found again.</p>
-                        </article>
-                        <article class="poem" role="tabpanel" id="poem-pace" aria-labelledby="t-pace" hidden>
-                            <h3>Pace</h3>
-                            <p>Time ticks quick<br>
-                                But here I stand still<br>
-                                Amidst the buzz of a world<br>
-                                That never seems to settle<br>
-                                To step ahead<br>
-                                Means to break barriers<br>
-                                To switch circumstances<br>
-                                Means to fear and quit<br>
-                                Have I lost my time already?<br>
-                                But allow me to ask<br>
-                                Who times our efforts?<br>
-                                A mind racing a heart isn’t life.<br>
-                                For, a pace that’s too fast<br>
-                                Could never lead to a stable end<br>
-                                And hence there is no fault<br>
-                                In a pace<br>
-                                That’s steady and poise.</p>
-                        </article>
-                        <p class="signature">Hajara Sabnam</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!--CONTACT-->
 
         <section class="section contact" id="contact">
@@ -769,7 +560,7 @@
                         <textarea id="message" name="message" rows="5" required></textarea>
                         <span class="error" id="message-error"></span>
                     </div>
-                    <button type="submit" class="btn btn-dark" id="submit">Send message</button>
+                    <button type="submit" class="btn btn-primary" id="submit">Send message</button>
                     <p class="form-status" id="formStatus" role="status"></p>
                 </form>
             </div>
