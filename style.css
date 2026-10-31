@@ -21,8 +21,8 @@
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
     --gutter: clamp(1rem, 5vw, 3rem);
     --header-h: 4rem;
-    --lift: -5px 6px 10px -2px oklch(0.5 0.06 215 / 0.32);
-    --lift-hover: -7px 9px 14px -2px oklch(0.5 0.06 215 / 0.4);
+    --lift: -8px 8px 8px -2px oklch(0.2 0.01 265 / 0.38);
+    --lift-hover: -10px 10px 10px -2px oklch(0.2 0.01 265 / 0.42);
 }
 
 /* ---------- Base ---------- */
@@ -477,16 +477,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     margin-top: clamp(4rem, 8vw, 6rem);
 }
 
-.edu { display: grid; gap: 1rem; }
-.edu li, .toolkit > div {
-    padding: 1.25rem 1.5rem;
-    border: 1px solid var(--line);
-    border-radius: 0.75rem;
+.about-lower > div {
+    padding: 1.75rem 2rem 2rem;
+    border-radius: 1.25rem;
     background: oklch(1 0 0);
     box-shadow: var(--lift);
-    transition: box-shadow 0.4s var(--ease), translate 0.4s var(--ease);
 }
-.edu li:hover, .toolkit > div:hover { box-shadow: var(--lift-hover); translate: 0 -2px; }
+.edu { display: grid; gap: 1.5rem; }
 .edu h4 { font: 600 1.1rem/1.3 var(--display); letter-spacing: -0.015em; margin-top: 0.15rem; }
 .edu p { color: var(--muted); font-size: 0.9375rem; }
 .medal {
@@ -498,7 +495,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     color: var(--accent-ink);
 }
 
-.toolkit { display: grid; gap: 1rem; }
+.toolkit { display: grid; gap: 1.5rem; }
 .toolkit h4 { font: 600 1rem/1.2 var(--display); margin-bottom: 0.6rem; }
 
 /* ---------- Research ---------- */
@@ -579,7 +576,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     gap: 0.4rem;
     margin-top: 1.6rem;
     padding: 0.55rem 1rem;
-    border: 1px solid var(--line);
     border-radius: 0.6rem;
     background: oklch(1 0 0);
     box-shadow: var(--lift);
@@ -612,8 +608,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 .jobs {
     max-width: 56rem;
-    border: 1px solid var(--line);
-    border-radius: 0.9rem;
+    border-radius: 1.25rem;
     background: oklch(1 0 0);
     box-shadow: var(--lift);
     overflow: hidden;

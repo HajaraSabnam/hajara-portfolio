@@ -42,7 +42,7 @@ Handwritten teal notes and hand-drawn marks: "hi, I'm", the underline under "res
 - Research list shows number, venue, title, summary and authors only; no results column, stamps, categories or filters.
 - Moderate type sizes; the very large display type of a later experiment was rejected.
 - Sections are separated by alternating bands (white, light grey, dark), not by rules. No boxed stat cells, no rules around research or the topic strip, no rules in the education list.
-- Lifted boxes: education entries, toolkit groups, the experience panel and the paper links are white boxes with a soft blue-teal shadow on the left and bottom only (from the owner's original site), not a full drop shadow.
+- Lifted boxes: one white box for Education and one for Toolkit (not one per item), plus the experience panel and the paper buttons. They use a crisp dark shadow on the left and bottom only (`-8px 8px 8px -2px`), taken from the owner's original About card, with no border.
 - Experience is one compact panel: a row per role with logo, role, company, skills in small text and dates on the right; the current role has a "Current role" tag.
 - Research titles are plain text; each paper has a "Check out paper" button on the right, as on the original site.
 - Moments photos have rounded corners.
