@@ -9,13 +9,35 @@ const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
 $("#year").textContent = new Date().getFullYear();
 
-// Header gets a hairline once the page scrolls
+// Header state, reading progress and the experience timeline all follow the scroll
 
 const header = $(".site-header");
-const updateHeader = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
+const progress = $(".progress");
+const timeline = $(".timeline");
+const jobs = $$(".timeline .job");
+let scrollQueued = false;
 
-updateHeader();
-window.addEventListener("scroll", updateHeader, { passive: true });
+function onScroll() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    header.classList.toggle("is-scrolled", window.scrollY > 8);
+    progress.style.setProperty("--p", max > 0 ? window.scrollY / max : 0);
+
+    const box = timeline.getBoundingClientRect();
+    const mark = window.innerHeight * 0.6;
+    const t = Math.min(Math.max((mark - box.top) / box.height, 0), 1);
+    timeline.style.setProperty("--tp", t);
+    jobs.forEach(job => job.classList.toggle("is-passed", job.getBoundingClientRect().top < mark));
+
+    scrollQueued = false;
+}
+
+onScroll();
+window.addEventListener("scroll", () => {
+    if (scrollQueued) return;
+    scrollQueued = true;
+    requestAnimationFrame(onScroll);
+}, { passive: true });
+window.addEventListener("resize", onScroll);
 
 // Mobile menu
 
@@ -33,9 +55,20 @@ document.addEventListener("keydown", e => {
     if (e.key === "Escape") setMenu(false);
 });
 
-// Underline the nav link for the section in view
+// Active section indicator in the nav
 
 const navLinks = $$(".nav a");
+const indicator = $(".nav-indicator");
+
+function moveIndicator(link) {
+    if (!link) {
+        indicator.classList.remove("is-on");
+        return;
+    }
+    indicator.style.setProperty("--x", link.offsetLeft + 12 + "px");
+    indicator.style.setProperty("--w", (link.offsetWidth - 24) / 100);
+    indicator.classList.add("is-on");
+}
 
 const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -43,10 +76,12 @@ const sectionObserver = new IntersectionObserver(entries => {
         const id = entry.target.id;
         const active = navLinks.find(a => a.getAttribute("href") === "#" + id);
         navLinks.forEach(a => a.classList.toggle("is-active", a === active));
+        moveIndicator(active);
     });
 }, { rootMargin: "-45% 0px -50% 0px" });
 
 $$("main > section").forEach(s => sectionObserver.observe(s));
+window.addEventListener("resize", () => moveIndicator($(".nav a.is-active")));
 
 // Scroll reveal, staggered among siblings
 
@@ -67,8 +102,8 @@ $$("[data-reveal]").forEach(el => {
 
 // Research numbers count up the first time they appear
 
-$(".counts").addEventListener("reveal", () => {
-    $$(".counts [data-count]").forEach(num => {
+$(".stats").addEventListener("reveal", () => {
+    $$(".stats [data-count]").forEach(num => {
         const target = Number(num.dataset.count);
         if (reduceMotion) return;
         const start = performance.now();
@@ -82,10 +117,10 @@ $(".counts").addEventListener("reveal", () => {
     });
 }, { once: true });
 
-// Topic strip needs a second copy to loop seamlessly
+// Topic marquee needs a second copy to loop seamlessly
 
-const topics = $(".topics-track");
-topics.innerHTML += topics.innerHTML;
+const marquee = $(".marquee-track");
+marquee.innerHTML += marquee.innerHTML;
 
 // Achievements accordion; #a-<name> links open the matching entry
 
@@ -111,7 +146,7 @@ function openFromHash() {
 openFromHash();
 window.addEventListener("hashchange", openFromHash);
 
-// Image viewer for achievement and moment photos
+// Image viewer for certificates and achievement photos
 
 const viewer = $("#viewer");
 const viewerImg = $("#viewerImg");

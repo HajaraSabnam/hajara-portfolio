@@ -8,13 +8,14 @@
     <meta name="theme-color" content="#fdfdfe">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Caveat:wght@500..700&family=Geist:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@500..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body>
     <a class="skip" href="#main">Skip to content</a>
+    <div class="progress" aria-hidden="true"></div>
 
     <!--NAVIGATION-->
 
@@ -27,6 +28,7 @@
             <a href="#experience">Experience</a>
             <a href="#achievements">Achievements</a>
             <a href="#contact">Contact</a>
+            <span class="nav-indicator" aria-hidden="true"></span>
         </nav>
 
         <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
@@ -38,251 +40,342 @@
 
         <!--HERO-->
 
-        <section class="hero wrap" id="home">
-            <div class="hero-text">
-                <p class="hand hero-hi" data-load>hi, I'm</p>
-                <h1 class="hero-name">
-                    <span class="line" data-load><span>Hajara</span></span>
-                    <span class="line" data-load><span>Sabnam</span></span>
-                </h1>
-                <div class="hero-foot" data-load>
-                    <p class="hero-lede">AI Engineer at <strong>Elchai Group</strong> and a researcher at heart.</p>
-                    <div class="hero-actions">
-                        <a href="#research" class="btn">Read my research <i class="arrow" aria-hidden="true"></i></a>
-                        <a href="#contact" class="text-link">Get in touch</a>
+        <section class="hero" id="home">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <p class="hand hero-hi" data-load>hi, I'm</p>
+                    <h1 class="hero-name" data-load>Hajara<br>Sabnam</h1>
+                    <p class="hero-lede" data-load>
+                        AI Engineer at <strong>Elchai Group</strong> and a
+                        <span class="scribble">researcher at heart<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 14 C 60 6, 120 4, 180 8 S 270 15, 297 6"/></svg></span>.
+                    </p>
+                    <div class="hero-actions" data-load>
+                        <a href="#research" class="btn btn-primary">Read my research <i class="arrow" aria-hidden="true"></i></a>
+                        <a href="#contact" class="btn btn-secondary">Say hello</a>
                     </div>
                 </div>
-            </div>
 
-            <figure class="portrait" data-load>
-                <div class="portrait-frame">
+                <figure class="polaroid" data-load>
+                    <span class="tape" aria-hidden="true"></span>
                     <img src="images/web/hajara.jpg" alt="Hajara Sabnam speaking at an event" width="1022" height="1100" fetchpriority="high">
-                </div>
-                <figcaption class="hand">me, mid-sentence</figcaption>
-            </figure>
+                    <figcaption class="hand">fig. 1: me, mid-sentence</figcaption>
+                    <svg class="doodle doodle-star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 L23 16 L37 20 L23 24 L20 37 L17 24 L3 20 L17 16 Z"/></svg>
+                    <svg class="doodle doodle-loop" viewBox="0 0 120 60" aria-hidden="true"><path pathLength="1" d="M4 50 C 30 50, 40 10, 62 14 C 84 18, 70 46, 56 38 C 44 30, 70 8, 112 10"/><path pathLength="1" d="M102 3 L113 10 L103 18"/></svg>
+                </figure>
+            </div>
         </section>
 
-        <!--TOPICS-->
+        <!--MARQUEE-->
 
-        <div class="topics" aria-hidden="true">
-            <div class="topics-track">
-                <span>Machine Learning</span><span>Deep Learning</span><span>IoT</span><span>Computer Vision</span>
-                <span>Symbolic Regression</span><span>Android</span><span>Sustainability</span><span>Research</span>
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>Machine Learning</span><i>&#10043;</i><span class="outline">Deep Learning</span><i>&#10043;</i>
+                <span>IoT</span><i>&#10043;</i><span class="outline">Computer Vision</span><i>&#10043;</i>
+                <span>Symbolic Regression</span><i>&#10043;</i><span class="outline">Android</span><i>&#10043;</i>
+                <span>Sustainability</span><i>&#10043;</i><span class="outline">Research</span><i>&#10043;</i>
             </div>
         </div>
 
         <!--ABOUT-->
 
-        <section class="section about wrap" id="about">
-            <div class="section-head" data-reveal>
-                <h2 class="big-title">About</h2>
-            </div>
-            <p class="statement" data-reveal>I'm a tech enthusiast driven by an insatiable hunger for knowledge, working to build real expertise and a reputation for <em>dedication and hard work.</em></p>
+        <section class="section about" id="about">
+            <div class="wrap">
+                <div class="about-grid">
+                    <div>
+                        <p class="kicker" data-reveal>About</p>
+                        <h2 class="section-title" data-reveal>A bit about me.</h2>
+                        <div class="about-text" data-reveal>
+                            <p class="lead">I'm a tech enthusiast driven by an insatiable hunger for knowledge, working to build real expertise and a reputation for dedication and hard work.</p>
+                            <p>Today I work as an AI Engineer at Elchai Group, building on research experience from the DEWA R&amp;D Center and published work in machine learning.</p>
+                            <p>When I'm not exploring technology or lost in the pages of a novel, I'm out networking, traveling and embracing new experiences. Let's connect and explore the world together!</p>
+                        </div>
+                    </div>
 
-            <div class="about-grid">
-                <div class="about-text" data-reveal>
-                    <p>Today I work as an AI Engineer at Elchai Group, building on research experience from the DEWA R&amp;D Center and published work in machine learning.</p>
-                    <p>When I'm not exploring technology or lost in the pages of a novel, I'm out networking, traveling and embracing new experiences. Let's connect and explore the world together!</p>
+                    <aside class="index-card" data-reveal>
+                        <p class="hand index-note">quick facts</p>
+                        <dl>
+                            <div><dt>Now</dt><dd>AI Engineer, Elchai Group</dd></div>
+                            <div><dt>Based in</dt><dd>Dubai, UAE</dd></div>
+                            <div><dt>Degree</dt><dd>B.Sc. IT, Amity University Dubai</dd></div>
+                            <div><dt>Off the clock</dt><dd>Chess, drawing, badminton</dd></div>
+                        </dl>
+                    </aside>
                 </div>
 
-                <div class="about-col" data-reveal>
-                    <h3 class="col-title">Education</h3>
-                    <ol class="edu">
-                        <li>
-                            <h4>B.Sc. Information Technology</h4>
-                            <p>Amity University Dubai, 2022 to 2025</p>
-                            <p><strong>9.65 CGPA</strong> &middot; Silver Medalist</p>
-                        </li>
-                        <li>
-                            <h4>High School</h4>
-                            <p>New Indian Model School, Dubai, 2020 to 2022</p>
-                            <p><strong>94.4%</strong> &middot; CBSE School Second Topper</p>
-                        </li>
-                    </ol>
-                </div>
+                <div class="about-lower">
+                    <div data-reveal>
+                        <h3 class="sub-title">Education</h3>
+                        <ol class="edu">
+                            <li>
+                                <span class="mono">2022 to 2025</span>
+                                <h4>B.Sc. Information Technology</h4>
+                                <p>Amity University Dubai &middot; 9.65 CGPA</p>
+                                <span class="medal">Silver Medalist</span>
+                            </li>
+                            <li>
+                                <span class="mono">2020 to 2022</span>
+                                <h4>High School</h4>
+                                <p>New Indian Model School, Dubai &middot; 94.4%</p>
+                                <span class="medal">CBSE School Second Topper</span>
+                            </li>
+                        </ol>
+                    </div>
 
-                <div class="about-col" data-reveal>
-                    <h3 class="col-title">Toolkit</h3>
-                    <p class="list-line">Python, Java, Kotlin, C, Android, HTML, CSS, JavaScript, Next.js, MySQL, Power BI, Figma, UI/UX and wireframing</p>
-                    <h3 class="col-title">Off the clock</h3>
-                    <p class="list-line">Chess, drawing, painting and badminton</p>
+                    <div data-reveal>
+                        <h3 class="sub-title">Toolkit</h3>
+                        <div class="toolkit">
+                            <div>
+                                <h4>Build</h4>
+                                <ul class="tags">
+                                    <li>Python</li><li>Java</li><li>Kotlin</li><li>C</li><li>Android</li><li>HTML, CSS, JS</li><li>Next.js</li><li>MySQL</li><li>Power BI</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Design</h4>
+                                <ul class="tags">
+                                    <li>UI/UX</li><li>Figma</li><li>Wireframing</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>People</h4>
+                                <ul class="tags">
+                                    <li>Communication</li><li>Presentation</li><li>Teamwork</li><li>Problem Solving</li><li>Creative Thinking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!--RESEARCH-->
 
-        <section class="section research band" id="research">
+        <section class="section research" id="research">
             <div class="wrap">
-                <div class="section-head" data-reveal>
-                    <h2 class="big-title">Research</h2>
-                    <p>From coral reefs to carbon emissions: machine learning applied to problems I care about.</p>
+                <div class="research-head">
+                    <div>
+                        <p class="kicker" data-reveal>Research</p>
+                        <h2 class="section-title" data-reveal>Research is where I do my best thinking.</h2>
+                    </div>
+                    <p class="research-intro" data-reveal>From coral reefs to carbon emissions, I like problems where a good model can make a measurable difference. Here is everything I've published, presented, and won with so far.</p>
+                    <p class="hand research-note" data-reveal>my favourite part <svg viewBox="0 0 60 40" aria-hidden="true"><path pathLength="1" d="M4 6 C 20 6, 40 14, 48 32"/><path pathLength="1" d="M38 28 L48 33 L52 22"/></svg></p>
                 </div>
 
-                <ul class="counts" data-reveal>
-                    <li><strong data-count="5">5</strong> papers published</li>
-                    <li><strong data-count="3">3</strong> research awards</li>
-                    <li><strong data-count="1">1</strong> in publishing</li>
-                    <li><strong data-count="2">2</strong> in writing</li>
+                <ul class="stats" data-reveal>
+                    <li><strong data-count="5">5</strong><span>papers published</span></li>
+                    <li><strong data-count="3">3</strong><span>research awards</span></li>
+                    <li><strong data-count="1">1</strong><span>paper in publishing</span></li>
+                    <li><strong data-count="2">2</strong><span>papers in writing</span></li>
                 </ul>
+
 
                 <ol class="papers">
                     <li class="paper" data-reveal>
-                        <span class="paper-no">01</span>
+                        <div class="paper-meta">
+                            <span class="paper-no">01</span>
+                        </div>
                         <div class="paper-body">
-                            <p class="paper-venue">Journal &middot; IJRASET &middot; Jan 2026</p>
+                            <p class="paper-venue">Journal &middot; IJRASET &middot; Jan 2026 &middot; Vol. 14</p>
                             <h3><a href="https://doi.org/10.22214/ijraset.2026.76812" target="_blank" rel="noopener">CNN and Transformer-Based Deep Learning Models for Coral Health Classification</a></h3>
-                            <p class="paper-summary">Compares ResNet50, EfficientNetB3, ConvNeXt-Tiny and Swin Transformer-Tiny for classifying corals as healthy or bleached from underwater images, using transfer learning on 923 labelled images.</p>
+                            <p>Coral reefs are bleaching at a record rate. This paper compares ResNet50, EfficientNetB3, ConvNeXt-Tiny and Swin Transformer-Tiny for classifying corals as healthy or bleached from underwater images, using transfer learning on 923 labelled images.</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b></p>
                         </div>
                     </li>
+
                     <li class="paper" data-reveal>
-                        <span class="paper-no">02</span>
+                        <div class="paper-meta">
+                            <span class="paper-no">02</span>
+                        </div>
                         <div class="paper-body">
                             <p class="paper-venue">Conference &middot; IEEE</p>
                             <h3><a href="https://ieeexplore.ieee.org/document/11268745" target="_blank" rel="noopener">Symbolic Regression for Unified Descriptor Learning of Geometric and Thermodynamic Stability in Perovskites</a></h3>
-                            <p class="paper-summary">Uses symbolic regression to learn a single descriptor that captures both the geometric and the thermodynamic stability of perovskite materials.</p>
+                            <p>Uses symbolic regression to learn a single descriptor that captures both the geometric and the thermodynamic stability of perovskite materials.</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Ansu Mathew, Dr. Ahmer A.B. Baloch, Haya Alshanqiti</p>
                         </div>
                     </li>
+
                     <li class="paper" data-reveal>
-                        <span class="paper-no">03</span>
+                        <div class="paper-meta">
+                            <span class="paper-no">03</span>
+                        </div>
                         <div class="paper-body">
                             <p class="paper-venue">Conference &middot; IEEE</p>
                             <h3><a href="https://ieeexplore.ieee.org/document/11318250" target="_blank" rel="noopener">Tranquil Touch: Smart Gloves for Anxiety Management</a></h3>
-                            <p class="paper-summary">A wearable for mental health: smart gloves designed to help people manage anxiety. Track Winner in Artificial Intelligence at the MDX Undergraduate Student Research Competition 2025.</p>
+                            <p>A wearable for mental health: smart gloves designed to help people manage anxiety. The work won the Artificial Intelligence track at the MDX Undergraduate Student Research Competition 2025.</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Dr. Archana Pandita</p>
                         </div>
                     </li>
+
                     <li class="paper" data-reveal>
-                        <span class="paper-no">04</span>
+                        <div class="paper-meta">
+                            <span class="paper-no">04</span>
+                        </div>
                         <div class="paper-body">
-                            <p class="paper-venue">Journal &middot; IJECS &middot; 2025</p>
+                            <p class="paper-venue">Journal &middot; IJECS &middot; 2025 &middot; Vol. 7</p>
                             <h3><a href="https://www.computersciencejournals.com/ijecs/archives/2025.v7.i2.B.212" target="_blank" rel="noopener">Predicting CO<sub>2</sub> Emissions from Heavy-Duty Vehicles Using XGBoost for Sustainable Transportation in the Supply Chain</a></h3>
-                            <p class="paper-summary">An XGBoost model trained on vehicle parameters and real-time operational data that continuously forecasts CO<sub>2</sub> output from heavy vehicles in logistics fleets, supporting preventive maintenance.</p>
+                            <p>Heavy vehicles in logistics fleets are an overlooked source of emissions. An XGBoost model trained on vehicle parameters and real-time operational data continuously forecasts CO<sub>2</sub> output to support preventive maintenance.</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b></p>
                         </div>
                     </li>
+
                     <li class="paper" data-reveal>
-                        <span class="paper-no">05</span>
+                        <div class="paper-meta">
+                            <span class="paper-no">05</span>
+                        </div>
                         <div class="paper-body">
-                            <p class="paper-venue">Presented &middot; MDX Research Competition &middot; Dec 2024</p>
-                            <h3><a href="#a-mdxresearch">IoT-Driven Real-Time Carbon Emission Monitoring and Optimization for Heavy Vehicles in the Supply Chain</a></h3>
-                            <p class="paper-summary">An IoT framework for real-time carbon emission monitoring of road freight, paired with a machine learning model for predictive maintenance. Track Winner in IT.</p>
+                            <p class="paper-venue">Presented &middot; MDX &middot; Dec 2024</p>
+                            <h3>IoT-Driven Real-Time Carbon Emission Monitoring and Optimization for Heavy Vehicles in the Supply Chain</h3>
+                            <p>An IoT framework for real-time carbon emission monitoring of road freight, paired with a machine learning model for predictive maintenance. Presented at the MDX International Undergraduate Student Research Competition, themed "Towards a Sustainable Future".</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b></p>
                         </div>
                     </li>
+
                     <li class="paper" data-reveal>
-                        <span class="paper-no">06</span>
+                        <div class="paper-meta">
+                            <span class="paper-no">06</span>
+                        </div>
                         <div class="paper-body">
                             <p class="paper-venue">Presented &middot; NEXUS 2.0 &middot; 2024</p>
-                            <h3><a href="#a-nexus">Path Planning for Autonomous Mobile Robots Using A* Algorithm</a></h3>
-                            <p class="paper-summary">Enhances the A* algorithm so autonomous mobile robots can navigate complex, dynamic environments, validated with MATLAB simulations. 1st Runner Up.</p>
+                            <h3>Path Planning for Autonomous Mobile Robots Using A* Algorithm</h3>
+                            <p>Enhances the A* algorithm so autonomous mobile robots can navigate complex, dynamic environments, with MATLAB simulations showing better path planning and obstacle avoidance.</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Kareena Mueenuddin</p>
                         </div>
                     </li>
+
                     <li class="paper" data-reveal>
-                        <span class="paper-no">07</span>
+                        <div class="paper-meta">
+                            <span class="paper-no">07</span>
+                        </div>
                         <div class="paper-body">
                             <p class="paper-venue">Conference &middot; ICEQ &middot; pp. 170 to 187</p>
                             <h3><a href="https://iceq.gdrfad.gov.ae/conference-book.html" target="_blank" rel="noopener">Machine Learning Framework for Enhancing Handwritten Alphabet Recognition in Education</a></h3>
-                            <p class="paper-summary">A machine learning framework for recognising handwritten alphabets, built to support learning in the classroom.</p>
+                            <p>A machine learning framework for recognising handwritten alphabets, built to support learning in the classroom.</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Dr. Archana Pandita</p>
                         </div>
                     </li>
+
                     <li class="paper" data-reveal>
-                        <span class="paper-no">08</span>
+                        <div class="paper-meta">
+                            <span class="paper-no">08</span>
+                        </div>
                         <div class="paper-body">
                             <p class="paper-venue">Conference paper</p>
                             <h3>Optimizing Handwritten Alphabet Recognition: A Comparative Study of ML Algorithms for Assistive Applications</h3>
-                            <p class="paper-summary">A comparative study of machine learning algorithms for handwritten alphabet recognition in assistive applications.</p>
+                            <p>A comparative study of machine learning algorithms for handwritten alphabet recognition, aimed at assistive applications.</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Dr. Archana Pandita</p>
                         </div>
                     </li>
                 </ol>
+
+                <div class="pipeline" data-reveal>
+                    <p class="hand">on my desk right now</p>
+                    <p>Two more papers in writing and one in the publishing process. More soon.</p>
+                </div>
             </div>
         </section>
 
         <!--EXPERIENCE-->
 
-        <section class="section experience wrap" id="experience">
-            <div class="section-head" data-reveal>
-                <h2 class="big-title">Experience</h2>
-            </div>
+        <section class="section experience" id="experience">
+            <div class="wrap">
+                <p class="kicker" data-reveal>Experience</p>
+                <h2 class="section-title" data-reveal>Where I've built things.</h2>
 
-            <div class="now" data-reveal>
-                <p class="now-when"><span class="now-dot" aria-hidden="true"></span>Present</p>
-                <p class="now-role">AI Engineer at <strong>Elchai Group</strong></p>
-            </div>
+                <ol class="timeline">
+                    <li class="job is-current" data-reveal>
+                        <span class="job-dot" aria-hidden="true"></span>
+                        <span class="mono">Now</span>
+                        <h3>AI Engineer</h3>
+                        <p class="job-org">Elchai Group</p>
+                    </li>
 
-            <ol class="past">
-                <li class="role" data-reveal>
-                    <img src="images/dewa.png" alt="DEWA logo" loading="lazy">
-                    <p class="role-when">Feb 2025 to Nov 2025 &middot; 10 months</p>
-                    <h3>AI &amp; IoT Research Intern</h3>
-                    <p class="role-org">DEWA R&amp;D Center</p>
-                    <p class="role-skills">Android (Java, Kotlin, XML), ML models in Python, UI/UX in Figma, research publication</p>
-                </li>
-                <li class="role" data-reveal>
-                    <img src="images/betaIT.png" alt="Beta Information Technology logo" loading="lazy">
-                    <p class="role-when">Jun 2024 to Aug 2024 &middot; 3 months</p>
-                    <h3>IT Research Intern</h3>
-                    <p class="role-org">Beta Information Technology, Dubai</p>
-                    <p class="role-skills">ML model development, cybersecurity research, presentation</p>
-                </li>
-                <li class="role" data-reveal>
-                    <img src="images/dvs.jpg" alt="Digital Value Stream logo" loading="lazy">
-                    <p class="role-when">Jan 2024 to Oct 2024 &middot; 10 months</p>
-                    <h3>Software Development Intern</h3>
-                    <p class="role-org">Digital Value Stream, Dubai</p>
-                    <p class="role-skills">Figma prototyping, front-end development, software research, Next.js</p>
-                </li>
-            </ol>
+                    <li class="job" data-reveal>
+                        <span class="job-dot" aria-hidden="true"></span>
+                        <span class="mono">Feb 2025 to Nov 2025</span>
+                        <div class="job-row">
+                            <img src="images/dewa.png" alt="" loading="lazy">
+                            <div>
+                                <h3>AI &amp; IoT Research Intern</h3>
+                                <p class="job-org">DEWA R&amp;D Center</p>
+                            </div>
+                        </div>
+                        <ul class="tags">
+                            <li>Android (Java, Kotlin, XML)</li><li>ML Models (Python)</li><li>UI/UX (Figma)</li><li>Research Publication</li>
+                        </ul>
+                    </li>
+
+                    <li class="job" data-reveal>
+                        <span class="job-dot" aria-hidden="true"></span>
+                        <span class="mono">Jun 2024 to Aug 2024</span>
+                        <div class="job-row">
+                            <img src="images/betaIT.png" alt="" loading="lazy">
+                            <div>
+                                <h3>IT Research Intern</h3>
+                                <p class="job-org">Beta Information Technology, Dubai</p>
+                            </div>
+                        </div>
+                        <ul class="tags">
+                            <li>ML Model Development</li><li>Cybersecurity Research</li><li>Presentation</li>
+                        </ul>
+                    </li>
+
+                    <li class="job" data-reveal>
+                        <span class="job-dot" aria-hidden="true"></span>
+                        <span class="mono">Jan 2024 to Oct 2024</span>
+                        <div class="job-row">
+                            <img src="images/dvs.jpg" alt="" loading="lazy">
+                            <div>
+                                <h3>Software Development Intern</h3>
+                                <p class="job-org">Digital Value Stream, Dubai</p>
+                            </div>
+                        </div>
+                        <ul class="tags">
+                            <li>Figma Prototyping</li><li>Front-End Development</li><li>Software Research</li><li>Next.js</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
         </section>
 
         <!--MOMENTS-->
 
         <section class="moments" aria-labelledby="moments-title">
-            <div class="wrap">
-                <div class="moments-head" data-reveal>
-                    <h2 class="big-title" id="moments-title">Moments</h2>
-                    <p>Competitions, hackathons and conferences along the way. Click a photo to see it larger.</p>
-                </div>
+            <div class="wrap moments-head">
+                <h2 class="section-title" id="moments-title" data-reveal>Moments along the way.</h2>
+                <p class="hand" data-reveal>(click a photo)</p>
             </div>
             <div class="moments-strip">
                 <div class="moments-track">
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="0"><img src="images/web/gotech1.jpg" alt="GOTECH 2025, AI Hackathon II" loading="lazy"><span>GOTECH 2025, AI Hackathon II</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="1"><img src="images/web/mdxresearch1.jpg" alt="MDX Research Competition 2025" loading="lazy"><span>MDX Research Competition 2025</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="2"><img src="images/web/nyuad3.jpg" alt="NYUAD Hackathon 2024" loading="lazy"><span>NYUAD Hackathon 2024</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="3"><img src="images/web/mdx3.jpg" alt="MDX Research Competition 2024" loading="lazy"><span>MDX Research Competition 2024</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="4"><img src="images/web/nexus1.jpg" alt="NEXUS 2.0, 2024" loading="lazy"><span>NEXUS 2.0, 2024</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="5"><img src="images/web/gotech3.jpg" alt="AI Hackathon II ceremony, 2025" loading="lazy"><span>AI Hackathon II ceremony, 2025</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="6"><img src="images/web/thinktank1.jpg" alt="RTA Think Tank 2024" loading="lazy"><span>RTA Think Tank 2024</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="7"><img src="images/web/mdx1.jpg" alt="MDX Case Study Challenge 2023" loading="lazy"><span>MDX Case Study Challenge 2023</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="8"><img src="images/web/rta2.jpg" alt="RTA Sustainability Hackathon 2023" loading="lazy"><span>RTA Sustainability Hackathon 2023</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="0" aria-hidden="true" tabindex="-1"><img src="images/web/gotech1.jpg" alt="GOTECH 2025, AI Hackathon II" loading="lazy"><span>GOTECH 2025, AI Hackathon II</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="1" aria-hidden="true" tabindex="-1"><img src="images/web/mdxresearch1.jpg" alt="MDX Research Competition 2025" loading="lazy"><span>MDX Research Competition 2025</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="2" aria-hidden="true" tabindex="-1"><img src="images/web/nyuad3.jpg" alt="NYUAD Hackathon 2024" loading="lazy"><span>NYUAD Hackathon 2024</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="3" aria-hidden="true" tabindex="-1"><img src="images/web/mdx3.jpg" alt="MDX Research Competition 2024" loading="lazy"><span>MDX Research Competition 2024</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="4" aria-hidden="true" tabindex="-1"><img src="images/web/nexus1.jpg" alt="NEXUS 2.0, 2024" loading="lazy"><span>NEXUS 2.0, 2024</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="5" aria-hidden="true" tabindex="-1"><img src="images/web/gotech3.jpg" alt="AI Hackathon II ceremony, 2025" loading="lazy"><span>AI Hackathon II ceremony, 2025</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="6" aria-hidden="true" tabindex="-1"><img src="images/web/thinktank1.jpg" alt="RTA Think Tank 2024" loading="lazy"><span>RTA Think Tank 2024</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="7" aria-hidden="true" tabindex="-1"><img src="images/web/mdx1.jpg" alt="MDX Case Study Challenge 2023" loading="lazy"><span>MDX Case Study Challenge 2023</span></button>
-                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="8" aria-hidden="true" tabindex="-1"><img src="images/web/rta2.jpg" alt="RTA Sustainability Hackathon 2023" loading="lazy"><span>RTA Sustainability Hackathon 2023</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="0"><img src="images/web/gotech1.jpg" alt="GOTECH 2025: 4th internationally" loading="lazy"><span class="hand">GOTECH 2025: 4th internationally</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="1"><img src="images/web/mdxresearch1.jpg" alt="MDX Research Competition 2025" loading="lazy"><span class="hand">MDX Research Competition 2025</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="2"><img src="images/web/nyuad3.jpg" alt="NYUAD Hackathon 2024" loading="lazy"><span class="hand">NYUAD Hackathon 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="3"><img src="images/web/mdx3.jpg" alt="MDX Research Competition 2024" loading="lazy"><span class="hand">MDX Research Competition 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="4"><img src="images/web/nexus1.jpg" alt="NEXUS 2.0, 2024" loading="lazy"><span class="hand">NEXUS 2.0, 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="5"><img src="images/web/gotech3.jpg" alt="AI Hackathon II ceremony, 2025" loading="lazy"><span class="hand">AI Hackathon II ceremony, 2025</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="6"><img src="images/web/thinktank1.jpg" alt="RTA Think Tank 2024" loading="lazy"><span class="hand">RTA Think Tank 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="7"><img src="images/web/mdx1.jpg" alt="MDX Case Study Challenge 2023" loading="lazy"><span class="hand">MDX Case Study Challenge 2023</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="8"><img src="images/web/rta2.jpg" alt="RTA Sustainability Hackathon 2023" loading="lazy"><span class="hand">RTA Sustainability Hackathon 2023</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="0" aria-hidden="true" tabindex="-1"><img src="images/web/gotech1.jpg" alt="GOTECH 2025: 4th internationally" loading="lazy"><span class="hand">GOTECH 2025: 4th internationally</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="1" aria-hidden="true" tabindex="-1"><img src="images/web/mdxresearch1.jpg" alt="MDX Research Competition 2025" loading="lazy"><span class="hand">MDX Research Competition 2025</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="2" aria-hidden="true" tabindex="-1"><img src="images/web/nyuad3.jpg" alt="NYUAD Hackathon 2024" loading="lazy"><span class="hand">NYUAD Hackathon 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="3" aria-hidden="true" tabindex="-1"><img src="images/web/mdx3.jpg" alt="MDX Research Competition 2024" loading="lazy"><span class="hand">MDX Research Competition 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="4" aria-hidden="true" tabindex="-1"><img src="images/web/nexus1.jpg" alt="NEXUS 2.0, 2024" loading="lazy"><span class="hand">NEXUS 2.0, 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="5" aria-hidden="true" tabindex="-1"><img src="images/web/gotech3.jpg" alt="AI Hackathon II ceremony, 2025" loading="lazy"><span class="hand">AI Hackathon II ceremony, 2025</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="6" aria-hidden="true" tabindex="-1"><img src="images/web/thinktank1.jpg" alt="RTA Think Tank 2024" loading="lazy"><span class="hand">RTA Think Tank 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="7" aria-hidden="true" tabindex="-1"><img src="images/web/mdx1.jpg" alt="MDX Case Study Challenge 2023" loading="lazy"><span class="hand">MDX Case Study Challenge 2023</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch1.jpg|images/web/nyuad3.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/gotech3.jpg|images/web/thinktank1.jpg|images/web/mdx1.jpg|images/web/rta2.jpg" data-index="8" aria-hidden="true" tabindex="-1"><img src="images/web/rta2.jpg" alt="RTA Sustainability Hackathon 2023" loading="lazy"><span class="hand">RTA Sustainability Hackathon 2023</span></button>
                 </div>
             </div>
         </section>
 
         <!--ACHIEVEMENTS-->
 
-        <section class="section achievements band" id="achievements">
+        <section class="section achievements" id="achievements">
             <div class="wrap">
-                <div class="section-head" data-reveal>
-                    <h2 class="big-title">Achievements</h2>
-                    <p>Competitions, hackathons and research awards, newest first.</p>
-                </div>
-                <div class="achievement-list">
-                    <div class="year-group">
+                <p class="kicker" data-reveal>Achievements</p>
+                <h2 class="section-title" data-reveal>Competitions, hackathons and honours.</h2>
+
+                <div class="year-group">
                     <h3 class="year" data-reveal>2025</h3>
                     <ul class="awards">
                         <li class="award" id="a-mdxresearch2" data-reveal>
@@ -520,59 +613,55 @@
                         </li>
                     </ul>
                 </div>
-                </div>
             </div>
         </section>
 
         <!--CONTACT-->
 
         <section class="contact" id="contact">
-            <div class="wrap">
-                <p class="hand contact-hi" data-reveal>say hi</p>
-                <h2 class="contact-title" data-reveal>Let's talk</h2>
-
-                <div class="contact-grid">
-                    <div class="contact-info" data-reveal>
-                        <p>Questions, collaborations or just a hello. I'm always open to meeting new people.</p>
-                        <a class="email" href="mailto:hajarasabnam@gmail.com">hajarasabnam@gmail.com</a>
-                        <div class="socials">
-                            <a href="https://www.linkedin.com/in/hajara-sabnam-kareem-navaz-32a11b234/" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.96c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4V9.75Z"/></svg>
-                                LinkedIn
-                            </a>
-                            <a href="https://www.instagram.com/hajarasabnam" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4Zm0 7.75a3.05 3.05 0 1 1 0-6.1 3.05 3.05 0 0 1 0 6.1ZM17 5.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM21.94 8.1c-.07-1.5-.41-2.83-1.51-3.93S17.99 2.73 16.5 2.66C14.95 2.57 9.05 2.57 7.5 2.66 6.01 2.73 4.68 3.07 3.57 4.17S2.13 6.6 2.06 8.1c-.09 1.55-.09 6.25 0 7.8.07 1.5.41 2.83 1.51 3.93s2.44 1.44 3.93 1.51c1.55.09 7.45.09 9 0 1.49-.07 2.82-.41 3.93-1.51s1.44-2.43 1.51-3.93c.09-1.55.09-6.25 0-7.8Zm-2.04 9.45a3.2 3.2 0 0 1-1.8 1.8c-1.25.5-4.21.38-5.6.38s-4.35.11-5.6-.38a3.2 3.2 0 0 1-1.8-1.8c-.5-1.25-.38-4.21-.38-5.6s-.11-4.35.38-5.6a3.2 3.2 0 0 1 1.8-1.8c1.25-.5 4.21-.38 5.6-.38s4.35-.11 5.6.38a3.2 3.2 0 0 1 1.8 1.8c.5 1.25.38 4.21.38 5.6s.12 4.35-.38 5.6Z"/></svg>
-                                Instagram
-                            </a>
-                        </div>
+            <div class="wrap contact-grid">
+                <div class="contact-info">
+                    <p class="hand contact-hi" data-reveal>say hi!</p>
+                    <h2 class="contact-title" data-reveal>Let's build or research something together.</h2>
+                    <p data-reveal>Questions, collaborations or just a hello, I'm always open to meeting new people.</p>
+                    <a class="email" href="mailto:hajarasabnam@gmail.com" data-reveal>hajarasabnam@gmail.com <i class="arrow" aria-hidden="true"></i></a>
+                    <div class="socials" data-reveal>
+                        <a href="https://www.linkedin.com/in/hajara-sabnam-kareem-navaz-32a11b234/" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.96c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4V9.75Z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://www.instagram.com/hajarasabnam" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4Zm0 7.75a3.05 3.05 0 1 1 0-6.1 3.05 3.05 0 0 1 0 6.1ZM17 5.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM21.94 8.1c-.07-1.5-.41-2.83-1.51-3.93S17.99 2.73 16.5 2.66C14.95 2.57 9.05 2.57 7.5 2.66 6.01 2.73 4.68 3.07 3.57 4.17S2.13 6.6 2.06 8.1c-.09 1.55-.09 6.25 0 7.8.07 1.5.41 2.83 1.51 3.93s2.44 1.44 3.93 1.51c1.55.09 7.45.09 9 0 1.49-.07 2.82-.41 3.93-1.51s1.44-2.43 1.51-3.93c.09-1.55.09-6.25 0-7.8Zm-2.04 9.45a3.2 3.2 0 0 1-1.8 1.8c-1.25.5-4.21.38-5.6.38s-4.35.11-5.6-.38a3.2 3.2 0 0 1-1.8-1.8c-.5-1.25-.38-4.21-.38-5.6s-.11-4.35.38-5.6a3.2 3.2 0 0 1 1.8-1.8c1.25-.5 4.21-.38 5.6-.38s4.35-.11 5.6.38a3.2 3.2 0 0 1 1.8 1.8c.5 1.25.38 4.21.38 5.6s.12 4.35-.38 5.6Z"/></svg>
+                            Instagram
+                        </a>
                     </div>
-
-                    <form class="contact-form" id="contactForm" novalidate data-reveal>
-                        <div class="field">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" autocomplete="name" required>
-                            <span class="error" id="name-error"></span>
-                        </div>
-                        <div class="field">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" autocomplete="email" required>
-                            <span class="error" id="email-error"></span>
-                        </div>
-                        <div class="field">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                            <span class="error" id="message-error"></span>
-                        </div>
-                        <button type="submit" class="btn btn-light" id="submit">Send message</button>
-                        <p class="form-status" id="formStatus" role="status"></p>
-                    </form>
                 </div>
 
-                <footer class="site-footer">
-                    <p>&copy; <span id="year">2025</span> Hajara Sabnam &middot; Dubai</p>
-                    <a href="#top">Back to top</a>
-                </footer>
+                <form class="contact-form" id="contactForm" novalidate data-reveal>
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+                        <span class="error" id="name-error"></span>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                        <span class="error" id="email-error"></span>
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="btn btn-accent" id="submit">Send message <i class="arrow" aria-hidden="true"></i></button>
+                    <p class="form-status" id="formStatus" role="status"></p>
+                </form>
             </div>
+
+            <footer class="site-footer">
+                <p>&copy; <span id="year">2025</span> Hajara Sabnam &middot; Dubai</p>
+                <a href="#top">Back to top <i class="arrow arrow-up" aria-hidden="true"></i></a>
+            </footer>
         </section>
     </main>
 
