@@ -601,8 +601,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     align-items: center;
     gap: 0.4rem;
     margin-top: 1.6rem;
-    padding-bottom: 0.15rem;
-    border-bottom: 1.5px solid currentColor;
     font-size: 0.9375rem;
     font-weight: 600;
     color: var(--accent-ink);
