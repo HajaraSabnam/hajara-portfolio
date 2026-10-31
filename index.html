@@ -1,75 +1,797 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hajara's Portfolio</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-***" crossorigin="anonymous" referrerpolicy="no-referrer">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hajara Sabnam</title>
+    <meta name="description" content="Hajara Sabnam: IT graduate, AI and IoT researcher, and poet based in Dubai.">
+    <meta name="theme-color" content="#3d1a33">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add("js");</script>
+</head>
 
-    <body class="homebody">
-        <section id="home">
+<body>
+    <a class="skip" href="#main">Skip to content</a>
 
-        <!--NAVIGATION BAR-->
+    <!--NAVIGATION-->
 
-        <div id="head">
-            <div class="menuicon" onclick="openmenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        
-            <header>
-                <p><em>Hajara Sabnam</em></p>
-        
-                <nav class="navbar" id="navbar">
-                    <ul class="mainlist">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="aboutme.html">About Me</a></li>
-                        <li><a href="experience.html">Work Experience</a></li>
-                        <li><a href="research.html">Research Works</a></li>
-                        <li><a href="poetry.html">My Poetry</a></li>
-                        <li><a href="contactme.html">Contact Me</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
+    <header class="site-header" id="top">
+        <a href="#top" class="brand">Hajara Sabnam</a>
 
-        <!--HOME-->
-            <div class="mainpage">
-                <div class="maintext" data-aos="fade-in">
-                    <p>Hi there!</p><br>
-                    <h1>I am <span class="anim"></span></h1>
-                    <a href="#" class="probutton" onclick="openProfileBox()">My Profile</a>    
-                </div>                
-                <!--<img src="" class="image1">-->
-            </div>
+        <nav class="nav" id="nav" aria-label="Main">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#research">Research</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#poetry">Poetry</a>
+            <a href="#contact">Contact</a>
+            <span class="nav-indicator" aria-hidden="true"></span>
+        </nav>
 
-            <div class="myprofile" id="myProfileBox">
-                <div class="pro">
-                    <span class="closebtn" onclick="closeProfileBox()">&times;</span>
-                    <h2>My Profile</h2><br>
-                    <p><strong>Name:</strong> Hajara Sabnam<br>
-                        <strong>DOB:</strong> 10-Mar-2005<br>
-                        <strong>Education:</strong> BSc IT Graduate from Amity University Dubai<br>
-                        <strong>Tech Skills:</strong> Android Development, UI/UX, Wireframing, Python, Java, C, Front-End Web Development using HTML CSS and JS, Power BI, MySQL<br>
-                        <strong>Soft Skills:</strong> Communication, Presentation, Speaking, Teamwork, Organizational, Observation, Problem Solving<br>
-                        <strong>Hobbies and Interests:</strong> Coding, Working on research projects, Playing chess</p>
-                        
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+            <span></span><span></span>
+        </button>
+    </header>
+
+    <main id="main">
+
+        <!--HERO-->
+
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <p class="hero-hi" data-load>Hi there, I'm</p>
+                <h1 class="hero-name" data-load>Hajara <em>Sabnam</em></h1>
+                <p class="hero-role" data-load>I work on <span class="typed" id="typed">Android apps</span><span class="caret" aria-hidden="true"></span></p>
+                <p class="hero-lede" data-load>IT graduate and Silver Medalist from Amity University Dubai, AI &amp; IoT research intern at the DEWA R&amp;D Center, and a writer of poems in between.</p>
+                <div class="hero-actions" data-load>
+                    <a href="#research" class="btn btn-light">See my work</a>
+                    <a href="#contact" class="btn btn-ghost">Get in touch</a>
                 </div>
             </div>
 
+            <figure class="hero-photo" data-load>
+                <img src="images/web/hajara.jpg" alt="Portrait of Hajara Sabnam" width="1022" height="1100" fetchpriority="high">
+            </figure>
         </section>
-        
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-        <script src="script.js"></script>
 
-    </body>
+        <!--ABOUT-->
+
+        <section class="section about" id="about">
+            <div class="wrap">
+                <h2 class="section-title" data-reveal>So, who am I?</h2>
+
+                <div class="about-grid">
+                    <div class="about-text" data-reveal>
+                        <p class="lead">I'm a tech enthusiast driven by an insatiable hunger for knowledge, working to build real expertise and a reputation for dedication and hard work.</p>
+                        <p>Beyond the digital landscape, I find solace in literature, particularly poetry, which I see as a profound expression of the human experience. To me, poetry adds a soulful rhythm to life, articulating emotions and thoughts in ways simple words cannot.</p>
+                        <p>When I'm not exploring technology or lost in the pages of a novel, I'm out networking, traveling and embracing new experiences. Curiosity fuels my passion for discovery, and I'm always eager to connect with fellow enthusiasts. Let's connect and explore the world together!</p>
+                    </div>
+
+                    <dl class="facts" data-reveal>
+                        <div><dt>Based in</dt><dd>Dubai, UAE</dd></div>
+                        <div><dt>Studied</dt><dd>B.Sc. Information Technology</dd></div>
+                        <div><dt>Interests</dt><dd>Coding, research projects, chess</dd></div>
+                    </dl>
+                </div>
+
+                <h3 class="sub-title" data-reveal>Education</h3>
+                <ol class="edu">
+                    <li data-reveal>
+                        <span class="edu-years">2022 to 2025</span>
+                        <div>
+                            <h4>B.Sc. Information Technology</h4>
+                            <p>Amity University Dubai</p>
+                        </div>
+                        <div class="edu-result">
+                            <strong>9.65 CGPA</strong>
+                            <span class="badge">Silver Medalist</span>
+                        </div>
+                    </li>
+                    <li data-reveal>
+                        <span class="edu-years">2020 to 2022</span>
+                        <div>
+                            <h4>High School</h4>
+                            <p>New Indian Model School, Dubai</p>
+                        </div>
+                        <div class="edu-result">
+                            <strong>94.4% (Grade 12)</strong>
+                            <span class="badge">CBSE School Second Topper</span>
+                        </div>
+                    </li>
+                </ol>
+
+                <h3 class="sub-title" data-reveal>Skills</h3>
+                <div class="skills">
+                    <div data-reveal>
+                        <h4>Technical</h4>
+                        <ul class="tags">
+                            <li>Android Development</li>
+                            <li>UI/UX &amp; Wireframing</li>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>C</li>
+                            <li>HTML, CSS, JS</li>
+                            <li>Power BI</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </div>
+                    <div data-reveal>
+                        <h4>Soft</h4>
+                        <ul class="tags">
+                            <li>Communication</li>
+                            <li>Teamwork</li>
+                            <li>Presentation &amp; Speaking</li>
+                            <li>Problem Solving</li>
+                            <li>Attention to Detail</li>
+                            <li>Creative Thinking</li>
+                        </ul>
+                    </div>
+                    <div data-reveal>
+                        <h4>Beyond the screen</h4>
+                        <ul class="tags">
+                            <li>Poetry Writing</li>
+                            <li>Drawing</li>
+                            <li>Painting</li>
+                            <li>Badminton</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--EXPERIENCE-->
+
+        <section class="section experience" id="experience">
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <h2 class="section-title">Work experience</h2>
+                    <p class="section-note">1 year and 8 months</p>
+                </div>
+
+                <ol class="jobs">
+                    <li class="job" data-reveal>
+                        <span class="job-dates">Feb 2025 to Nov 2025</span>
+                        <div class="job-body">
+                            <h3>AI &amp; IoT Research Intern</h3>
+                            <p class="job-org">DEWA R&amp;D Center</p>
+                            <ul class="tags">
+                                <li>Android (Java, Kotlin, XML)</li>
+                                <li>ML Models (Python)</li>
+                                <li>UI/UX (Figma)</li>
+                                <li>Research Publication</li>
+                            </ul>
+                        </div>
+                        <div class="job-side">
+                            <img src="images/dewa.png" alt="DEWA logo" loading="lazy">
+                            <button class="link-btn" data-gallery="images/web/dewac.jpg">View certificate</button>
+                        </div>
+                    </li>
+
+                    <li class="job" data-reveal>
+                        <span class="job-dates">Jun 2024 to Aug 2024</span>
+                        <div class="job-body">
+                            <h3>IT Research Intern</h3>
+                            <p class="job-org">Beta Information Technology, Dubai</p>
+                            <ul class="tags">
+                                <li>ML Model Development</li>
+                                <li>Cybersecurity Research</li>
+                                <li>Presentation</li>
+                            </ul>
+                        </div>
+                        <div class="job-side">
+                            <img src="images/betaIT.png" alt="Beta Information Technology logo" loading="lazy">
+                            <button class="link-btn" data-gallery="images/web/betac.jpg">View certificate</button>
+                        </div>
+                    </li>
+
+                    <li class="job" data-reveal>
+                        <span class="job-dates">Jan 2024 to Oct 2024</span>
+                        <div class="job-body">
+                            <h3>Software Development Intern</h3>
+                            <p class="job-org">Digital Value Stream, Dubai</p>
+                            <ul class="tags">
+                                <li>Figma Prototyping</li>
+                                <li>Front-End Development</li>
+                                <li>Software Research</li>
+                                <li>Next.js</li>
+                            </ul>
+                        </div>
+                        <div class="job-side">
+                            <img src="images/dvs.jpg" alt="Digital Value Stream logo" loading="lazy">
+                            <button class="link-btn" data-gallery="images/web/dvsc2.jpg|images/web/dvsc.jpg">View certificates</button>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!--RESEARCH-->
+
+        <section class="section research" id="research">
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <h2 class="section-title">Research</h2>
+                    <p class="section-note"><strong>5</strong> published &middot; <strong>1</strong> in publishing &middot; <strong>2</strong> in writing</p>
+                </div>
+
+                <ol class="papers">
+                    <li data-reveal>
+                        <a href="https://ieeexplore.ieee.org/document/11268745" target="_blank" rel="noopener">
+                            <span class="paper-kind">Conference paper</span>
+                            <span class="paper-title">Symbolic Regression for Unified Descriptor Learning of Geometric and Thermodynamic Stability in Perovskites</span>
+                            <span class="paper-authors"><b>Hajara Sabnam Kareem Navaz</b>, Ansu Mathew, Dr. Ahmer A.B. Baloch, Haya Alshanqiti</span>
+                            <span class="paper-link">IEEE Xplore <i class="arrow" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li data-reveal>
+                        <a href="https://ieeexplore.ieee.org/document/11318250" target="_blank" rel="noopener">
+                            <span class="paper-kind">Conference paper</span>
+                            <span class="paper-title">Tranquil Touch: Smart Gloves for Anxiety Management</span>
+                            <span class="paper-authors"><b>Hajara Sabnam Kareem Navaz</b>, Dr. Archana Pandita</span>
+                            <span class="paper-link">IEEE Xplore <i class="arrow" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li data-reveal>
+                        <a href="https://www.computersciencejournals.com/ijecs/archives/2025.v7.i2.B.212" target="_blank" rel="noopener">
+                            <span class="paper-kind">Journal paper</span>
+                            <span class="paper-title">Predicting CO2 Emissions from Heavy-Duty Vehicles Using XGBoost for Sustainable Transportation in the Supply Chain</span>
+                            <span class="paper-authors"><b>Hajara Sabnam Kareem Navaz</b></span>
+                            <span class="paper-link">IJECS <i class="arrow" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li data-reveal>
+                        <a href="https://doi.org/10.22214/ijraset.2026.76812" target="_blank" rel="noopener">
+                            <span class="paper-kind">Journal paper</span>
+                            <span class="paper-title">CNN and Transformer-Based Models for Coral Health Classification</span>
+                            <span class="paper-authors"><b>Hajara Sabnam Kareem Navaz</b></span>
+                            <span class="paper-link">IJRASET <i class="arrow" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li data-reveal>
+                        <a href="https://iceq.gdrfad.gov.ae/conference-book.html" target="_blank" rel="noopener">
+                            <span class="paper-kind">Conference paper</span>
+                            <span class="paper-title">Machine Learning Framework for Enhancing Handwritten Alphabet Recognition in Education</span>
+                            <span class="paper-authors"><b>Hajara Sabnam Kareem Navaz</b>, Dr. Archana Pandita &middot; Conference Book, pp. 170 to 187</span>
+                            <span class="paper-link">Conference book <i class="arrow" aria-hidden="true"></i></span>
+                        </a>
+                    </li>
+                    <li data-reveal>
+                        <div>
+                            <span class="paper-kind">Conference paper</span>
+                            <span class="paper-title">Optimizing Handwritten Alphabet Recognition: A Comparative Study of ML Algorithms for Assistive Applications</span>
+                            <span class="paper-authors"><b>Hajara Sabnam Kareem Navaz</b>, Dr. Archana Pandita</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!--ACHIEVEMENTS-->
+
+        <section class="section achievements" id="achievements">
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <h2 class="section-title">Achievements</h2>
+                    <p class="section-note">Competitions, hackathons and research awards</p>
+                </div>
+
+                <div class="year-group">
+                    <h3 class="year" data-reveal>2025</h3>
+                    <ul class="awards">
+                        <li class="award" id="a-mdxresearch2" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-mdxresearch2">
+                                <img src="images/mdx%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">Track Winner, 3rd Undergraduate MDX Student Research Competition (Track AI)</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-mdxresearch2" role="region" aria-label="Track Winner, 3rd Undergraduate MDX Student Research Competition (Track AI)">
+                                <div class="award-inner">
+                                    <h4>Track Winner in MDX International Undergraduate Student Research Competition 2025</h4>
+                                    <p>MDX International Undergraduate Student Research Competition 2025, held on January 16, 2025, at Middlesex University Dubai, brought together students from various disciplines to present innovative research under the theme &quot;Human Centric Innovation in the Era of AI&quot; exploring how emerging technologies can be harnessed to enhance human potential, ethical decision-making and inclusive progress. The competition involved abstract submissions, followed by in-person presentations in the finale, where selected students showcased their research.</p>
+                                    <p>I was honored to be awarded Track Winner in Track 'Artificial Intelligence' for my research paper, &quot;Tranquil Touch: Smart Gloves for Anxiety Management&quot;. Representing Amity University Dubai was an incredible experience, and I am grateful to the organizers and mentors for their support and insights.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/mdxresearch1.jpg|images/web/mdxresearch2.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/mdxresearch1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/mdxresearch1.jpg|images/web/mdxresearch2.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/mdxresearch2.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-gotech" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-gotech">
+                                <img src="images/spe%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">1st in the UAE and 4th internationally, International AI Hackathon II</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-gotech" role="region" aria-label="1st in the UAE and 4th internationally, International AI Hackathon II">
+                                <div class="award-inner">
+                                    <h4>1st Winner in UAE and 4th Winner in International AI Hackathon II Held During GOTECH 2025</h4>
+                                    <p>The International AI Hackathon II, held as part of the GOTECH Conference in Dubai, UAE, brought together participants from around the world to develop innovative AI solutions for a specific challenge, &quot;AI Surface Network Production Flow Behaviour Prediction and Optimisation&quot;.</p>
+                                    <p>Over a three-month development period, we built a model using a Random Forest Regressor combined with time-series forecast visualization to analyze production trends and support data-driven decision-making. The project was recognized as one of the winning solutions, ranking 4th internationally and 1st in the UAE, and we had the opportunity to present our work at the GOTECH Conference. This experience was highly enriching, offering both technical growth and valuable exposure to industry-driven AI applications.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/gotech1.jpg|images/web/gotech2.jpg|images/web/gotech3.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/gotech1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/gotech1.jpg|images/web/gotech2.jpg|images/web/gotech3.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/gotech2.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/gotech1.jpg|images/web/gotech2.jpg|images/web/gotech3.jpg" data-index="2" aria-label="View photo 3"><img src="images/web/gotech3.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-icsc" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-icsc">
+                                <img src="images/icsc%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">Bronze Honour, International Computer Science Competition</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-icsc" role="region" aria-label="Bronze Honour, International Computer Science Competition">
+                                <div class="award-inner">
+                                    <h4>Bronze Honour in the International Computer Science Competition 2025</h4>
+                                    <p>The International Computer Science Competition (ICSC) 2025 was a global, multi-round competition designed to assess core computer science knowledge and problem-solving skills. The competition consisted of three stages, a qualification round, pre-final, and final round covering topics such as neural networks, logic, object-oriented programming, and Python programming.</p>
+                                    <p>I qualified through all rounds and reached the final stage, where I ranked among the top 8% of participants worldwide, earning the Bronze Honor Award. This experience strengthened my theoretical foundations and reinforced my interest in competitive problem-solving and applied computer science.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/icsc.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/icsc.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="year-group">
+                    <h3 class="year" data-reveal>2024</h3>
+                    <ul class="awards">
+                        <li class="award" id="a-iymc" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-iymc">
+                                <img src="images/iymc%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">Bronze Honour, International Youth Math Challenge</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-iymc" role="region" aria-label="Bronze Honour, International Youth Math Challenge">
+                                <div class="award-inner">
+                                    <h4>Bronze Honour in the International Youth Math Challenge 2024</h4>
+                                    <p>The International Youth Math Challenge (IYMC) 2024 was a multi-stage global competition consisting of a qualification round, pre-final, and final round. In each round, we had to solve mathematical problems from various topics and different difficulty levels. I advanced through all stages and was awarded the Bronze Honour in the final round, ranking among the top 15% of participants worldwide. This competition strengthened my problem-solving skills and mathematical reasoning across a wide range of topics.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/iymc.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/iymc.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-mdxresearch" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-mdxresearch">
+                                <img src="images/mdx%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">Track Winner, MDX International Undergraduate Student Research Competition (Track IT)</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-mdxresearch" role="region" aria-label="Track Winner, MDX International Undergraduate Student Research Competition (Track IT)">
+                                <div class="award-inner">
+                                    <h4>Track Winner in MDX International Undergraduate Student Research Competition 2024</h4>
+                                    <p>MDX International Undergraduate Student Research Competition 2024, held on December 5, 2024, at Middlesex University Dubai, brought together students from various disciplines to present innovative research under the theme &quot;Towards a Sustainable Future,&quot; aligned with the UN’s 2030 Agenda. The competition involved abstract submissions, followed by in-person presentations in the finale, where selected students showcased their research.</p>
+                                    <p>I was honored to be awarded Track Winner – IT for my research paper, &quot;IoT-Driven Real-Time Carbon Emission Monitoring and Optimization for Heavy Vehicles in the Supply Chain.&quot; My research highlighted the overlooked impact of road freight transport on carbon emissions and proposed an IoT-based framework for real-time monitoring, along with a machine learning model for predictive maintenance. Representing Amity University Dubai was an incredible experience, and I am grateful to the organizers and mentors for their support and insights.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/mdx3.jpg|images/web/mdx2-png.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/mdx3.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/mdx3.jpg|images/web/mdx2-png.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/mdx2-png.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-nexus" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-nexus">
+                                <img src="images/amity%20logo.jpg" alt="" loading="lazy">
+                                <span class="award-title">1st Runner Up, NEXUS 2.0 National Inter-University Student Research Competition</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-nexus" role="region" aria-label="1st Runner Up, NEXUS 2.0 National Inter-University Student Research Competition">
+                                <div class="award-inner">
+                                    <h4>1st Runner Up in NEXUS 2.0 - A National Level Inter-University Student Research Competition 2024</h4>
+                                    <p>Nexus 2.0 – National Level Inter-University Student Research Competition 2024, organized by Amity University Dubai, brought together students from various universities to present innovative research across multiple disciplines. Our paper, &quot;Path Planning for Autonomous Mobile Robots Using A* Algorithm&quot; secured the 1st Runner-Up position under Track 3 – Technology Applications in Mechanical, Automation, and Civil Structures.</p>
+                                    <p>In collaboration with my co-author, Kareena Mueenuddin, we focused our research on enhancing the A* Algorithm for efficient navigation in Autonomous Mobile Robots (AMRs), particularly in complex and dynamic environments. Through MATLAB simulations, we demonstrated how our approach improved path planning and obstacle avoidance, making AMRs more adaptable to real-world scenarios. This competition was an incredible learning experience, and I am grateful for the opportunity to represent my university.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/nexus1.jpg|images/web/nexus3.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/nexus1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/nexus1.jpg|images/web/nexus3.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/nexus3.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-nyuad" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-nyuad">
+                                <img src="images/nyuad%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">NYUAD Hackathon for Social Good in the Arab World</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-nyuad" role="region" aria-label="NYUAD Hackathon for Social Good in the Arab World">
+                                <div class="award-inner">
+                                    <h4>12th NYUAD Hackathon for Social Good in the Arab World</h4>
+                                    <p>The NYUAD Hackathon for Social Good in the Arab World convened a diverse group of 200 participants from across the globe, selected from a competitive pool of over 1000 applicants. Hosted at New York University Abu Dhabi, the hackathon focused on the intersection of quantum computing and the United Nations Sustainable Development Goals (UNSDGs). With an intensive four-day timeline, participants delved into workshops led by QWorld, gaining insights into quantum cryptography, encryption techniques, and quantum machine learning.</p>
+                                    <p>Teaming up with fellow innovators from around the world, my colleagues and I embarked on a mission to develop a cutting-edge solution. Our project centered on creating a web application leveraging quantum computing to predict diabetes, blending quantum machine learning algorithms with advanced encryption methods. Over the course of the hackathon, we worked tirelessly to refine our concept, drawing inspiration from the diverse perspectives and expertise of our team members.</p>
+                                    <p>The culminating moment arrived as we presented our project on stage, receiving valuable feedback from mentors and judges. Beyond the accolades, the hackathon provided a transformative experience, showcasing the immense potential of technology to address pressing societal challenges. It was a testament to the power of collaboration and innovation, leaving an indelible mark on my journey of personal and professional growth.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/nyuad1.jpg|images/web/nyuad3.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/nyuad1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/nyuad1.jpg|images/web/nyuad3.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/nyuad3.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-thinktank" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-thinktank">
+                                <img src="images/rta%20logo.jpg" alt="" loading="lazy">
+                                <span class="award-title">Presenter, RTA Dubai's Think Tank Initiative</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-thinktank" role="region" aria-label="Presenter, RTA Dubai's Think Tank Initiative">
+                                <div class="award-inner">
+                                    <h4>Presenter in RTA Dubai's Think Tank Initiative</h4>
+                                    <p>The Think Tank, hosted by RTA at Birmingham University, was a pivotal event where innovation thrived. Among 12 distinguished teams, our presentation of Enviromove stood out. Enviromove isn't just a tech solution; it's a paradigm shift towards sustainable smart mobility, rooted in citizen-centric principles. Over a span of two intense weeks, our team meticulously crafted Enviromove. The judges' positive feedback affirmed our dedication. This is just the beginning; Enviromove holds immense potential for further development, and our team is committed to realizing it.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/thinktank1.jpg|images/web/thinktank2.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/thinktank1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/thinktank1.jpg|images/web/thinktank2.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/thinktank2.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="year-group">
+                    <h3 class="year" data-reveal>2023</h3>
+                    <ul class="awards">
+                        <li class="award" id="a-unihack" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-unihack">
+                                <img src="images/unihack%20logo.jpg" alt="" loading="lazy">
+                                <span class="award-title">Track Winner, Unihack 2023 for Climate Action</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-unihack" role="region" aria-label="Track Winner, Unihack 2023 for Climate Action">
+                                <div class="award-inner">
+                                    <h4>Track Winner in Unihack 2023 for Climate Action</h4>
+                                    <p>Unihack 2023 is a global hackathon organized by ProjectSet.</p>
+                                    <p>I had participated in the Unihack 2023 individually and won in the Climate Action Track.</p>
+                                    <p>It was a 2-week competition, the first round being a poster making round where I had to explain my idea in a well-balanced poster presentation. Upon qualifying this round, for the finale, I had to present my idea as a pitch through a well-put presentation.</p>
+                                    <p>Overall, it was a wonderful journey of learning for me. It was insightful, enriching and extremely informative which I am happy to have been a part of.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/unihack1.jpg|images/web/unihack2.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/unihack1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/unihack1.jpg|images/web/unihack2.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/unihack2.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-mdx" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-mdx">
+                                <img src="images/mdx%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">Finalist, Inter-University Business Case Study Competition</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-mdx" role="region" aria-label="Finalist, Inter-University Business Case Study Competition">
+                                <div class="award-inner">
+                                    <h4>Finalist in Inter-University Business Case Study Competition 2023</h4>
+                                    <p>Inter-University Business Case Study Competition 2023 was organized by Middlesex University Dubai.</p>
+                                    <p>I had participated in the Inter-University Business Case Study Competition with my teammates from the Engineering Department of my university and got qualified to the finals.</p>
+                                    <p>The competition delved into various aspects of the Global Ecommerce Market, with special focus on the UAE. The qualifying round had about 5 case study questions about the business and sustainability related aspects of the ecommerce and grocery market. It required hours and days of research for us to arrive at our final answers and fortunately, it was worth the effort as we were one of the 5 teams out of the 63 participated teams that got qualified for finals.</p>
+                                    <p>In the final round of the competition, we were provided with a similar set of 5 case study questions revolving around the business sector and ecommerce market and we had to present our solutions through a well-put presentation and pitch ourselves in front of the judges.</p>
+                                    <p>It was in itself a huge honour to be a finalist of the Business Case Study Competition with no academic background in business. It was truly a team effort as we sat day and night brainstorming and polishing our solutions.</p>
+                                    <p>This experience provided me with valuable insights into the dynamics of the Business World and the Ecommerce Market. As an IT student, this journey has been an incredible learning experience for me, broadening my understanding of the business world and the current trends.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/mdx1.jpg|images/web/mdx2.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/mdx1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/mdx1.jpg|images/web/mdx2.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/mdx2.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-bcc" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-bcc">
+                                <img src="images/curtin%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">Finalist, Inter-University Business Cup Challenge</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-bcc" role="region" aria-label="Finalist, Inter-University Business Cup Challenge">
+                                <div class="award-inner">
+                                    <h4>Finalist in Inter-University Business Cup Challenge 2023</h4>
+                                    <p>Inter-University Business Cup Challenge 2023 was a 3 level challenge spanning over 3 weeks organized by Curtin University Dubai.</p>
+                                    <p>I had participated in the Inter-University Business Case Study Competition with my teammates from the Engineering Department of my university and got qualified to the finals.</p>
+                                    <p>The competition delved into various aspects of the Global Ecommerce Market, with special focus on the UAE. The qualifying round had about 5 case study questions about the business and sustainability related aspects of the ecommerce and grocery market. It required hours and days of research for us to arrive at our final answers and fortunately, it was worth the effort as we were one of the 5 teams out of the 63 participated teams that got qualified for finals.</p>
+                                    <p>In the final round of the competition, we were provided with a similar set of 5 case study questions revolving around the business sector and ecommerce market and we had to present our solutions through a well-put presentation and pitch ourselves in front of the judges.</p>
+                                    <p>It was in itself a huge honour to be a finalist of the Business Case Study Competition with no academic background in business. It was truly a team effort as we sat day and night brainstorming and polishing our solutions.</p>
+                                    <p>This experience provided me with valuable insights into the dynamics of the Business World and the Ecommerce Market. As an IT student, this journey has been an incredible learning experience for me, broadening my understanding of the business world and the current trends.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/bcc.jpg|images/web/bcc1.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/bcc.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/bcc.jpg|images/web/bcc1.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/bcc1.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-rta" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-rta">
+                                <img src="images/rta%20logo.jpg" alt="" loading="lazy">
+                                <span class="award-title">Finalist, RTA Sustainability Hackathon</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-rta" role="region" aria-label="Finalist, RTA Sustainability Hackathon">
+                                <div class="award-inner">
+                                    <h4>Finalist in RTA Sustainability Hackathon</h4>
+                                    <p>The RTA Sustainability Hackathon, organized by Unipreneur.inc, RTA Dubai, and GITEX YouthX, was a remarkable event dedicated to innovation. Amidst the energy of the hackathon, our team quickly formed, fueled by a shared passion for sustainable transportation. With two weeks at our disposal, we delved into crafting our solution, guided by the theme of sustainable transportation. The culmination of our efforts resulted in The Green Step, an innovative application promoting walkability and advocating for public transportation usage. Presenting our solution was an exhilarating experience, met with positive feedback from the judges. Participating in the hackathon was not just about competition; it was an opportunity for growth and collaboration, leaving us with invaluable insights and memories.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/rta1.jpg|images/web/rta2.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/rta1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/rta1.jpg|images/web/rta2.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/rta2.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!--POETRY-->
+
+        <section class="poetry" id="poetry">
+            <div class="wrap">
+                <blockquote class="rumi" data-reveal>
+                    <p>&ldquo;Be silent now. Say fewer and fewer praise poems. Let yourself become living poetry.&rdquo;</p>
+                    <cite>Rumi</cite>
+                </blockquote>
+
+                <div class="section-head" data-reveal>
+                    <h2 class="section-title">I write poetry</h2>
+                    <p class="section-note">A few of my poems</p>
+                </div>
+
+                <div class="reader" data-reveal>
+                    <div class="poem-list" role="tablist" aria-label="Poems">
+                        <button role="tab" id="t-white" aria-controls="poem-white" aria-selected="true"><span>01</span>White</button>
+                        <button role="tab" id="t-spirit" aria-controls="poem-spirit" aria-selected="false" tabindex="-1"><span>02</span>Spirit</button>
+                        <button role="tab" id="t-time-a-saviour" aria-controls="poem-time-a-saviour" aria-selected="false" tabindex="-1"><span>03</span>Time, A Saviour</button>
+                        <button role="tab" id="t-melodies-of-the-wind" aria-controls="poem-melodies-of-the-wind" aria-selected="false" tabindex="-1"><span>04</span>Melodies of the Wind</button>
+                        <button role="tab" id="t-words" aria-controls="poem-words" aria-selected="false" tabindex="-1"><span>05</span>Words</button>
+                        <button role="tab" id="t-blue-hour" aria-controls="poem-blue-hour" aria-selected="false" tabindex="-1"><span>06</span>Blue Hour</button>
+                        <button role="tab" id="t-silenced" aria-controls="poem-silenced" aria-selected="false" tabindex="-1"><span>07</span>Silenced</button>
+                        <button role="tab" id="t-pace" aria-controls="poem-pace" aria-selected="false" tabindex="-1"><span>08</span>Pace</button>
+                    </div>
+                    <div class="poem-stage">
+                        <article class="poem" role="tabpanel" id="poem-white" aria-labelledby="t-white">
+                            <h3>White</h3>
+                            <p>I wonder,<br>
+                                What do these clouds hide?<br>
+                                The gloom it’s about to glaze me with<br>
+                                Or the glory to conceal the dark?<br>
+                                Like it does<br>
+                                With itself<br>
+                                One can never know, I suppose.<br>
+                                And perhaps, that’s the reason<br>
+                                It’s too appealing to the eyes<br>
+                                Yet so unreal to think about.</p>
+                        </article>
+                        <article class="poem" role="tabpanel" id="poem-spirit" aria-labelledby="t-spirit" hidden>
+                            <h3>Spirit</h3>
+                            <p>It feels like just yesterday<br>
+                                I came into this world in spring<br>
+                                But look, it’s already autumn.<br>
+                                Along with the petals of soft flowers,<br>
+                                I wished to fly away.<br>
+                                But if the flowers perished<br>
+                                Where is the beauty of the plant, I thought.<br>
+                                And so, I stayed.<br>
+                                For a pitied reason<br>
+                                Only to find that<br>
+                                The plant bore the flowers<br>
+                                And hence there is so much green<br>
+                                Than the glowing hue<br>
+                                To gracefully endow me<br>
+                                With a steady and placid life<br>
+                                Of opportunities to blossom<br>
+                                And not just fugitive flowers<br>
+                                That end up faded and forgotten.</p>
+                        </article>
+                        <article class="poem" role="tabpanel" id="poem-time-a-saviour" aria-labelledby="t-time-a-saviour" hidden>
+                            <h3>Time, A Saviour</h3>
+                            <p>Lamps of colors blinds the shades of those eyes<br>
+                                A beautiful little face<br>
+                                Sometimes, she smiles and several times, she frowns<br>
+                                Isn’t that how dubious life is?<br>
+                                Times filled with happiness and those with pain<br>
+                                Before I am done with one, here it is, another one.<br>
+                                Before I realize that my hair’s grown a few inches,<br>
+                                I feel the wrinkles on my face as I laugh<br>
+                                I sometimes look back at that beautiful face<br>
+                                That has withered with time<br>
+                                Such were the shades, dark and bright<br>
+                                Moments I am caged up<br>
+                                Now that I think about it,<br>
+                                Oh, how lucky am I<br>
+                                That you never let go of my hand<br>
+                                That you never let me stop<br>
+                                That you always made me run with you<br>
+                                A savior, I never realized I had<br>
+                                Before I put down this pen that I am holding<br>
+                                A thousand frowns have let go of me<br>
+                                A few smiles have come looking for me<br>
+                                Thanks to you, I am still running with you<br>
+                                Time changes everything<br>
+                                And yet life goes on, doesn’t it?</p>
+                        </article>
+                        <article class="poem" role="tabpanel" id="poem-melodies-of-the-wind" aria-labelledby="t-melodies-of-the-wind" hidden>
+                            <h3>Melodies of the Wind</h3>
+                            <p>As I put my ear close to the windowpane<br>
+                                I feel the breeze with a heavy heart<br>
+                                Warm and cold is the usual rhythm<br>
+                                But this time, it’s different<br>
+                                This wind holds onto stories of many<br>
+                                Among troubles, one speaks happiness<br>
+                                There’s one with tears too<br>
+                                Several throughout the night<br>
+                                To keep me well occupied<br>
+                                That night filled my ears with words<br>
+                                Some I never want to utter<br>
+                                Some I wish I had heard earlier<br>
+                                In the meantime, this heart forgot<br>
+                                What it had been holding the night before<br>
+                                Give some thought to it<br>
+                                Time passes and so does life, doesn’t it?<br>
+                                When there is so much weight in their hearts<br>
+                                What am I holding onto?<br>
+                                This little soul is blessed, I felt<br>
+                                They would feel the same, I thought<br>
+                                If they had heard each other<br>
+                                In a life filled with troubles<br>
+                                There is an ease in sharing<br>
+                                In a world filled with such souls<br>
+                                There are stories waiting to be shared<br>
+                                And this is the music<br>
+                                The wind plays every night<br>
+                                This time, listen closely<br>
+                                You will hear one too.</p>
+                        </article>
+                        <article class="poem" role="tabpanel" id="poem-words" aria-labelledby="t-words" hidden>
+                            <h3>Words</h3>
+                            <p>To be oneself, is to live at ease<br>
+                                To feel happy, embracing life like an evening breeze.<br>
+                                In every moment, shall find peace<br>
+                                To feel content, with one’s own feats.</p>
+                            <p>To laugh along, at life's subtle play<br>
+                                Forgetting little errors, ones of life's display.<br>
+                                In simple joys, to find one’s way<br>
+                                Is somehow, only to exist in words, like these convey.</p>
+                        </article>
+                        <article class="poem" role="tabpanel" id="poem-blue-hour" aria-labelledby="t-blue-hour" hidden>
+                            <h3>Blue Hour</h3>
+                            <p>When the blue hour hits<br>
+                                Midnight, when it's past 12<br>
+                                Even the daring waves<br>
+                                Look calm and quiet<br>
+                                Something about the blues of the nights<br>
+                                Watching the world rush<br>
+                                When my heart takes a little rest<br>
+                                Rich of calmness in a hush<br>
+                                Loaded with nostalgic beauty<br>
+                                How is it, you calm me so much? I asked<br>
+                                For that's when you see the world<br>
+                                With no expectations and no thoughts<br>
+                                Simply, when your world is quiet, it said.</p>
+                        </article>
+                        <article class="poem" role="tabpanel" id="poem-silenced" aria-labelledby="t-silenced" hidden>
+                            <h3>Silenced</h3>
+                            <p>In the dead of the night, when the world fell quiet<br>
+                                A voice spoke out of an uncertain conviction.<br>
+                                Yearning for a glint, the moonlight embraced her little face<br>
+                                A face that has withered over time<br>
+                                A heart that had battled itself<br>
+                                A mind that forced her to keep fighting<br>
+                                She had carried a lot, the miserable woman.<br>
+                                But who bothered to ask her, she thought<br>
+                                As she reminisced her life, she let out a laugh<br>
+                                Soaked in pain, her lips hardly curled<br>
+                                Just smile, be elegant.<br>
+                                You are a girl, they said.<br>
+                                As a sharp pain caught her throat<br>
+                                She screamed with tears.<br>
+                                Be polite, be quiet.<br>
+                                You are a girl, they said.<br>
+                                As she prepared to speak<br>
+                                Listen to him.<br>
+                                Again, you are the girl, they said.<br>
+                                And today, as the veil covered her pale face<br>
+                                She felt her dreams shatter into pieces<br>
+                                Amidst the voices of the unspoken,<br>
+                                Her voice stayed mute.<br>
+                                Amidst the rules of the unbothered,<br>
+                                Her thoughts stayed with her.<br>
+                                Amidst their system of life<br>
+                                She became a mere puppet.<br>
+                                In their world, filled with lights<br>
+                                She was devoid of one.<br>
+                                And that is how it was supposed to be, they said.<br>
+                                But who are they, she thought as she closed her eyes.<br>
+                                With filtered emotions, she lifted up her face<br>
+                                Hoping that her voice would echo in their unfiltered minds,<br>
+                                She opened her eyes.<br>
+                                A gentle breeze touched her slow<br>
+                                In the soft embrace of the light, she felt a power<br>
+                                Of a world that had truly fell silent.<br>
+                                And there she disappeared into the moonlight<br>
+                                Nowhere to be found again.</p>
+                        </article>
+                        <article class="poem" role="tabpanel" id="poem-pace" aria-labelledby="t-pace" hidden>
+                            <h3>Pace</h3>
+                            <p>Time ticks quick<br>
+                                But here I stand still<br>
+                                Amidst the buzz of a world<br>
+                                That never seems to settle<br>
+                                To step ahead<br>
+                                Means to break barriers<br>
+                                To switch circumstances<br>
+                                Means to fear and quit<br>
+                                Have I lost my time already?<br>
+                                But allow me to ask<br>
+                                Who times our efforts?<br>
+                                A mind racing a heart isn’t life.<br>
+                                For, a pace that’s too fast<br>
+                                Could never lead to a stable end<br>
+                                And hence there is no fault<br>
+                                In a pace<br>
+                                That’s steady and poise.</p>
+                        </article>
+                        <p class="signature">Hajara Sabnam</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--CONTACT-->
+
+        <section class="section contact" id="contact">
+            <div class="wrap contact-grid">
+                <div class="contact-info" data-reveal>
+                    <h2 class="contact-title">Let's <em>talk.</em></h2>
+                    <p>If you have a question or just want to say hello, reach out. I'm always open to meeting new people and I'll get back to you as soon as I can.</p>
+                    <a class="email" href="mailto:hajarasabnam@gmail.com">hajarasabnam@gmail.com</a>
+                    <div class="socials">
+                        <a href="https://www.linkedin.com/in/hajara-sabnam-kareem-navaz-32a11b234/" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.96c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4V9.75Z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://www.instagram.com/hajarasabnam" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4Zm0 7.75a3.05 3.05 0 1 1 0-6.1 3.05 3.05 0 0 1 0 6.1ZM17 5.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM21.94 8.1c-.07-1.5-.41-2.83-1.51-3.93S17.99 2.73 16.5 2.66C14.95 2.57 9.05 2.57 7.5 2.66 6.01 2.73 4.68 3.07 3.57 4.17S2.13 6.6 2.06 8.1c-.09 1.55-.09 6.25 0 7.8.07 1.5.41 2.83 1.51 3.93s2.44 1.44 3.93 1.51c1.55.09 7.45.09 9 0 1.49-.07 2.82-.41 3.93-1.51s1.44-2.43 1.51-3.93c.09-1.55.09-6.25 0-7.8Zm-2.04 9.45a3.2 3.2 0 0 1-1.8 1.8c-1.25.5-4.21.38-5.6.38s-4.35.11-5.6-.38a3.2 3.2 0 0 1-1.8-1.8c-.5-1.25-.38-4.21-.38-5.6s-.11-4.35.38-5.6a3.2 3.2 0 0 1 1.8-1.8c1.25-.5 4.21-.38 5.6-.38s4.35-.11 5.6.38a3.2 3.2 0 0 1 1.8 1.8c.5 1.25.38 4.21.38 5.6s.12 4.35-.38 5.6Z"/></svg>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm" novalidate data-reveal>
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+                        <span class="error" id="name-error"></span>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                        <span class="error" id="email-error"></span>
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="btn btn-dark" id="submit">Send message</button>
+                    <p class="form-status" id="formStatus" role="status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year">2025</span> Hajara Sabnam</p>
+        <a href="#top">Back to top <i class="arrow arrow-up" aria-hidden="true"></i></a>
+    </footer>
+
+    <!--IMAGE VIEWER-->
+
+    <dialog class="viewer" id="viewer" aria-label="Image viewer">
+        <img id="viewerImg" src="" alt="">
+        <button class="viewer-btn viewer-close" id="viewerClose" aria-label="Close">&times;</button>
+        <button class="viewer-btn viewer-prev" id="viewerPrev" aria-label="Previous image">&#8249;</button>
+        <button class="viewer-btn viewer-next" id="viewerNext" aria-label="Next image">&#8250;</button>
+        <span class="viewer-count" id="viewerCount"></span>
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
-

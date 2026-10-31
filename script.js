@@ -1,228 +1,289 @@
 const supabaseUrl = "https://jmxrcnxygyvbrbzxnher.supabase.co";
 const supabaseKey = "sb_publishable_JU_CiBRevCBpJ4Twk7Jddg_10keBxy9";
 
+const client = window.supabase ? supabase.createClient(supabaseUrl, supabaseKey) : null;
 
-const client = supabase.createClient(supabaseUrl, supabaseKey);
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $ = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
-// Transition Animation 
+$("#year").textContent = new Date().getFullYear();
 
-AOS.init({
-    offset: 100,
-    duration: 900,
+// Header turns solid once the hero has scrolled away
+
+const header = $(".site-header");
+const hero = $(".hero");
+
+new IntersectionObserver(([entry]) => {
+    header.classList.toggle("is-solid", !entry.isIntersecting);
+}, { rootMargin: "-72px 0px 0px 0px" }).observe(hero);
+
+// Mobile menu
+
+const menuBtn = $("#menuBtn");
+
+function setMenu(open) {
+    document.body.classList.toggle("nav-open", open);
+    menuBtn.setAttribute("aria-expanded", open);
+    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+}
+
+menuBtn.addEventListener("click", () => setMenu(!document.body.classList.contains("nav-open")));
+$$(".nav a").forEach(link => link.addEventListener("click", () => setMenu(false)));
+document.addEventListener("keydown", e => {
+    if (e.key === "Escape") setMenu(false);
 });
 
-// Typing Effect Animation 
+// Active section indicator in the nav
 
-if (typeof Typed !== "undefined" && document.querySelector(".anim")) {
-    var typingEffect = new Typed(".anim", {
-        strings: ["Hajara Sabnam", "A Tech Enthusiast", "A Coder"],
-        loop: true,
-        typeSpeed: 100,
-        backSpeed: 80,
-        backDelay: 1200
+const navLinks = $$(".nav a");
+const indicator = $(".nav-indicator");
+
+function moveIndicator(link) {
+    if (!link) {
+        indicator.classList.remove("is-on");
+        return;
+    }
+    indicator.style.setProperty("--x", link.offsetLeft + 12 + "px");
+    indicator.style.setProperty("--w", (link.offsetWidth - 24) / 100);
+    indicator.classList.add("is-on");
+}
+
+const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        const active = navLinks.find(a => a.getAttribute("href") === "#" + id);
+        navLinks.forEach(a => a.classList.toggle("is-active", a === active));
+        moveIndicator(active);
     });
-}
+}, { rootMargin: "-45% 0px -50% 0px" });
 
-// Profile Box Animation 
+$$("main > section").forEach(s => sectionObserver.observe(s));
+window.addEventListener("resize", () => moveIndicator($(".nav a.is-active")));
 
-function openProfileBox() {
-    var profileBox = document.getElementById("myProfileBox");
-    profileBox.style.right = "3%";
-}
-    
-function closeProfileBox() {
-    var profileBox = document.getElementById("myProfileBox");
-    profileBox.style.right = "-600px"; 
-}
-    
-function openmenu() {
-    var navbar = document.getElementById("navbar");
-    navbar.classList.toggle("active");
-    
-    var screenWidth = window.innerWidth || document.documentElement.clientWidth;
-    
-    if (screenWidth <= 950) {
-        navbar.classList.toggle("vertical");
-    } else {
-        navbar.classList.remove("vertical");
-    }
-}
-    
-// View Cetificate - Cetificate Modal in Work Experiences
+// Scroll reveal, staggered among siblings
 
-function viewCertificate(certPath) {
-    const modal = document.getElementById("certModal");
-    const modalImg = document.getElementById("certImage");
-    
-    if (modal && modalImg && certPath) {
-        modalImg.src = certPath;
-        modal.style.display = "flex";
-        
-        setTimeout(() => {
-            modal.classList.add("show");
-        }, 10);
-    }
-}
+const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        revealObserver.unobserve(entry.target);
+    });
+}, { rootMargin: "0px 0px -8% 0px" });
 
-function viewCertificateMultiple(certPaths) {
-    const modal = document.getElementById("certModal");
-    const modalImg = document.getElementById("certImage");
-
-    if (!modal || !modalImg || !certPaths || certPaths.length === 0) return;
-
-    currentCerts = certPaths;
-    currentCertIndex = 0;
-    modalImg.src = currentCerts[currentCertIndex];
-
-    modal.style.display = "flex";
-    setTimeout(() => modal.classList.add("show"), 10);
-
-    addCertNavButtons();
-}
-
-function addCertNavButtons() {
-    const modal = document.getElementById("certModal");
-
-    document.querySelectorAll(".cert-nav-btn").forEach(btn => btn.remove());
-
-    if (currentCerts.length <= 1) return;
-
-    const prevBtn = document.createElement("button");
-    prevBtn.textContent = "<";
-    prevBtn.className = "cert-nav-btn prev";
-    prevBtn.onclick = (e) => {
-        e.stopPropagation(); 
-        showCert(currentCertIndex - 1);
-    };
-    modal.appendChild(prevBtn);
-
-    const nextBtn = document.createElement("button");
-    nextBtn.textContent = ">";
-    nextBtn.className = "cert-nav-btn next";
-    nextBtn.onclick = (e) => {
-        e.stopPropagation();  
-        showCert(currentCertIndex + 1);
-    };
-    modal.appendChild(nextBtn);
-}
-
-function showCert(index) {
-    const modalImg = document.getElementById("certImage");
-
-    if (index < 0) index = currentCerts.length - 1;
-    if (index >= currentCerts.length) index = 0;
-
-    currentCertIndex = index;
-    modalImg.src = currentCerts[currentCertIndex];
-}
-
-function closeCertModal() {
-    const modal = document.getElementById("certModal");
-    if (modal) {
-        modal.classList.remove("show");
-        setTimeout(() => {
-            modal.style.display = "none";
-            document.querySelectorAll(".cert-nav-btn").forEach(btn => btn.remove());
-        }, 300);
-    }
-}
-
-// function closeCertModal() {
-//     const modal = document.getElementById("certModal");
-//     if (modal) {
-//         modal.classList.remove("show");
-//         setTimeout(() => {
-//             modal.style.display = "none";
-//         }, 300); 
-//     }
-// }
-
-document.addEventListener("click", function(e) {
-    const modal = document.getElementById("certModal");
-    const modalImg = document.getElementById("certImage");
-    
-    if (modal && e.target === modal) {
-        closeCertModal();
-    }
+$$("[data-reveal]").forEach(el => {
+    const siblings = $$(":scope > [data-reveal]", el.parentElement);
+    el.style.setProperty("--d", Math.min(siblings.indexOf(el), 5) * 0.08 + "s");
+    revealObserver.observe(el);
 });
 
-document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") {
-        closeCertModal();
-    }
+// Typing effect
+
+const typed = $("#typed");
+const words = ["Android apps", "machine learning models", "AI & IoT research", "poetry"];
+
+if (!reduceMotion) {
+    let word = 0;
+    let chars = words[0].length;
+    let deleting = true;
+    const pause = { typed: 1600, deleted: 350 };
+
+    setTimeout(function tick() {
+        const current = words[word];
+        chars += deleting ? -1 : 1;
+        typed.textContent = current.slice(0, chars);
+
+        let delay = deleting ? 40 : 75;
+        if (!deleting && chars === current.length) {
+            deleting = true;
+            delay = pause.typed;
+        } else if (deleting && chars === 0) {
+            deleting = false;
+            word = (word + 1) % words.length;
+            delay = pause.deleted;
+        }
+        setTimeout(tick, delay);
+    }, 2600);
+}
+
+// Gentle parallax on the portrait
+
+const portrait = $(".hero-photo img");
+
+if (!reduceMotion) {
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            const y = Math.min(window.scrollY, window.innerHeight);
+            portrait.style.setProperty("--s", 1 + y / 4000);
+            portrait.style.setProperty("--py", y * 0.06 + "px");
+            ticking = false;
+        });
+    }, { passive: true });
+}
+
+// Achievements accordion; #a-<name> links open the matching entry
+
+function setAward(award, open) {
+    award.classList.toggle("is-open", open);
+    $(".award-head", award).setAttribute("aria-expanded", open);
+}
+
+$$(".award").forEach(award => {
+    $(".award-head", award).addEventListener("click", () => {
+        setAward(award, !award.classList.contains("is-open"));
+    });
 });
 
-// Form Validation
+function openFromHash() {
+    const target = location.hash && $(location.hash);
+    if (!target || !target.classList.contains("award")) return;
+    setAward(target, true);
+    target.classList.add("is-in");
+    setTimeout(() => target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" }), 100);
+}
 
-function validateForm(event) {
+openFromHash();
+window.addEventListener("hashchange", openFromHash);
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+// Poem reader tabs
 
-    const nameError = document.getElementById("name-error");
-    const emailError = document.getElementById("email-error");
-    const messageError = document.getElementById("message-error");
+const tabs = $$('.poem-list [role="tab"]');
 
-    nameError.textContent = "";
-    emailError.textContent = "";
-    messageError.textContent = "";
+function selectPoem(tab, focus) {
+    tabs.forEach(t => {
+        const selected = t === tab;
+        t.setAttribute("aria-selected", selected);
+        t.tabIndex = selected ? 0 : -1;
+        const panel = document.getElementById(t.getAttribute("aria-controls"));
+        panel.hidden = !selected;
+        if (selected) {
+            panel.classList.remove("is-entering");
+            void panel.offsetWidth;
+            panel.classList.add("is-entering");
+        }
+    });
+    if (focus) tab.focus();
+    tab.scrollIntoView({ block: "nearest", inline: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
+}
 
+tabs.forEach((tab, i) => {
+    tab.addEventListener("click", () => selectPoem(tab));
+    tab.addEventListener("keydown", e => {
+        const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (!step) return;
+        e.preventDefault();
+        selectPoem(tabs[(i + step + tabs.length) % tabs.length], true);
+    });
+});
+
+// Image viewer for certificates and achievement photos
+
+const viewer = $("#viewer");
+const viewerImg = $("#viewerImg");
+const viewerCount = $("#viewerCount");
+let gallery = [];
+let galleryIndex = 0;
+
+function showImage(index) {
+    galleryIndex = (index + gallery.length) % gallery.length;
+    viewerImg.classList.add("is-swapping");
+    const next = new Image();
+    next.onload = next.onerror = () => {
+        viewerImg.src = gallery[galleryIndex];
+        viewerImg.classList.remove("is-swapping");
+    };
+    next.src = gallery[galleryIndex];
+    viewerCount.textContent = `${galleryIndex + 1} / ${gallery.length}`;
+}
+
+$$("[data-gallery]").forEach(btn => {
+    btn.addEventListener("click", () => {
+        gallery = btn.dataset.gallery.split("|");
+        viewer.classList.toggle("single", gallery.length === 1);
+        viewerImg.alt = btn.closest(".award") ? $(".award-title", btn.closest(".award")).textContent : "Certificate";
+        viewer.showModal();
+        showImage(Number(btn.dataset.index || 0));
+    });
+});
+
+$("#viewerClose").addEventListener("click", () => viewer.close());
+$("#viewerPrev").addEventListener("click", () => showImage(galleryIndex - 1));
+$("#viewerNext").addEventListener("click", () => showImage(galleryIndex + 1));
+viewer.addEventListener("click", e => {
+    if (e.target === viewer) viewer.close();
+});
+viewer.addEventListener("keydown", e => {
+    if (gallery.length < 2) return;
+    if (e.key === "ArrowLeft") showImage(galleryIndex - 1);
+    if (e.key === "ArrowRight") showImage(galleryIndex + 1);
+});
+
+// Contact form
+
+const form = $("#contactForm");
+const status = $("#formStatus");
+
+function setError(id, message) {
+    $(`#${id}-error`).textContent = message;
+    $(`#${id}`).closest(".field").classList.toggle("has-error", Boolean(message));
+}
+
+function validateForm() {
+    const name = $("#name").value.trim();
+    const email = $("#email").value.trim();
+    const message = $("#message").value.trim();
     let isValid = true;
 
+    setError("name", "");
+    setError("email", "");
+    setError("message", "");
+
     if (name === "" || /\d/.test(name)) {
-        nameError.textContent = "Please enter your name properly.";
+        setError("name", "Please enter your name properly.");
         isValid = false;
     }
-
-    if (email === "" || !email.includes("@")) {
-        emailError.textContent = "Please enter a valid email address.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        setError("email", "Please enter a valid email address.");
         isValid = false;
     }
-
     if (message === "") {
-        messageError.textContent = "Please enter your message.";
+        setError("message", "Please enter your message.");
         isValid = false;
     }
 
-    if (isValid) {
-        alert('Thank you for your message!');
-    }
-
-    return isValid;  
+    return isValid ? { name, email, message } : null;
 }
 
-// document.getElementById("contactForm").addEventListener("submit", function(event) {
-    
-//     if (!validateForm(event)) {
-//         event.preventDefault();  
-//     }
-// });
+form.addEventListener("submit", async e => {
+    e.preventDefault();
+    status.className = "form-status";
+    status.textContent = "";
 
-document.getElementById("contactForm").addEventListener("submit", async function (event) {
-    event.preventDefault();
+    const values = validateForm();
+    if (!values) return;
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+    const submit = $("#submit");
+    submit.disabled = true;
+    submit.textContent = "Sending...";
 
-    if (!validateForm()) return;
+    const { error } = client
+        ? await client.from("contact_form").insert([values])
+        : { error: new Error("Supabase failed to load") };
 
-    const { error } = await client
-        .from("contact_form")
-        .insert([
-            {
-                name: name,
-                email: email,
-                message: message
-            }
-        ]);
+    submit.disabled = false;
+    submit.textContent = "Send message";
 
     if (error) {
         console.log(error);
-        alert("Error sending message");
+        status.classList.add("fail");
+        status.textContent = "Sorry, your message couldn't be sent. Please email me directly instead.";
     } else {
-        alert("Message sent successfully!");
-        document.getElementById("contactForm").reset();
+        status.classList.add("ok");
+        status.textContent = "Thank you! Your message has been sent.";
+        form.reset();
     }
 });
