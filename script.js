@@ -9,25 +9,16 @@ const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
 $("#year").textContent = new Date().getFullYear();
 
-// Header state, reading progress and the experience timeline all follow the scroll
+// Header state and reading progress follow the scroll
 
 const header = $(".site-header");
 const progress = $(".progress");
-const timeline = $(".timeline");
-const jobs = $$(".timeline .job");
 let scrollQueued = false;
 
 function onScroll() {
     const max = document.documentElement.scrollHeight - window.innerHeight;
     header.classList.toggle("is-scrolled", window.scrollY > 8);
     progress.style.setProperty("--p", max > 0 ? window.scrollY / max : 0);
-
-    const box = timeline.getBoundingClientRect();
-    const mark = window.innerHeight * 0.6;
-    const t = Math.min(Math.max((mark - box.top) / box.height, 0), 1);
-    timeline.style.setProperty("--tp", t);
-    jobs.forEach(job => job.classList.toggle("is-passed", job.getBoundingClientRect().top < mark));
-
     scrollQueued = false;
 }
 
@@ -133,31 +124,9 @@ $(".stats").addEventListener("reveal", () => {
 const marquee = $(".marquee-track");
 marquee.innerHTML += marquee.innerHTML;
 
-// Research topic filters
-
-const papers = $$(".paper");
-papers.forEach((paper, i) => paper.style.setProperty("--vt", `paper-${i}`));
-
-function applyFilter(button) {
-    const area = button.dataset.filter;
-    $$(".filters button").forEach(b => b.setAttribute("aria-pressed", b === button));
-    papers.forEach(paper => {
-        paper.classList.toggle("is-hidden", area !== "all" && !paper.dataset.area.includes(area));
-    });
-}
-
-$$(".filters button").forEach(button => {
-    button.addEventListener("click", () => {
-        if (document.startViewTransition && !reduceMotion) {
-            document.startViewTransition(() => applyFilter(button));
-        } else {
-            applyFilter(button);
-        }
-    });
-});
-
 // Soft spotlight that follows the cursor across each paper
 
+const papers = $$(".paper");
 papers.forEach(paper => {
     paper.addEventListener("pointermove", e => {
         const box = paper.getBoundingClientRect();
