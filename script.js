@@ -163,7 +163,8 @@ $$("[data-gallery]").forEach(btn => {
         gallery = btn.dataset.gallery.split("|");
         viewer.classList.toggle("single", gallery.length === 1);
         const award = btn.closest(".award");
-        viewerImg.alt = award ? $(".award-title", award).textContent : $("img", btn).alt;
+        const img = $("img", btn);
+        viewerImg.alt = award ? $(".award-title", award).textContent : img ? img.alt : "Certificate";
         viewer.showModal();
         showImage(Number(btn.dataset.index || 0));
     });

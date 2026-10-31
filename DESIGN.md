@@ -43,7 +43,10 @@ Handwritten teal notes and hand-drawn marks: "hi, I'm", the underline under "res
 - Moderate type sizes; the very large display type of a later experiment was rejected.
 - Sections are separated by alternating bands (white, light grey, dark), not by rules. No boxed stat cells, no rules around research or the topic strip, no rules in the education list.
 - Lifted boxes: one white box for Education and one for Toolkit (not one per item), plus the experience panel and the paper buttons. They use a crisp dark shadow on the left and bottom only (`-8px 8px 8px -2px`), taken from the owner's original About card, with no border.
-- Experience is one compact panel: a row per role with logo, role, company, skills in small text and dates on the right; the current role has a "Current role" tag.
+- Experience: heading on the left with a short summary on the right; a full-width panel of rows (logo, role, company, skills, dates, View certificate) with a teal timeline line and dots down its left side.
+- Certificates open in a smaller viewer over a light, blurred backdrop so the page stays visible.
+- Black line icons sit on the right of the Achievements heading and the Education and Toolkit box titles.
+- Research order: papers with a link first ("Check out paper"), then presented work, whose button ("See the award") jumps to and opens the matching achievement.
 - Research titles are plain text; each paper has a "Check out paper" button on the right, as on the original site.
 - Moments photos have rounded corners.
 - No decorative star glyphs before honours.
