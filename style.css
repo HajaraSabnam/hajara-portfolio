@@ -582,7 +582,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .paper:first-child { border-top: 0; padding-top: 0; }
 
 .paper-no {
-    font: 600 1.25rem/1.4 var(--display);
+    font: 600 1.75rem/1.1 var(--display);
     color: var(--muted);
     font-variant-numeric: tabular-nums;
     transition: color 0.3s;
@@ -639,8 +639,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     white-space: nowrap;
 }
 .exp-total span {
-    font: 700 clamp(2.5rem, 5vw, 3.5rem)/1 var(--display);
-    letter-spacing: -0.04em;
+    font: 600 clamp(2.5rem, 5vw, 3.25rem)/1 var(--body);
+    letter-spacing: -0.03em;
     color: var(--accent-ink);
 }
 
@@ -1117,7 +1117,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     .award-inner { padding-left: 0; }
     .photos { grid-template-columns: repeat(2, 1fr); }
     .moment { width: 13rem; }
-    .paper-no { font-size: 1.0625rem; }
+    .paper-no { font-size: 1.35rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
