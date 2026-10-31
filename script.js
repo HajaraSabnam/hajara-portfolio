@@ -9,26 +9,13 @@ const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
 $("#year").textContent = new Date().getFullYear();
 
-// Header state and reading progress follow the scroll
+// Header gets a hairline once the page scrolls
 
 const header = $(".site-header");
-const progress = $(".progress");
-let scrollQueued = false;
+const updateHeader = () => header.classList.toggle("is-scrolled", window.scrollY > 8);
 
-function onScroll() {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    header.classList.toggle("is-scrolled", window.scrollY > 8);
-    progress.style.setProperty("--p", max > 0 ? window.scrollY / max : 0);
-    scrollQueued = false;
-}
-
-onScroll();
-window.addEventListener("scroll", () => {
-    if (scrollQueued) return;
-    scrollQueued = true;
-    requestAnimationFrame(onScroll);
-}, { passive: true });
-window.addEventListener("resize", onScroll);
+updateHeader();
+window.addEventListener("scroll", updateHeader, { passive: true });
 
 // Mobile menu
 
@@ -46,20 +33,9 @@ document.addEventListener("keydown", e => {
     if (e.key === "Escape") setMenu(false);
 });
 
-// Active section indicator in the nav
+// Underline the nav link for the section in view
 
 const navLinks = $$(".nav a");
-const indicator = $(".nav-indicator");
-
-function moveIndicator(link) {
-    if (!link) {
-        indicator.classList.remove("is-on");
-        return;
-    }
-    indicator.style.setProperty("--x", link.offsetLeft + 12 + "px");
-    indicator.style.setProperty("--w", (link.offsetWidth - 24) / 100);
-    indicator.classList.add("is-on");
-}
 
 const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -67,22 +43,10 @@ const sectionObserver = new IntersectionObserver(entries => {
         const id = entry.target.id;
         const active = navLinks.find(a => a.getAttribute("href") === "#" + id);
         navLinks.forEach(a => a.classList.toggle("is-active", a === active));
-        moveIndicator(active);
     });
 }, { rootMargin: "-45% 0px -50% 0px" });
 
 $$("main > section").forEach(s => sectionObserver.observe(s));
-window.addEventListener("resize", () => moveIndicator($(".nav a.is-active")));
-
-// Headings rise in word by word
-
-$$("[data-split]").forEach(el => {
-    const words = el.textContent.trim().split(/\s+/);
-    el.setAttribute("aria-label", words.join(" "));
-    el.innerHTML = words
-        .map((word, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${word}</span></span>`)
-        .join(" ");
-});
 
 // Scroll reveal, staggered among siblings
 
@@ -100,12 +64,11 @@ $$("[data-reveal]").forEach(el => {
     el.style.setProperty("--d", Math.min(siblings.indexOf(el), 5) * 0.08 + "s");
     revealObserver.observe(el);
 });
-$$("[data-split]").forEach(el => revealObserver.observe(el));
 
 // Research numbers count up the first time they appear
 
-$(".stats").addEventListener("reveal", () => {
-    $$(".stats [data-count]").forEach(num => {
+$(".counts").addEventListener("reveal", () => {
+    $$(".counts [data-count]").forEach(num => {
         const target = Number(num.dataset.count);
         if (reduceMotion) return;
         const start = performance.now();
@@ -119,21 +82,10 @@ $(".stats").addEventListener("reveal", () => {
     });
 }, { once: true });
 
-// Topic marquee needs a second copy to loop seamlessly
+// Topic strip needs a second copy to loop seamlessly
 
-const marquee = $(".marquee-track");
-marquee.innerHTML += marquee.innerHTML;
-
-// Soft spotlight that follows the cursor across each paper
-
-const papers = $$(".paper");
-papers.forEach(paper => {
-    paper.addEventListener("pointermove", e => {
-        const box = paper.getBoundingClientRect();
-        paper.style.setProperty("--mx", e.clientX - box.left + "px");
-        paper.style.setProperty("--my", e.clientY - box.top + "px");
-    });
-});
+const topics = $(".topics-track");
+topics.innerHTML += topics.innerHTML;
 
 // Achievements accordion; #a-<name> links open the matching entry
 
@@ -159,7 +111,7 @@ function openFromHash() {
 openFromHash();
 window.addEventListener("hashchange", openFromHash);
 
-// Image viewer for certificates and achievement photos
+// Image viewer for achievement and moment photos
 
 const viewer = $("#viewer");
 const viewerImg = $("#viewerImg");
