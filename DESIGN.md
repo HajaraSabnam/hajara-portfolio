@@ -6,7 +6,7 @@ Design Read: personal portfolio for recruiters, researchers and collaborators, i
 
 ## Visual theme
 
-Confident and personal. Real photos and clear structure carry the energy; decoration stays out of the way. Professional first, with one human gesture: short handwritten notes in teal, as if Hajara annotated her own page.
+Confident and personal. Real photos and clear structure carry the energy; decoration stays out of the way. Professional first, with one human gesture: short handwritten notes in teal, as if Hajara had annotated the page by hand.
 
 ## Color
 
