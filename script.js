@@ -152,7 +152,7 @@ function showImage(index) {
     const next = new Image();
     next.onload = next.onerror = () => {
         viewerImg.src = gallery[galleryIndex];
-        viewerImg.classList.remove("is-swapping");
+        requestAnimationFrame(() => requestAnimationFrame(() => viewerImg.classList.remove("is-swapping")));
     };
     next.src = gallery[galleryIndex];
     viewerCount.textContent = `${galleryIndex + 1} / ${gallery.length}`;
@@ -165,6 +165,8 @@ $$("[data-gallery]").forEach(btn => {
         const award = btn.closest(".award");
         const img = $("img", btn);
         viewerImg.alt = award ? $(".award-title", award).textContent : img ? img.alt : "Certificate";
+        viewerImg.classList.add("is-swapping");
+        viewerImg.removeAttribute("src");
         viewer.showModal();
         showImage(Number(btn.dataset.index || 0));
     });

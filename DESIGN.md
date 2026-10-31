@@ -43,7 +43,7 @@ Handwritten teal notes and hand-drawn marks: "hi, I'm", the underline under "res
 - Research list shows number, venue, title, summary and authors only; no results column, stamps, categories or filters.
 - Moderate type sizes; the very large display type of a later experiment was rejected.
 - Sections are separated by alternating bands (white, light grey, dark), not by rules. No boxed stat cells, no rules around research or the topic strip, no rules in the education list.
-- Boxes (Education, Skills, Experience, contact form) have a 3px ink line on the left and bottom only, with slightly rounded corners (0.6rem); no drop shadows.
+- Boxes (Education, Skills, Experience, contact form) have a 3px ink line on the left and bottom only, with rounded corners (0.9rem); no drop shadows.
 - Experience: heading on the left with a short summary on the right; a full-width panel of rows (logo, role, company, skills, dates, View certificate) with a teal timeline line and dots down its left side.
 - Certificates open in a smaller viewer over a light, blurred backdrop so the page stays visible.
 - Black line icons sit on the right of the Achievements heading and the Education and Toolkit box titles.
@@ -53,7 +53,8 @@ Handwritten teal notes and hand-drawn marks: "hi, I'm", the underline under "res
 - No decorative star glyphs before honours.
 - Icons beside titles are solid black (filled), not outlines.
 - Hero line: "AI Engineer · AI/ML Researcher · Published Researcher".
-- Experience: "~ 2 years of experience" beside the heading; one box with a date column, a timeline line and dots, logo, role, skills and a View certificate text link.
+- Experience: "2+ years of experience" beside the heading; one box with a date column, a timeline line and dots, logo, role, skills and a View certificate text link.
 - Skills (not "Toolkit") are plain bulleted text, not tag pills. Box titles are larger, with larger solid black icons.
 - "Check out paper" is a text link with an underline and arrow, not a button.
 - Contact and footer are light like the rest of the page; only Moments stays dark.
+- Experience rows: Elchai Group (Mar 2026 to Present) with its logo, no Current role tag; View certificate is a plain link with an arrow, no underline. Achievements heading uses a solid black medal icon.
