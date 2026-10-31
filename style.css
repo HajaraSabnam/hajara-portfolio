@@ -658,7 +658,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     grid-template-columns: 11.5rem 3.5rem minmax(0, 1fr) auto;
     align-items: center;
     gap: 0.5rem 1.25rem;
-    padding: 1.1rem 2rem;
+    padding: 1.6rem 2rem;
 }
 .job + .job { border-top: 1px solid var(--line); }
 
@@ -1102,7 +1102,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 600px) {
     .job { grid-template-columns: 3rem minmax(0, 1fr); padding: 1rem 1.1rem; }
     .job-logo { width: 2.5rem; height: 2.5rem; }
-    .job { grid-template-columns: 3rem minmax(0, 1fr); padding: 1rem 1.25rem 1rem 2.75rem; }
+    .job { grid-template-columns: 3rem minmax(0, 1fr); padding: 1.4rem 1.25rem 1.4rem 2.75rem; }
     .job-when { grid-column: 1 / -1; }
     .job-when::before { left: -1.5rem; }
     .cert-btn { grid-column: 2; justify-self: start; }
