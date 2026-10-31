@@ -16,7 +16,8 @@ Professional, with a personal layer. The page reads like a well-kept notebook: c
 | Paper 2 | `oklch(0.975 0.003 250)` | Research band |
 | Ink | `oklch(0.19 0.012 265)` | Text, Moments and Contact bands |
 | Muted | `oklch(0.5 0.012 265)` | Secondary text |
-| Accent, sea teal | `oklch(0.62 0.11 190)`, text shade `oklch(0.5 0.095 192)` | Chosen by the owner to replace orange |
+| Accent, rose | `oklch(0.6 0.19 8)`, text shade `oklch(0.52 0.19 8)`, light `oklch(0.8 0.11 10)` on dark bands | Chosen after teal and indigo were rejected; echoes the blue-to-pink feel of the owner's original site |
+| Washes | sky blue `oklch(0.93 0.045 235)` and blush `oklch(0.94 0.04 10)` | Soft radial gradients in each section's background, at the owner's request, to give depth and separate sections |
 
 ## Typography
 
@@ -50,3 +51,4 @@ Handwritten teal notes and hand-drawn marks: "hi, I'm", the underline under "res
 - Research titles are plain text; each paper has a "Check out paper" button on the right, as on the original site.
 - Moments photos have rounded corners.
 - No decorative star glyphs before honours.
+- Icons beside titles are solid black (filled), not outlines.
