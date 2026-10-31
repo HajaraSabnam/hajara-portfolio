@@ -244,7 +244,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 .hero-name {
-    font: 700 clamp(3.75rem, 11vw, 8.75rem)/0.88 var(--display);
+    font: 700 clamp(3.25rem, 8.5vw, 6.75rem)/0.9 var(--display);
     font-variation-settings: "opsz" 96;
     letter-spacing: -0.045em;
 }
@@ -364,8 +364,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 .marquee {
     overflow: hidden;
-    border-block: 1px solid var(--line);
-    padding-block: 0.9rem;
+    padding-block: 1.25rem;
     background: var(--paper);
 }
 .marquee-track {
@@ -399,8 +398,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 .section-title {
     max-width: 20ch;
-    font: 600 clamp(2.1rem, 5vw, 3.6rem)/1.04 var(--display);
-    letter-spacing: -0.035em;
+    font: 600 clamp(1.85rem, 3.8vw, 2.75rem)/1.08 var(--display);
+    letter-spacing: -0.03em;
     margin-bottom: clamp(2rem, 4vw, 3.25rem);
 }
 
@@ -446,7 +445,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 .about-text { display: grid; gap: 1rem; max-width: 38rem; color: var(--muted); }
 .about-text .lead {
-    font: 500 clamp(1.2rem, 2vw, 1.45rem)/1.45 var(--display);
+    font: 500 clamp(1.1rem, 1.7vw, 1.3rem)/1.5 var(--display);
     letter-spacing: -0.015em;
     color: var(--ink);
 }
@@ -476,20 +475,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     margin-top: clamp(4rem, 8vw, 6rem);
 }
 
-.edu li { padding-block: 1.1rem; border-top: 1px solid var(--line); }
-.edu li:last-child { border-bottom: 1px solid var(--line); }
-.edu h4 { font: 600 1.2rem/1.3 var(--display); letter-spacing: -0.015em; margin-top: 0.15rem; }
+.edu { display: grid; gap: 1.5rem; }
+.edu h4 { font: 600 1.1rem/1.3 var(--display); letter-spacing: -0.015em; margin-top: 0.15rem; }
 .edu p { color: var(--muted); font-size: 0.9375rem; }
 .medal {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
     font-size: 0.8125rem;
     font-weight: 600;
     color: var(--accent-ink);
 }
-.medal::before { content: "\2605"; }
 
 .toolkit { display: grid; gap: 1.5rem; }
 .toolkit h4 { font: 600 1rem/1.2 var(--display); margin-bottom: 0.6rem; }
@@ -498,9 +494,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 .research {
     position: relative;
-    background:
-        linear-gradient(var(--paper-2), var(--paper-2)) padding-box;
-    border-block: 1.5px solid var(--ink);
+    background: var(--paper-2);
 }
 .research .wrap { position: relative; }
 
@@ -531,17 +525,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem 2rem;
     margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
-    border-block: 1px solid var(--line);
 }
-.stats li {
-    display: grid;
-    gap: 0.35rem;
-    padding: 1.5rem 1.25rem;
-}
-.stats li + li { border-left: 1px solid var(--line); }
+.stats li { display: grid; gap: 0.25rem; }
 .stats strong {
-    font: 700 clamp(2.5rem, 5vw, 3.75rem)/1 var(--display);
+    font: 700 clamp(2rem, 3.5vw, 2.75rem)/1 var(--display);
     letter-spacing: -0.04em;
     font-variant-numeric: tabular-nums;
 }
@@ -555,6 +544,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     padding-block: 2rem;
     border-top: 1px solid var(--line);
 }
+.paper:first-child { border-top: 0; padding-top: 0; }
 
 .paper-no {
     font: 600 1.25rem/1.4 var(--display);
@@ -567,8 +557,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .paper-body { display: grid; gap: 0.6rem; align-content: start; }
 .paper-venue { font-size: 0.8125rem; font-weight: 500; color: var(--muted); }
 .paper h3 {
-    font: 600 clamp(1.2rem, 2vw, 1.45rem)/1.25 var(--display);
-    letter-spacing: -0.02em;
+    font: 600 clamp(1.1rem, 1.7vw, 1.3rem)/1.3 var(--display);
+    letter-spacing: -0.015em;
     max-width: 48rem;
 }
 .paper h3 a { text-decoration: none; background: linear-gradient(var(--accent), var(--accent)) 0 100% / 0 2px no-repeat; transition: background-size 0.6s var(--ease); }
@@ -592,55 +582,61 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Experience ---------- */
 
-.timeline {
-    position: relative;
-    padding-left: 2.75rem;
-}
-.timeline::before, .timeline::after {
-    content: "";
-    position: absolute;
-    left: 0.55rem;
-    top: 0.5rem;
-    bottom: 0.5rem;
-    width: 2px;
-    background: var(--line);
-}
-.timeline::after {
-    background: var(--accent);
-    transform-origin: top;
-    transform: scaleY(var(--tp, 0));
+.jobs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
 }
 
-.job { position: relative; padding-bottom: 2.75rem; }
-.job:last-child { padding-bottom: 0; }
-.job-dot {
-    position: absolute;
-    left: -2.75rem;
-    top: 0.2rem;
-    z-index: 1;
-    width: 1.2rem;
-    height: 1.2rem;
-    border: 2px solid var(--line);
-    border-radius: 50%;
-    background: var(--paper);
-    transition: border-color 0.4s, background-color 0.4s, transform 0.5s var(--ease);
+.job-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: var(--paper-2);
+    transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.3s;
 }
-.job.is-passed .job-dot { border-color: var(--accent); background: var(--accent); transform: scale(1.1); }
-.job h3 { font: 600 clamp(1.35rem, 2.6vw, 1.85rem)/1.15 var(--display); letter-spacing: -0.025em; margin-top: 0.2rem; }
-.job-org { color: var(--muted); margin-top: 0.1rem; }
-.job-row { display: flex; align-items: center; gap: 1rem; margin-top: 0.4rem; }
-.job-row h3 { margin-top: 0; }
-.job-row img {
-    flex: none;
-    width: 3.25rem;
-    height: 3.25rem;
+.job-card:hover {
+    transform: translateY(-3px);
+    border-color: oklch(0.86 0.01 250);
+    box-shadow: 0 16px 32px -20px oklch(0.2 0.01 265 / 0.25);
+}
+.job-card.is-current {
+    border-color: oklch(0.88 0.03 190);
+    background: oklch(0.98 0.012 190);
+}
+
+.job-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 3rem;
+    margin-bottom: 1.25rem;
+}
+.job-logo {
+    width: 3rem;
+    height: 3rem;
     object-fit: contain;
     padding: 0.3rem;
     border: 1px solid var(--line);
-    border-radius: 0.75rem;
+    border-radius: 0.6rem;
     background: oklch(1 0 0);
 }
-.job .tags { margin-top: 1rem; }
+.job-now {
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.4rem;
+    background: var(--accent-ink);
+    color: var(--paper);
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+.job-when { font-size: 0.8125rem; color: var(--muted); white-space: nowrap; }
+.job-card h3 { font: 600 clamp(1.15rem, 1.8vw, 1.35rem)/1.25 var(--display); letter-spacing: -0.02em; }
+.job-org { margin-top: 0.15rem; color: var(--muted); }
+.job-card .tags { margin-top: 1.25rem; }
+.job-card .tags li { background: oklch(1 0 0); }
 
 /* ---------- Moments ---------- */
 
@@ -691,6 +687,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .moment .hand { display: block; padding: 0.7rem 0.25rem 0.8rem; font-size: 1.3rem; }
 
 /* ---------- Achievements ---------- */
+
+.achievements { background: var(--paper-2); }
 
 .year-group {
     display: grid;
@@ -820,8 +818,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .contact-hi { font-size: 2rem; color: var(--accent); rotate: -4deg; display: inline-block; margin-bottom: 0.5rem; }
 .contact-title {
     max-width: 14ch;
-    font: 600 clamp(2.4rem, 5.5vw, 4rem)/1.02 var(--display);
-    letter-spacing: -0.04em;
+    font: 600 clamp(2.1rem, 4.5vw, 3.25rem)/1.05 var(--display);
+    letter-spacing: -0.035em;
     margin-bottom: 1.5rem;
 }
 .contact-info > p:not(.hand) { max-width: 26rem; color: var(--on-ink-muted); }
@@ -971,6 +969,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* ---------- Responsive ---------- */
 
 @media (max-width: 900px) {
+    .jobs { grid-template-columns: 1fr; }
     .menu-btn { display: block; }
 
     .nav {
@@ -1017,8 +1016,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     .research-note svg { display: none; }
 
     .stats { grid-template-columns: repeat(2, 1fr); }
-    .stats li:nth-child(3) { border-left: 0; }
-    .stats li:nth-child(n + 3) { border-top: 1px solid var(--line); }
 
     .paper { grid-template-columns: 2.5rem minmax(0, 1fr); gap: 0.5rem 1rem; }
 }

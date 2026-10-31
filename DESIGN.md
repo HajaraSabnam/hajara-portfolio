@@ -32,7 +32,7 @@ Handwritten teal notes and hand-drawn marks: "hi, I'm", the underline under "res
 
 ## Motion
 
-- Purpose: one entrance on load (name, intro, polaroid), gentle fade-ins as sections enter, real numbers counting up once, and a scroll-drawn experience timeline.
+- Purpose: one entrance on load (name, intro, polaroid), gentle fade-ins as sections enter, real numbers counting up once, and a gentle lift on experience cards.
 - Owner override (R-19): the topic strip and the Moments photo strip keep a slow auto-scroll, paused on hover and off for reduced motion.
 - Removed as decorative: the spinning star, rotating award stamps, the pulsing current-role ring, the bouncing scroll cue, the word-by-word heading reveal and the cursor spotlight.
 
@@ -41,3 +41,6 @@ Handwritten teal notes and hand-drawn marks: "hi, I'm", the underline under "res
 - White background, no graph-paper grid, no "hs" monogram.
 - Research list shows number, venue, title, summary and authors only; no results column, stamps, categories or filters.
 - Moderate type sizes; the very large display type of a later experiment was rejected.
+- Sections are separated by alternating bands (white, light grey, dark), not by rules. No boxed stat cells, no rules around research or the topic strip, no rules in the education list.
+- Experience is shown as cards: the current role in a lightly teal-tinted card, past roles with logo, dates and skills.
+- No decorative star glyphs before honours.
