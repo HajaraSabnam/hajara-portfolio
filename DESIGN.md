@@ -17,7 +17,7 @@ Professional, with a personal layer. The page reads like a well-kept notebook: c
 | Ink | `oklch(0.19 0.012 265)` | Text, Moments and Contact bands |
 | Muted | `oklch(0.5 0.012 265)` | Secondary text |
 | Accent, ocean blue | `oklch(0.56 0.16 245)`, text shade `oklch(0.48 0.15 250)` | Chosen after teal, indigo and rose were rejected |
-| Washes | sky blue `oklch(0.9 0.07 235)` and lilac `oklch(0.91 0.06 295)` | Radial gradients in every section, strong enough to be visible; they separate the sections |
+| Washes | sky blue `oklch(0.9 0.07 235)` and lilac `oklch(0.9 0.075 295)` | Radial gradients in every section, strong enough to be visible; they separate the sections |
 
 ## Typography
 

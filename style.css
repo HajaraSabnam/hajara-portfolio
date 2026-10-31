@@ -4,7 +4,7 @@
     --paper: oklch(0.995 0.001 250);
     --paper-2: oklch(0.966 0.006 250);
     --wash-blue: oklch(0.9 0.07 235);
-    --wash-lilac: oklch(0.91 0.06 295);
+    --wash-lilac: oklch(0.9 0.075 295);
     --ink: oklch(0.19 0.012 265);
     --ink-2: oklch(0.25 0.014 265);
     --muted: oklch(0.5 0.012 265);
@@ -1140,43 +1140,43 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero {
     background:
         radial-gradient(70% 80% at 90% 15%, oklch(0.88 0.08 235 / 0.9), transparent 80%),
-        radial-gradient(65% 75% at 4% 95%, oklch(0.9 0.07 295 / 0.85), transparent 80%),
+        radial-gradient(65% 75% at 4% 95%, oklch(0.89 0.085 295 / 0.95), transparent 80%),
         var(--paper);
 }
 .marquee { background: linear-gradient(90deg, var(--wash-blue), var(--wash-lilac)); }
 .about {
     background:
-        radial-gradient(60% 70% at 100% 0%, oklch(0.91 0.06 295 / 0.7), transparent 80%),
+        radial-gradient(60% 70% at 100% 0%, oklch(0.9 0.075 295 / 0.8), transparent 80%),
         radial-gradient(55% 60% at 0% 100%, oklch(0.9 0.07 235 / 0.55), transparent 80%),
         var(--paper);
 }
 .research {
     background:
         radial-gradient(70% 60% at 0% 0%, oklch(0.88 0.08 235 / 0.85), transparent 80%),
-        radial-gradient(65% 55% at 100% 100%, oklch(0.9 0.07 295 / 0.8), transparent 80%),
+        radial-gradient(65% 55% at 100% 100%, oklch(0.89 0.085 295 / 0.9), transparent 80%),
         oklch(0.97 0.012 260);
 }
 .experience {
     background:
         radial-gradient(60% 70% at 100% 100%, oklch(0.89 0.075 235 / 0.7), transparent 80%),
-        radial-gradient(55% 60% at 0% 0%, oklch(0.91 0.06 295 / 0.55), transparent 80%),
+        radial-gradient(55% 60% at 0% 0%, oklch(0.9 0.075 295 / 0.65), transparent 80%),
         var(--paper);
 }
 .moments {
     background:
         radial-gradient(60% 85% at 0% 0%, oklch(0.42 0.11 245 / 0.55), transparent 80%),
-        radial-gradient(60% 85% at 100% 100%, oklch(0.42 0.1 295 / 0.45), transparent 80%),
+        radial-gradient(60% 85% at 100% 100%, oklch(0.42 0.12 295 / 0.55), transparent 80%),
         var(--ink);
 }
 .achievements {
     background:
-        radial-gradient(70% 60% at 100% 0%, oklch(0.9 0.07 295 / 0.8), transparent 80%),
+        radial-gradient(70% 60% at 100% 0%, oklch(0.89 0.085 295 / 0.9), transparent 80%),
         radial-gradient(65% 55% at 0% 100%, oklch(0.88 0.08 235 / 0.85), transparent 80%),
         oklch(0.97 0.012 260);
 }
 .contact {
     background:
         radial-gradient(65% 75% at 100% 0%, oklch(0.88 0.08 235 / 0.85), transparent 80%),
-        radial-gradient(60% 70% at 0% 100%, oklch(0.9 0.07 295 / 0.8), transparent 80%),
+        radial-gradient(60% 70% at 0% 100%, oklch(0.89 0.085 295 / 0.9), transparent 80%),
         var(--paper);
 }
