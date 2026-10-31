@@ -16,8 +16,8 @@ Professional, with a personal layer. The page reads like a well-kept notebook: c
 | Paper 2 | `oklch(0.975 0.003 250)` | Research band |
 | Ink | `oklch(0.19 0.012 265)` | Text, Moments and Contact bands |
 | Muted | `oklch(0.5 0.012 265)` | Secondary text |
-| Accent, rose | `oklch(0.6 0.19 8)`, text shade `oklch(0.52 0.19 8)`, light `oklch(0.8 0.11 10)` on dark bands | Chosen after teal and indigo were rejected; echoes the blue-to-pink feel of the owner's original site |
-| Washes | sky blue `oklch(0.93 0.045 235)` and blush `oklch(0.94 0.04 10)` | Soft radial gradients in each section's background, at the owner's request, to give depth and separate sections |
+| Accent, ocean blue | `oklch(0.56 0.16 245)`, text shade `oklch(0.48 0.15 250)` | Chosen after teal, indigo and rose were rejected |
+| Washes | sky blue `oklch(0.9 0.07 235)` and lilac `oklch(0.91 0.06 295)` | Radial gradients in every section, strong enough to be visible; they separate the sections |
 
 ## Typography
 
@@ -43,7 +43,7 @@ Handwritten teal notes and hand-drawn marks: "hi, I'm", the underline under "res
 - Research list shows number, venue, title, summary and authors only; no results column, stamps, categories or filters.
 - Moderate type sizes; the very large display type of a later experiment was rejected.
 - Sections are separated by alternating bands (white, light grey, dark), not by rules. No boxed stat cells, no rules around research or the topic strip, no rules in the education list.
-- Lifted boxes: one white box for Education and one for Toolkit (not one per item), plus the experience panel and the paper buttons. They use a crisp dark shadow on the left and bottom only (`-8px 8px 8px -2px`), taken from the owner's original About card, with no border.
+- Boxes (Education, Skills, Experience, contact form) have a 3px ink line on the left and bottom only, with rounded corners; no drop shadows.
 - Experience: heading on the left with a short summary on the right; a full-width panel of rows (logo, role, company, skills, dates, View certificate) with a teal timeline line and dots down its left side.
 - Certificates open in a smaller viewer over a light, blurred backdrop so the page stays visible.
 - Black line icons sit on the right of the Achievements heading and the Education and Toolkit box titles.
@@ -52,3 +52,8 @@ Handwritten teal notes and hand-drawn marks: "hi, I'm", the underline under "res
 - Moments photos have rounded corners.
 - No decorative star glyphs before honours.
 - Icons beside titles are solid black (filled), not outlines.
+- Hero line: "AI Engineer · AI/ML Researcher · Published Researcher".
+- Experience: "~ 2 years of experience" beside the heading; one box with a date column, a timeline line and dots, logo, role, skills and a View certificate text link.
+- Skills (not "Toolkit") are plain bulleted text, not tag pills. Box titles are larger, with larger solid black icons.
+- "Check out paper" is a text link with an underline and arrow, not a button.
+- Contact and footer are light like the rest of the page; only Moments stays dark.
