@@ -9,6 +9,8 @@ const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
 $("#year").textContent = new Date().getFullYear();
 
+if (window.lucide) lucide.createIcons();
+
 // Header state and the experience timeline follow the scroll
 
 const header = $(".site-header");
@@ -58,7 +60,7 @@ const navLinks = $$(".nav a");
 const indicator = $(".nav-indicator");
 
 function moveIndicator(link) {
-    if (!link) {
+    if (!link || link.classList.contains("nav-cta")) {
         indicator.classList.remove("is-on");
         return;
     }
@@ -95,6 +97,27 @@ $$("[data-reveal]").forEach(el => {
     el.style.setProperty("--d", Math.min(siblings.indexOf(el), 5) * 0.08 + "s");
     revealObserver.observe(el);
 });
+
+// Numbers count up the first time they scroll into view
+
+const countObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        countObserver.unobserve(entry.target);
+        const el = entry.target;
+        const target = Number(el.dataset.count);
+        const decimals = Number(el.dataset.decimals || 0);
+        const start = performance.now();
+        const step = now => {
+            const t = Math.min((now - start) / 1600, 1);
+            el.textContent = (target * (1 - Math.pow(1 - t, 4))).toFixed(decimals);
+            if (t < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+    });
+}, { threshold: 0.6 });
+
+if (!reduceMotion) $$("[data-count]").forEach(el => countObserver.observe(el));
 
 // Topic strip needs a second copy to loop seamlessly
 

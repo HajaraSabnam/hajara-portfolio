@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hajara Sabnam</title>
     <meta name="description" content="Hajara Sabnam: AI Engineer at Elchai Group and machine learning researcher, based in Dubai.">
-    <meta name="theme-color" content="#fafaf7">
+    <meta name="theme-color" content="#fbfbfd">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400..700&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap" rel="stylesheet">
@@ -19,14 +19,17 @@
     <!--NAVIGATION-->
 
     <header class="site-header" id="top">
-        <a href="#top" class="brand">Hajara Sabnam</a>
+        <a href="#top" class="brand">
+            <img src="images/web/hajara.jpg" alt="" width="32" height="32">
+            Hajara Sabnam
+        </a>
 
         <nav class="nav" id="nav" aria-label="Main">
             <a href="#about">About</a>
             <a href="#research">Research</a>
             <a href="#experience">Experience</a>
             <a href="#achievements">Achievements</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact" class="nav-cta"><i data-lucide="mail"></i>Let's talk</a>
             <span class="nav-indicator" aria-hidden="true"></span>
         </nav>
 
@@ -41,12 +44,15 @@
 
         <section class="hero" id="home">
             <div class="hero-text">
-                <p class="hero-meta" data-load>AI Engineer &middot; Elchai Group &middot; Dubai</p>
-                <h1 class="hero-name" data-load>Hajara Sabnam</h1>
+                <p class="hero-hi" data-load><span class="wave"><i data-lucide="hand"></i></span>Hi, I'm</p>
+                <h1 class="hero-name">
+                    <span class="line" data-load><span>Hajara</span></span>
+                    <span class="line" data-load><span>Sabnam<span class="dot">.</span></span></span>
+                </h1>
                 <p class="hero-lede" data-load>AI Engineer at Elchai Group and a researcher at heart, with five published papers in machine learning.</p>
                 <div class="hero-actions" data-load>
-                    <a href="#research" class="btn btn-primary">Read my research</a>
-                    <a href="#contact" class="text-link">Get in touch <i class="arrow" aria-hidden="true"></i></a>
+                    <a href="#research" class="btn btn-primary">Read my research <i data-lucide="arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-ghost"><i data-lucide="mail"></i>Get in touch</a>
                 </div>
             </div>
 
@@ -55,12 +61,43 @@
             </figure>
         </section>
 
+        <!--QUICK FACTS-->
+
+        <ul class="facts wrap">
+            <li data-reveal>
+                <i data-lucide="briefcase"></i>
+                <span class="fact-label">Currently</span>
+                <span class="fact-value">AI Engineer, Elchai Group</span>
+            </li>
+            <li data-reveal>
+                <i data-lucide="map-pin"></i>
+                <span class="fact-label">Based in</span>
+                <span class="fact-value">Dubai, UAE</span>
+            </li>
+            <li data-reveal>
+                <i data-lucide="graduation-cap"></i>
+                <span class="fact-label">Education</span>
+                <span class="fact-value">B.Sc. IT, Silver Medalist</span>
+            </li>
+            <li data-reveal>
+                <i data-lucide="file-text"></i>
+                <span class="fact-label">Research</span>
+                <span class="fact-value"><span data-count="5">5</span> papers published</span>
+            </li>
+        </ul>
+
         <!--TOPICS-->
 
         <div class="topics" aria-hidden="true">
             <div class="topics-track">
-                <span>Machine Learning</span><span>Deep Learning</span><span>IoT</span><span>Computer Vision</span>
-                <span>Symbolic Regression</span><span>Android</span><span>Sustainability</span><span>Research</span>
+                <span><i data-lucide="brain"></i>Machine Learning</span>
+                <span><i data-lucide="layers"></i>Deep Learning</span>
+                <span><i data-lucide="wifi"></i>IoT</span>
+                <span><i data-lucide="eye"></i>Computer Vision</span>
+                <span><i data-lucide="sigma"></i>Symbolic Regression</span>
+                <span><i data-lucide="smartphone"></i>Android</span>
+                <span><i data-lucide="leaf"></i>Sustainability</span>
+                <span><i data-lucide="flask-conical"></i>Research</span>
             </div>
         </div>
 
@@ -73,13 +110,15 @@
                 <div class="split-body">
                     <div class="about-text" data-reveal>
                         <p class="lead">I'm a tech enthusiast driven by an insatiable hunger for knowledge, working to build real expertise and a reputation for dedication and hard work.</p>
-                        <p>Today I work as an AI Engineer at Elchai Group, building on research experience from the DEWA R&amp;D Center and published work in machine learning.</p>
-                        <p>When I'm not exploring technology or lost in the pages of a novel, I'm out networking, traveling and embracing new experiences. Let's connect and explore the world together!</p>
+                        <div class="about-paras">
+                            <p>Today I work as an AI Engineer at Elchai Group, building on research experience from the DEWA R&amp;D Center and published work in machine learning.</p>
+                            <p>When I'm not exploring technology or lost in the pages of a novel, I'm out networking, traveling and embracing new experiences. Let's connect and explore the world together!</p>
+                        </div>
                     </div>
 
                     <div class="about-cols">
                         <div data-reveal>
-                            <h3 class="sub-title">Education</h3>
+                            <h3 class="sub-title"><i data-lucide="graduation-cap"></i>Education</h3>
                             <ol class="edu">
                                 <li>
                                     <h4>B.Sc. Information Technology</h4>
@@ -95,13 +134,20 @@
                         </div>
 
                         <div data-reveal>
-                            <h3 class="sub-title">Toolkit</h3>
-                            <dl class="toolkit">
-                                <div><dt>Build</dt><dd>Python, Java, Kotlin, C, Android, HTML/CSS/JS, Next.js, MySQL, Power BI</dd></div>
-                                <div><dt>Design</dt><dd>UI/UX, Figma, wireframing</dd></div>
-                                <div><dt>People</dt><dd>Communication, presentation, teamwork, problem solving</dd></div>
-                                <div><dt>Off the clock</dt><dd>Chess, drawing, painting, badminton</dd></div>
-                            </dl>
+                            <h3 class="sub-title"><i data-lucide="wrench"></i>Toolkit</h3>
+                            <ul class="tags">
+                                <li>Python</li><li>Java</li><li>Kotlin</li><li>C</li><li>Android</li><li>HTML, CSS, JS</li><li>Next.js</li><li>MySQL</li><li>Power BI</li><li>Figma</li><li>UI/UX</li>
+                            </ul>
+                        </div>
+
+                        <div data-reveal>
+                            <h3 class="sub-title"><i data-lucide="coffee"></i>Off the clock</h3>
+                            <ul class="hobbies">
+                                <li><i data-lucide="crown"></i>Chess</li>
+                                <li><i data-lucide="pencil"></i>Drawing</li>
+                                <li><i data-lucide="palette"></i>Painting</li>
+                                <li><i data-lucide="feather"></i>Badminton</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -111,87 +157,133 @@
         <!--RESEARCH-->
 
         <section class="section research" id="research">
-            <div class="wrap split">
-                <div class="split-side">
+            <div class="wrap">
+                <div class="research-head">
                     <h2 class="section-title" data-reveal>Research</h2>
-                    <p class="research-intro" data-reveal>Machine learning applied to problems I care about, from coral reefs to clean transport.</p>
-                    <p class="research-count" data-reveal>5 published, 1 in publishing, 2 in writing, 3 research awards.</p>
+                    <div data-reveal>
+                        <p class="research-intro">Machine learning applied to problems I care about, from coral reefs to clean transport.</p>
+                        <p class="research-count">5 published &middot; 1 in publishing &middot; 2 in writing &middot; 3 research awards</p>
+                    </div>
                 </div>
 
-                <div class="split-body">
-                    <div class="filters" role="group" aria-label="Filter research by topic" data-reveal>
-                        <button aria-pressed="true" data-filter="all">All</button>
-                        <button aria-pressed="false" data-filter="sustainability">Sustainability</button>
-                        <button aria-pressed="false" data-filter="health">Health</button>
-                        <button aria-pressed="false" data-filter="vision">Computer vision</button>
-                        <button aria-pressed="false" data-filter="materials">Materials</button>
-                        <button aria-pressed="false" data-filter="education">Education</button>
-                        <button aria-pressed="false" data-filter="robotics">Robotics</button>
-                    </div>
+                <div class="filters" role="group" aria-label="Filter research by topic" data-reveal>
+                    <button aria-pressed="true" data-filter="all"><i data-lucide="sparkles"></i>All</button>
+                    <button aria-pressed="false" data-filter="sustainability"><i data-lucide="leaf"></i>Sustainability</button>
+                    <button aria-pressed="false" data-filter="health"><i data-lucide="heart-pulse"></i>Health</button>
+                    <button aria-pressed="false" data-filter="vision"><i data-lucide="eye"></i>Computer vision</button>
+                    <button aria-pressed="false" data-filter="materials"><i data-lucide="atom"></i>Materials</button>
+                    <button aria-pressed="false" data-filter="education"><i data-lucide="book-open"></i>Education</button>
+                    <button aria-pressed="false" data-filter="robotics"><i data-lucide="bot"></i>Robotics</button>
+                </div>
 
-                    <ol class="papers">
-                        <li class="paper" data-area="vision" data-reveal>
+                <ol class="papers">
+                    <li class="paper" data-area="vision" data-reveal>
+                        <span class="paper-icon"><i data-lucide="eye"></i></span>
+                        <div class="paper-body">
                             <p class="paper-meta">Journal &middot; IJRASET &middot; Jan 2026</p>
                             <h3><a href="https://doi.org/10.22214/ijraset.2026.76812" target="_blank" rel="noopener">CNN and Transformer-Based Deep Learning Models for Coral Health Classification</a></h3>
                             <p class="paper-summary">Compares ResNet50, EfficientNetB3, ConvNeXt-Tiny and Swin Transformer-Tiny for classifying corals as healthy or bleached from underwater images, using transfer learning on 923 labelled images.</p>
-                            <p class="paper-result"><strong>86.33%</strong> accuracy with ConvNeXt-Tiny and Swin-Tiny</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b></p>
-                        </li>
+                        </div>
+                        <div class="paper-side">
+                            <p class="result"><strong><span data-count="86.33" data-decimals="2">86.33</span>%</strong>accuracy with ConvNeXt-Tiny and Swin-Tiny</p>
+                            <a class="paper-link" href="https://doi.org/10.22214/ijraset.2026.76812" target="_blank" rel="noopener">Read paper <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </li>
 
-                        <li class="paper" data-area="materials" data-reveal>
+                    <li class="paper" data-area="materials" data-reveal>
+                        <span class="paper-icon"><i data-lucide="atom"></i></span>
+                        <div class="paper-body">
                             <p class="paper-meta">Conference &middot; IEEE</p>
                             <h3><a href="https://ieeexplore.ieee.org/document/11268745" target="_blank" rel="noopener">Symbolic Regression for Unified Descriptor Learning of Geometric and Thermodynamic Stability in Perovskites</a></h3>
                             <p class="paper-summary">Uses symbolic regression to learn a single descriptor that captures both the geometric and the thermodynamic stability of perovskite materials.</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Ansu Mathew, Dr. Ahmer A.B. Baloch, Haya Alshanqiti</p>
-                        </li>
+                        </div>
+                        <div class="paper-side">
+                            <a class="paper-link" href="https://ieeexplore.ieee.org/document/11268745" target="_blank" rel="noopener">IEEE Xplore <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </li>
 
-                        <li class="paper" data-area="health" data-reveal>
+                    <li class="paper" data-area="health" data-reveal>
+                        <span class="paper-icon"><i data-lucide="heart-pulse"></i></span>
+                        <div class="paper-body">
                             <p class="paper-meta">Conference &middot; IEEE</p>
                             <h3><a href="https://ieeexplore.ieee.org/document/11318250" target="_blank" rel="noopener">Tranquil Touch: Smart Gloves for Anxiety Management</a></h3>
                             <p class="paper-summary">A wearable for mental health: smart gloves designed to help people manage anxiety.</p>
-                            <p class="paper-award">Track Winner, Artificial Intelligence, MDX Undergraduate Student Research Competition 2025</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Dr. Archana Pandita</p>
-                        </li>
+                        </div>
+                        <div class="paper-side">
+                            <p class="award-note"><i data-lucide="trophy"></i>Track Winner, AI<br>MDX Research Competition 2025</p>
+                            <a class="paper-link" href="https://ieeexplore.ieee.org/document/11318250" target="_blank" rel="noopener">IEEE Xplore <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </li>
 
-                        <li class="paper" data-area="sustainability" data-reveal>
+                    <li class="paper" data-area="sustainability" data-reveal>
+                        <span class="paper-icon"><i data-lucide="leaf"></i></span>
+                        <div class="paper-body">
                             <p class="paper-meta">Journal &middot; IJECS &middot; 2025</p>
                             <h3><a href="https://www.computersciencejournals.com/ijecs/archives/2025.v7.i2.B.212" target="_blank" rel="noopener">Predicting CO<sub>2</sub> Emissions from Heavy-Duty Vehicles Using XGBoost for Sustainable Transportation in the Supply Chain</a></h3>
                             <p class="paper-summary">An XGBoost model trained on vehicle parameters and real-time operational data that continuously forecasts CO<sub>2</sub> output from heavy vehicles in logistics fleets, supporting preventive maintenance.</p>
-                            <p class="paper-result"><strong>97.88%</strong> prediction accuracy, R&sup2; of 0.94</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b></p>
-                        </li>
+                        </div>
+                        <div class="paper-side">
+                            <p class="result"><strong><span data-count="97.88" data-decimals="2">97.88</span>%</strong>prediction accuracy, R&sup2; of 0.94</p>
+                            <a class="paper-link" href="https://www.computersciencejournals.com/ijecs/archives/2025.v7.i2.B.212" target="_blank" rel="noopener">Read paper <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </li>
 
-                        <li class="paper" data-area="sustainability" data-reveal>
+                    <li class="paper" data-area="sustainability" data-reveal>
+                        <span class="paper-icon"><i data-lucide="wifi"></i></span>
+                        <div class="paper-body">
                             <p class="paper-meta">Presented &middot; MDX Research Competition &middot; Dec 2024</p>
                             <h3><a href="#a-mdxresearch">IoT-Driven Real-Time Carbon Emission Monitoring and Optimization for Heavy Vehicles in the Supply Chain</a></h3>
                             <p class="paper-summary">An IoT framework for real-time carbon emission monitoring of road freight, paired with a machine learning model for predictive maintenance.</p>
-                            <p class="paper-award">Track Winner, IT, MDX International Undergraduate Student Research Competition 2024</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b></p>
-                        </li>
+                        </div>
+                        <div class="paper-side">
+                            <p class="award-note"><i data-lucide="trophy"></i>Track Winner, IT<br>MDX Research Competition 2024</p>
+                            <a class="paper-link" href="#a-mdxresearch">The story <i data-lucide="arrow-down-right"></i></a>
+                        </div>
+                    </li>
 
-                        <li class="paper" data-area="robotics" data-reveal>
+                    <li class="paper" data-area="robotics" data-reveal>
+                        <span class="paper-icon"><i data-lucide="bot"></i></span>
+                        <div class="paper-body">
                             <p class="paper-meta">Presented &middot; NEXUS 2.0 &middot; 2024</p>
                             <h3><a href="#a-nexus">Path Planning for Autonomous Mobile Robots Using A* Algorithm</a></h3>
                             <p class="paper-summary">Enhances the A* algorithm so autonomous mobile robots can navigate complex, dynamic environments, validated with MATLAB simulations.</p>
-                            <p class="paper-award">1st Runner Up, NEXUS 2.0 National Inter-University Student Research Competition</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Kareena Mueenuddin</p>
-                        </li>
+                        </div>
+                        <div class="paper-side">
+                            <p class="award-note"><i data-lucide="medal"></i>1st Runner Up<br>NEXUS 2.0, 2024</p>
+                            <a class="paper-link" href="#a-nexus">The story <i data-lucide="arrow-down-right"></i></a>
+                        </div>
+                    </li>
 
-                        <li class="paper" data-area="education" data-reveal>
+                    <li class="paper" data-area="education" data-reveal>
+                        <span class="paper-icon"><i data-lucide="book-open"></i></span>
+                        <div class="paper-body">
                             <p class="paper-meta">Conference &middot; ICEQ &middot; pp. 170 to 187</p>
                             <h3><a href="https://iceq.gdrfad.gov.ae/conference-book.html" target="_blank" rel="noopener">Machine Learning Framework for Enhancing Handwritten Alphabet Recognition in Education</a></h3>
                             <p class="paper-summary">A machine learning framework for recognising handwritten alphabets, built to support learning in the classroom.</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Dr. Archana Pandita</p>
-                        </li>
+                        </div>
+                        <div class="paper-side">
+                            <a class="paper-link" href="https://iceq.gdrfad.gov.ae/conference-book.html" target="_blank" rel="noopener">Conference book <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </li>
 
-                        <li class="paper" data-area="education" data-reveal>
+                    <li class="paper" data-area="education" data-reveal>
+                        <span class="paper-icon"><i data-lucide="pen-line"></i></span>
+                        <div class="paper-body">
                             <p class="paper-meta">Conference paper</p>
                             <h3>Optimizing Handwritten Alphabet Recognition: A Comparative Study of ML Algorithms for Assistive Applications</h3>
                             <p class="paper-summary">A comparative study of machine learning algorithms for handwritten alphabet recognition in assistive applications.</p>
                             <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Dr. Archana Pandita</p>
-                        </li>
-                    </ol>
-                </div>
+                        </div>
+                        <div class="paper-side"></div>
+                    </li>
+                </ol>
             </div>
         </section>
 
@@ -204,33 +296,59 @@
                 <ol class="timeline split-body">
                     <li class="job is-current" data-reveal>
                         <span class="job-dot" aria-hidden="true"></span>
-                        <p class="job-dates">Present</p>
-                        <h3>AI Engineer</h3>
-                        <p class="job-org">Elchai Group</p>
+                        <div class="job-head">
+                            <span class="job-logo job-logo-text" aria-hidden="true">E</span>
+                            <div>
+                                <h3>AI Engineer</h3>
+                                <p class="job-org">Elchai Group</p>
+                            </div>
+                            <p class="job-dates"><span class="live"></span>Present</p>
+                        </div>
                     </li>
 
                     <li class="job" data-reveal>
                         <span class="job-dot" aria-hidden="true"></span>
-                        <p class="job-dates">Feb 2025 to Nov 2025</p>
-                        <h3>AI &amp; IoT Research Intern</h3>
-                        <p class="job-org">DEWA R&amp;D Center</p>
-                        <p class="job-skills">Android (Java, Kotlin, XML) &middot; ML models in Python &middot; UI/UX in Figma &middot; Research publication</p>
+                        <div class="job-head">
+                            <img class="job-logo" src="images/dewa.png" alt="" loading="lazy">
+                            <div>
+                                <h3>AI &amp; IoT Research Intern</h3>
+                                <p class="job-org">DEWA R&amp;D Center</p>
+                            </div>
+                            <p class="job-dates">Feb 2025 to Nov 2025</p>
+                        </div>
+                        <ul class="tags">
+                            <li>Android (Java, Kotlin, XML)</li><li>ML models in Python</li><li>UI/UX in Figma</li><li>Research publication</li>
+                        </ul>
                     </li>
 
                     <li class="job" data-reveal>
                         <span class="job-dot" aria-hidden="true"></span>
-                        <p class="job-dates">Jun 2024 to Aug 2024</p>
-                        <h3>IT Research Intern</h3>
-                        <p class="job-org">Beta Information Technology, Dubai</p>
-                        <p class="job-skills">ML model development &middot; Cybersecurity research &middot; Presentation</p>
+                        <div class="job-head">
+                            <img class="job-logo" src="images/betaIT.png" alt="" loading="lazy">
+                            <div>
+                                <h3>IT Research Intern</h3>
+                                <p class="job-org">Beta Information Technology, Dubai</p>
+                            </div>
+                            <p class="job-dates">Jun 2024 to Aug 2024</p>
+                        </div>
+                        <ul class="tags">
+                            <li>ML model development</li><li>Cybersecurity research</li><li>Presentation</li>
+                        </ul>
                     </li>
 
                     <li class="job" data-reveal>
                         <span class="job-dot" aria-hidden="true"></span>
-                        <p class="job-dates">Jan 2024 to Oct 2024</p>
-                        <h3>Software Development Intern</h3>
-                        <p class="job-org">Digital Value Stream, Dubai</p>
-                        <p class="job-skills">Figma prototyping &middot; Front-end development &middot; Software research &middot; Next.js</p>
+                        <div class="job-head">
+                            <img class="job-logo" src="images/dvs.jpg" alt="" loading="lazy">
+                            <div>
+                                <h3>Software Development Intern</h3>
+                                <p class="job-org">Digital Value Stream, Dubai</p>
+                            </div>
+                            <p class="job-dates">Jan 2024 to Oct 2024</p>
+                        </div>
+                        <ul class="tags">
+                            <li>Figma prototyping</li><li>Front-end development</li><li>Software research</li><li>Next.js</li>
+                        </ul>
                     </li>
                 </ol>
             </div>
@@ -239,8 +357,9 @@
         <!--MOMENTS-->
 
         <section class="moments" aria-labelledby="moments-title">
-            <div class="wrap">
+            <div class="wrap moments-head">
                 <h2 class="section-title" id="moments-title" data-reveal>Moments</h2>
+                <p data-reveal><i data-lucide="camera"></i>Tap a photo to see it larger</p>
             </div>
             <div class="moments-strip">
                 <div class="moments-track">
@@ -520,16 +639,10 @@
                 <div class="contact-info">
                     <h2 class="contact-title" data-reveal>Let's talk.</h2>
                     <p data-reveal>Questions, collaborations or just a hello. I'm always open to meeting new people.</p>
-                    <a class="email" href="mailto:hajarasabnam@gmail.com" data-reveal>hajarasabnam@gmail.com</a>
+                    <a class="email" href="mailto:hajarasabnam@gmail.com" data-reveal><i data-lucide="mail"></i>hajarasabnam@gmail.com</a>
                     <div class="socials" data-reveal>
-                        <a href="https://www.linkedin.com/in/hajara-sabnam-kareem-navaz-32a11b234/" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.96c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4V9.75Z"/></svg>
-                            LinkedIn
-                        </a>
-                        <a href="https://www.instagram.com/hajarasabnam" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4Zm0 7.75a3.05 3.05 0 1 1 0-6.1 3.05 3.05 0 0 1 0 6.1ZM17 5.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM21.94 8.1c-.07-1.5-.41-2.83-1.51-3.93S17.99 2.73 16.5 2.66C14.95 2.57 9.05 2.57 7.5 2.66 6.01 2.73 4.68 3.07 3.57 4.17S2.13 6.6 2.06 8.1c-.09 1.55-.09 6.25 0 7.8.07 1.5.41 2.83 1.51 3.93s2.44 1.44 3.93 1.51c1.55.09 7.45.09 9 0 1.49-.07 2.82-.41 3.93-1.51s1.44-2.43 1.51-3.93c.09-1.55.09-6.25 0-7.8Zm-2.04 9.45a3.2 3.2 0 0 1-1.8 1.8c-1.25.5-4.21.38-5.6.38s-4.35.11-5.6-.38a3.2 3.2 0 0 1-1.8-1.8c-.5-1.25-.38-4.21-.38-5.6s-.11-4.35.38-5.6a3.2 3.2 0 0 1 1.8-1.8c1.25-.5 4.21-.38 5.6-.38s4.35-.11 5.6.38a3.2 3.2 0 0 1 1.8 1.8c.5 1.25.38 4.21.38 5.6s.12 4.35-.38 5.6Z"/></svg>
-                            Instagram
-                        </a>
+                        <a href="https://www.linkedin.com/in/hajara-sabnam-kareem-navaz-32a11b234/" target="_blank" rel="noopener"><i data-lucide="linkedin"></i>LinkedIn</a>
+                        <a href="https://www.instagram.com/hajarasabnam" target="_blank" rel="noopener"><i data-lucide="instagram"></i>Instagram</a>
                     </div>
                 </div>
 
@@ -549,14 +662,14 @@
                         <textarea id="message" name="message" rows="5" required></textarea>
                         <span class="error" id="message-error"></span>
                     </div>
-                    <button type="submit" class="btn btn-light" id="submit">Send message</button>
+                    <button type="submit" class="btn btn-light" id="submit">Send message <i data-lucide="send"></i></button>
                     <p class="form-status" id="formStatus" role="status"></p>
                 </form>
             </div>
 
-            <footer class="site-footer">
+            <footer class="site-footer wrap">
                 <p>&copy; <span id="year">2025</span> Hajara Sabnam</p>
-                <a href="#top">Back to top</a>
+                <a href="#top">Back to top <i data-lucide="arrow-up"></i></a>
             </footer>
         </section>
     </main>
@@ -565,12 +678,13 @@
 
     <dialog class="viewer" id="viewer" aria-label="Image viewer">
         <img id="viewerImg" src="" alt="">
-        <button class="viewer-btn viewer-close" id="viewerClose" aria-label="Close">&times;</button>
-        <button class="viewer-btn viewer-prev" id="viewerPrev" aria-label="Previous image">&#8249;</button>
-        <button class="viewer-btn viewer-next" id="viewerNext" aria-label="Next image">&#8250;</button>
+        <button class="viewer-btn viewer-close" id="viewerClose" aria-label="Close"><i data-lucide="x"></i></button>
+        <button class="viewer-btn viewer-prev" id="viewerPrev" aria-label="Previous image"><i data-lucide="chevron-left"></i></button>
+        <button class="viewer-btn viewer-next" id="viewerNext" aria-label="Next image"><i data-lucide="chevron-right"></i></button>
         <span class="viewer-count" id="viewerCount"></span>
     </dialog>
 
+    <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
     <script src="script.js"></script>
 </body>
