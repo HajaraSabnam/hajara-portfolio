@@ -32,7 +32,7 @@ Handwritten teal notes and hand-drawn marks: "hi, I'm", the underline under "res
 
 ## Motion
 
-- Purpose: one entrance on load (name, intro, polaroid), gentle fade-ins as sections enter, real numbers counting up once, and a slight grow on experience cards.
+- Purpose: one entrance on load (name, intro, polaroid), gentle fade-ins as sections enter, real numbers counting up once, and small lifts on hover for the boxed elements.
 - Owner override (R-19): the topic strip and the Moments photo strip keep a slow auto-scroll, paused on hover and off for reduced motion.
 - Removed as decorative: the spinning star, rotating award stamps, the pulsing current-role ring, the bouncing scroll cue, the word-by-word heading reveal and the cursor spotlight.
 
@@ -42,5 +42,8 @@ Handwritten teal notes and hand-drawn marks: "hi, I'm", the underline under "res
 - Research list shows number, venue, title, summary and authors only; no results column, stamps, categories or filters.
 - Moderate type sizes; the very large display type of a later experiment was rejected.
 - Sections are separated by alternating bands (white, light grey, dark), not by rules. No boxed stat cells, no rules around research or the topic strip, no rules in the education list.
-- Experience follows the owner's original site: one white card per role, stacked, with a soft blue-teal shadow down and to the left. Dates, role, company and dotted skills on the left, the company logo on the right; a slight grow on hover.
+- Lifted boxes: education entries, toolkit groups, the experience panel and the paper links are white boxes with a soft blue-teal shadow on the left and bottom only (from the owner's original site), not a full drop shadow.
+- Experience is one compact panel: a row per role with logo, role, company, skills in small text and dates on the right; the current role has a "Current role" tag.
+- Research titles are plain text; each paper has a "Check out paper" button on the right, as on the original site.
+- Moments photos have rounded corners.
 - No decorative star glyphs before honours.
