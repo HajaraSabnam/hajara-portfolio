@@ -9,17 +9,18 @@ const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
 $("#year").textContent = new Date().getFullYear();
 
-if (window.lucide) lucide.createIcons();
-
-// Header state and the experience timeline follow the scroll
+// Header state, reading progress and the experience timeline all follow the scroll
 
 const header = $(".site-header");
+const progress = $(".progress");
 const timeline = $(".timeline");
 const jobs = $$(".timeline .job");
 let scrollQueued = false;
 
 function onScroll() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
     header.classList.toggle("is-scrolled", window.scrollY > 8);
+    progress.style.setProperty("--p", max > 0 ? window.scrollY / max : 0);
 
     const box = timeline.getBoundingClientRect();
     const mark = window.innerHeight * 0.6;
@@ -60,7 +61,7 @@ const navLinks = $$(".nav a");
 const indicator = $(".nav-indicator");
 
 function moveIndicator(link) {
-    if (!link || link.classList.contains("nav-cta")) {
+    if (!link) {
         indicator.classList.remove("is-on");
         return;
     }
@@ -82,12 +83,23 @@ const sectionObserver = new IntersectionObserver(entries => {
 $$("main > section").forEach(s => sectionObserver.observe(s));
 window.addEventListener("resize", () => moveIndicator($(".nav a.is-active")));
 
+// Headings rise in word by word
+
+$$("[data-split]").forEach(el => {
+    const words = el.textContent.trim().split(/\s+/);
+    el.setAttribute("aria-label", words.join(" "));
+    el.innerHTML = words
+        .map((word, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${word}</span></span>`)
+        .join(" ");
+});
+
 // Scroll reveal, staggered among siblings
 
 const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add("is-in");
+        entry.target.dispatchEvent(new Event("reveal"));
         revealObserver.unobserve(entry.target);
     });
 }, { rootMargin: "0px 0px -8% 0px" });
@@ -97,32 +109,29 @@ $$("[data-reveal]").forEach(el => {
     el.style.setProperty("--d", Math.min(siblings.indexOf(el), 5) * 0.08 + "s");
     revealObserver.observe(el);
 });
+$$("[data-split]").forEach(el => revealObserver.observe(el));
 
-// Numbers count up the first time they scroll into view
+// Research numbers count up the first time they appear
 
-const countObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        countObserver.unobserve(entry.target);
-        const el = entry.target;
-        const target = Number(el.dataset.count);
-        const decimals = Number(el.dataset.decimals || 0);
+$(".stats").addEventListener("reveal", () => {
+    $$(".stats [data-count]").forEach(num => {
+        const target = Number(num.dataset.count);
+        if (reduceMotion) return;
         const start = performance.now();
         const step = now => {
-            const t = Math.min((now - start) / 1600, 1);
-            el.textContent = (target * (1 - Math.pow(1 - t, 4))).toFixed(decimals);
+            const t = Math.min((now - start) / 1400, 1);
+            num.textContent = Math.round(target * (1 - Math.pow(1 - t, 4)));
             if (t < 1) requestAnimationFrame(step);
         };
+        num.textContent = "0";
         requestAnimationFrame(step);
     });
-}, { threshold: 0.6 });
+}, { once: true });
 
-if (!reduceMotion) $$("[data-count]").forEach(el => countObserver.observe(el));
+// Topic marquee needs a second copy to loop seamlessly
 
-// Topic strip needs a second copy to loop seamlessly
-
-const topics = $(".topics-track");
-topics.innerHTML += topics.innerHTML;
+const marquee = $(".marquee-track");
+marquee.innerHTML += marquee.innerHTML;
 
 // Research topic filters
 
@@ -144,6 +153,16 @@ $$(".filters button").forEach(button => {
         } else {
             applyFilter(button);
         }
+    });
+});
+
+// Soft spotlight that follows the cursor across each paper
+
+papers.forEach(paper => {
+    paper.addEventListener("pointermove", e => {
+        const box = paper.getBoundingClientRect();
+        paper.style.setProperty("--mx", e.clientX - box.left + "px");
+        paper.style.setProperty("--my", e.clientY - box.top + "px");
     });
 });
 
