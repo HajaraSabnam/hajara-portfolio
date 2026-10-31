@@ -1,75 +1,662 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hajara's Portfolio</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-***" crossorigin="anonymous" referrerpolicy="no-referrer">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hajara Sabnam</title>
+    <meta name="description" content="Hajara Sabnam: AI Engineer at Elchai Group and machine learning researcher, based in Dubai.">
+    <meta name="theme-color" content="#fdfdfe">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,100,0&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@500..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add("js");</script>
+</head>
 
-    <body class="homebody">
-        <section id="home">
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="progress" aria-hidden="true"></div>
 
-        <!--NAVIGATION BAR-->
+    <!--NAVIGATION-->
 
-        <div id="head">
-            <div class="menuicon" onclick="openmenu()">
-                <i class="fa-solid fa-bars"></i>
+    <header class="site-header" id="top">
+        <a href="#home" class="brand">Hajara Sabnam</a>
+
+        <nav class="nav" id="nav" aria-label="Main">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#experience">Experience</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#contact">Contact</a>
+            <span class="nav-indicator" aria-hidden="true"></span>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+            <span></span><span></span>
+        </button>
+    </header>
+
+    <main id="main">
+
+        <!--HERO-->
+
+        <section class="hero" id="home">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <p class="hand hero-hi" data-load>hi, I'm</p>
+                    <h1 class="hero-name" data-load>Hajara<br>Sabnam</h1>
+                    <p class="hero-lede" data-load>
+                        AI Engineer <span class="sep">&middot;</span> AI/ML Researcher <span class="sep">&middot;</span>
+                        <span class="scribble">Published Researcher<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 14 C 60 6, 120 4, 180 8 S 270 15, 297 6"/></svg></span>
+                    </p>
+                    <div class="hero-actions" data-load>
+                        <a href="#research" class="btn btn-primary">Read my research <i class="arrow" aria-hidden="true"></i></a>
+                        <a href="#contact" class="btn btn-secondary">Say hello</a>
+                    </div>
+                </div>
+
+                <figure class="polaroid" data-load>
+                    <span class="tape" aria-hidden="true"></span>
+                    <img src="images/web/hajara.jpg" alt="Hajara Sabnam speaking at an event" width="1022" height="1100" fetchpriority="high">
+                    <figcaption class="hand">fig. 1: me, mid-sentence</figcaption>
+                    <svg class="doodle doodle-star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 L23 16 L37 20 L23 24 L20 37 L17 24 L3 20 L17 16 Z"/></svg>
+                    <svg class="doodle doodle-loop" viewBox="0 0 120 60" aria-hidden="true"><path pathLength="1" d="M4 50 C 30 50, 40 10, 62 14 C 84 18, 70 46, 56 38 C 44 30, 70 8, 112 10"/><path pathLength="1" d="M102 3 L113 10 L103 18"/></svg>
+                </figure>
             </div>
-        
-            <header>
-                <p><em>Hajara Sabnam</em></p>
-        
-                <nav class="navbar" id="navbar">
-                    <ul class="mainlist">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="aboutme.html">About Me</a></li>
-                        <li><a href="experience.html">Work Experience</a></li>
-                        <li><a href="research.html">Research Works</a></li>
-                        <li><a href="poetry.html">My Poetry</a></li>
-                        <li><a href="contactme.html">Contact Me</a></li>
-                    </ul>
-                </nav>
-            </header>
+        </section>
+
+        <!--MARQUEE-->
+
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>Machine Learning</span><i>&#10043;</i><span class="outline">Deep Learning</span><i>&#10043;</i>
+                <span>IoT</span><i>&#10043;</i><span class="outline">Computer Vision</span><i>&#10043;</i>
+                <span class="outline">Android Application Development</span><i>&#10043;</i>
+                <span>Sustainability</span><i>&#10043;</i><span class="outline">Research</span><i>&#10043;</i>
+            </div>
         </div>
 
-        <!--HOME-->
-            <div class="mainpage">
-                <div class="maintext" data-aos="fade-in">
-                    <p>Hi there!</p><br>
-                    <h1>I am <span class="anim"></span></h1>
-                    <a href="#" class="probutton" onclick="openProfileBox()">My Profile</a>    
-                </div>                
-                <!--<img src="" class="image1">-->
-            </div>
+        <!--ABOUT-->
 
-            <div class="myprofile" id="myProfileBox">
-                <div class="pro">
-                    <span class="closebtn" onclick="closeProfileBox()">&times;</span>
-                    <h2>My Profile</h2><br>
-                    <p><strong>Name:</strong> Hajara Sabnam<br>
-                        <strong>DOB:</strong> 10-Mar-2005<br>
-                        <strong>Education:</strong> BSc IT Graduate from Amity University Dubai<br>
-                        <strong>Tech Skills:</strong> Android Development, UI/UX, Wireframing, Python, Java, C, Front-End Web Development using HTML CSS and JS, Power BI, MySQL<br>
-                        <strong>Soft Skills:</strong> Communication, Presentation, Speaking, Teamwork, Organizational, Observation, Problem Solving<br>
-                        <strong>Hobbies and Interests:</strong> Coding, Working on research projects, Playing chess</p>
-                        
+        <section class="section about" id="about">
+            <div class="wrap">
+                <div class="about-grid">
+                    <div>
+                        <p class="kicker" data-reveal>About</p>
+                        <h2 class="section-title" data-reveal>A bit about me.</h2>
+                        <div class="about-text" data-reveal>
+                            <p class="lead">I'm a tech enthusiast driven by an insatiable hunger for knowledge, working to build real expertise and a reputation for dedication and hard work.</p>
+                            <p>Today I work as an AI Engineer at Elchai Group, building on research experience from the DEWA R&amp;D Center and published work in machine learning.</p>
+                            <p>When I'm not exploring technology or lost in the pages of a novel, I'm out networking, traveling and embracing new experiences. Let's connect and explore the world together!</p>
+                        </div>
+                    </div>
+
+                    <aside class="index-card" data-reveal>
+                        <p class="hand index-note">quick facts</p>
+                        <dl>
+                            <div><dt>Now</dt><dd>AI Engineer, Elchai Group</dd></div>
+                            <div><dt>Based in</dt><dd>Dubai, UAE</dd></div>
+                            <div><dt>Degree</dt><dd>B.Sc. IT, Amity University Dubai</dd></div>
+                            <div><dt>Off the clock</dt><dd>Chess, drawing, badminton</dd></div>
+                        </dl>
+                    </aside>
+                </div>
+
+                <div class="about-lower">
+                    <div data-reveal>
+                        <h3 class="sub-title">Education <svg class="title-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></svg></h3>
+                        <ol class="edu">
+                            <li>
+                                <span class="mono">2022 to 2025</span>
+                                <h4>B.Sc. Information Technology</h4>
+                                <p>Amity University Dubai &middot; 9.65 CGPA</p>
+                                <span class="medal">Silver Medalist</span>
+                            </li>
+                            <li>
+                                <span class="mono">2020 to 2022</span>
+                                <h4>High School</h4>
+                                <p>New Indian Model School, Dubai &middot; 94.4%</p>
+                                <span class="medal">CBSE School Second Topper</span>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div data-reveal>
+                        <h3 class="sub-title">Skills <svg class="title-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg></h3>
+                        <div class="toolkit">
+                            <div>
+                                <h4>Build</h4>
+                                <ul class="skill-list">
+                                    <li>Python</li><li>Java</li><li>Kotlin</li><li>C</li><li>Android</li><li>HTML, CSS, JS</li><li>Next.js</li><li>MySQL</li><li>Power BI</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Design</h4>
+                                <ul class="skill-list">
+                                    <li>UI/UX</li><li>Figma</li><li>Wireframing</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>People</h4>
+                                <ul class="skill-list">
+                                    <li>Communication</li><li>Presentation</li><li>Teamwork</li><li>Problem Solving</li><li>Creative Thinking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </section>
-        
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-        <script src="script.js"></script>
 
-    </body>
+        <!--RESEARCH-->
+
+        <section class="section research" id="research">
+            <div class="wrap">
+                <div class="research-head">
+                    <div>
+                        <p class="kicker" data-reveal>Research</p>
+                        <h2 class="section-title" data-reveal>Published research and work in progress.</h2>
+                    </div>
+                    <p class="research-intro" data-reveal>Here is everything I've published so far.</p>
+                    <p class="hand research-note" data-reveal>my favourite part <svg viewBox="0 0 60 50" aria-hidden="true"><path pathLength="1" d="M6 8 C 42 4, 58 30, 22 44"/><path pathLength="1" d="M31 47 L21 44 L27 36"/></svg></p>
+                </div>
+
+                <ul class="stats" data-reveal>
+                    <li><strong data-count="6">6</strong><span>papers published</span></li>
+                    <li><strong data-count="3">3</strong><span>research awards</span></li>
+                    <li><strong data-count="2">2</strong><span>papers in publishing process</span></li>
+                    <li><strong data-count="1">1</strong><span>paper in writing process</span></li>
+                </ul>
+
+
+                <ol class="papers">
+
+                    <li class="paper" data-reveal>
+                        <div class="paper-meta">
+                            <span class="paper-no">01</span>
+                        </div>
+                        <div class="paper-body">
+                            <p class="paper-venue">Conference &middot; IEEE</p>
+                            <h3>Tranquil Touch: Smart Gloves for Anxiety Management</h3>
+                            <p>A wearable for mental health: smart gloves designed to help people manage anxiety. The work won the Artificial Intelligence track at the MDX Undergraduate Student Research Competition 2025.</p>
+                            <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Dr. Archana Pandita</p>
+                        </div>
+                        <a class="paper-link" href="https://ieeexplore.ieee.org/document/11318250" target="_blank" rel="noopener">Check out paper <i class="arrow" aria-hidden="true"></i></a>
+                    </li>
+
+                    <li class="paper" data-reveal>
+                        <div class="paper-meta">
+                            <span class="paper-no">02</span>
+                        </div>
+                        <div class="paper-body">
+                            <p class="paper-venue">Conference &middot; IEEE</p>
+                            <h3>Symbolic Regression for Unified Descriptor Learning of Geometric and Thermodynamic Stability in Perovskites</h3>
+                            <p>Uses symbolic regression to learn a single descriptor that captures both the geometric and the thermodynamic stability of perovskite materials.</p>
+                            <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Ansu Mathew, Dr. Ahmer A.B. Baloch, Haya Alshanqiti</p>
+                        </div>
+                        <a class="paper-link" href="https://ieeexplore.ieee.org/document/11268745" target="_blank" rel="noopener">Check out paper <i class="arrow" aria-hidden="true"></i></a>
+                    </li>
+
+                    <li class="paper" data-reveal>
+                        <div class="paper-meta">
+                            <span class="paper-no">03</span>
+                        </div>
+                        <div class="paper-body">
+                            <p class="paper-venue">Book chapter &middot; Springer CCIS, Data Science and Exploration in Artificial Intelligence &middot; 2026 &middot; pp. 114 to 126</p>
+                            <h3>Optimizing Handwritten Alphabet Recognition: A Comparative Study of ML Algorithms for Assistive Applications</h3>
+                            <p>Compares SVM, KNN, Decision Tree and Random Forest for recognising handwritten alphabets, for assistive technologies that help people with disabilities communicate and learn. SVM with an RBF kernel performed best, at 97.25% testing accuracy, ahead of Random Forest (96.25%) and KNN (95.20%).</p>
+                            <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Dr. Archana Pandita</p>
+                        </div>
+                        <a class="paper-link" href="https://link.springer.com/chapter/10.1007/978-3-032-19321-6_11" target="_blank" rel="noopener">Check out paper <i class="arrow" aria-hidden="true"></i></a>
+                    </li>
+
+                    <li class="paper" data-reveal>
+                        <div class="paper-meta">
+                            <span class="paper-no">04</span>
+                        </div>
+                        <div class="paper-body">
+                            <p class="paper-venue">Conference &middot; ICEQ &middot; pp. 170 to 187</p>
+                            <h3>Machine Learning Framework for Enhancing Handwritten Alphabet Recognition in Education</h3>
+                            <p>A machine learning framework for recognising handwritten alphabets, built to support learning in the classroom.</p>
+                            <p class="authors"><b>Hajara Sabnam Kareem Navaz</b>, Dr. Archana Pandita</p>
+                        </div>
+                        <a class="paper-link" href="https://iceq.gdrfad.gov.ae/conference-book.html" target="_blank" rel="noopener">Check out paper <i class="arrow" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="paper" data-reveal>
+                        <div class="paper-meta">
+                            <span class="paper-no">05</span>
+                        </div>
+                        <div class="paper-body">
+                            <p class="paper-venue">Journal &middot; IJRASET &middot; Jan 2026 &middot; Vol. 14</p>
+                            <h3>CNN and Transformer-Based Deep Learning Models for Coral Health Classification</h3>
+                            <p>Coral reefs are bleaching at a record rate. This paper compares ResNet50, EfficientNetB3, ConvNeXt-Tiny and Swin Transformer-Tiny for classifying corals as healthy or bleached from underwater images, using transfer learning on 923 labelled images.</p>
+                            <p class="authors"><b>Hajara Sabnam Kareem Navaz</b></p>
+                        </div>
+                        <a class="paper-link" href="https://doi.org/10.22214/ijraset.2026.76812" target="_blank" rel="noopener">Check out paper <i class="arrow" aria-hidden="true"></i></a>
+                    </li>
+
+                    <li class="paper" data-reveal>
+                        <div class="paper-meta">
+                            <span class="paper-no">06</span>
+                        </div>
+                        <div class="paper-body">
+                            <p class="paper-venue">Journal &middot; IJECS &middot; 2025 &middot; Vol. 7</p>
+                            <h3>Predicting CO<sub>2</sub> Emissions from Heavy-Duty Vehicles Using XGBoost for Sustainable Transportation in the Supply Chain</h3>
+                            <p>Heavy vehicles in logistics fleets are an overlooked source of emissions. An XGBoost model trained on vehicle parameters and real-time operational data continuously forecasts CO<sub>2</sub> output to support preventive maintenance.</p>
+                            <p class="authors"><b>Hajara Sabnam Kareem Navaz</b></p>
+                        </div>
+                        <a class="paper-link" href="https://www.computersciencejournals.com/ijecs/archives/2025.v7.i2.B.212" target="_blank" rel="noopener">Check out paper <i class="arrow" aria-hidden="true"></i></a>
+                    </li>
+                </ol>
+
+                <div class="pipeline" data-reveal>
+                    <p class="hand">on my desk right now</p>
+                    <p>Two papers in the publishing process and one in writing. More soon.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--EXPERIENCE-->
+
+        <section class="section experience" id="experience">
+            <div class="wrap">
+                <div class="head-split" data-reveal>
+                    <div>
+                        <p class="kicker">Experience</p>
+                        <h2 class="section-title">Where I've built things.</h2>
+                    </div>
+                    <p class="exp-total"><span>2+</span> years of experience</p>
+                </div>
+
+                <ol class="jobs box" data-reveal>
+                    <li class="job is-current">
+                        <p class="job-when">Mar 2026 to Present</p>
+                        <img class="job-logo" src="images/elchai.png" alt="" loading="lazy">
+                        <div class="job-info">
+                            <h3>AI Engineer</h3>
+                            <p class="job-org">Elchai Group</p>
+                            <p class="job-skills">Leading the AI Agent Development team &middot; Developing AI agents and optimizing agentic workflows &middot; Building data workflows and pipelines for agent development &middot; Delivering AI-driven solutions for business applications</p>
+                        </div>
+                    </li>
+                    <li class="job">
+                        <p class="job-when">Feb 2025 to Nov 2025</p>
+                        <img class="job-logo" src="images/dewa.png" alt="" loading="lazy">
+                        <div class="job-info">
+                            <h3>AI &amp; IoT Research Intern</h3>
+                            <p class="job-org">DEWA R&amp;D Center</p>
+                            <p class="job-skills">Android (Java, Kotlin, XML) &middot; ML models in Python &middot; UI/UX in Figma &middot; Research publication</p>
+                        </div>
+                        <button class="cert-btn" data-gallery="images/web/dewac.jpg">View certificate <i class="arrow" aria-hidden="true"></i></button>
+                    </li>
+                    <li class="job">
+                        <p class="job-when">Jun 2024 to Aug 2024</p>
+                        <img class="job-logo" src="images/betaIT.png" alt="" loading="lazy">
+                        <div class="job-info">
+                            <h3>IT Research Intern</h3>
+                            <p class="job-org">Beta Information Technology, Dubai</p>
+                            <p class="job-skills">ML model development &middot; Cybersecurity research &middot; Presentation</p>
+                        </div>
+                        <button class="cert-btn" data-gallery="images/web/betac.jpg">View certificate <i class="arrow" aria-hidden="true"></i></button>
+                    </li>
+                    <li class="job">
+                        <p class="job-when">Jan 2024 to Oct 2024</p>
+                        <img class="job-logo" src="images/dvs.jpg" alt="" loading="lazy">
+                        <div class="job-info">
+                            <h3>Software Development Intern</h3>
+                            <p class="job-org">Digital Value Stream, Dubai</p>
+                            <p class="job-skills">Figma prototyping &middot; Front-end development &middot; Software research &middot; Next.js</p>
+                        </div>
+                        <button class="cert-btn" data-gallery="images/web/dvsc2.jpg|images/web/dvsc.jpg">View certificates <i class="arrow" aria-hidden="true"></i></button>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!--MOMENTS-->
+
+        <section class="moments" aria-labelledby="moments-title">
+            <div class="wrap moments-head">
+                <h2 class="section-title" id="moments-title" data-reveal>Moments along the way.</h2>
+            </div>
+            <div class="moments-strip">
+                <div class="moments-track">
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="0"><img src="images/web/gotech1.jpg" alt="GOTECH 2025: 4th internationally" loading="lazy"><span class="hand">GOTECH 2025: 4th internationally</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="1"><img src="images/web/mdxresearch2.jpg" alt="MDX Research Competition 2025" loading="lazy"><span class="hand">MDX Research Competition 2025</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="2"><img src="images/web/nyuad5.jpg" alt="NYUAD Hackathon 2024" loading="lazy"><span class="hand">NYUAD Hackathon 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="3"><img src="images/web/mdx3.jpg" alt="MDX Research Competition 2024" loading="lazy"><span class="hand">MDX Research Competition 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="4"><img src="images/web/nexus1.jpg" alt="NEXUS 2.0, 2024" loading="lazy"><span class="hand">NEXUS 2.0, 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="5"><img src="images/web/thinktank1.jpg" alt="RTA Think Tank 2024" loading="lazy"><span class="hand">RTA Think Tank 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="6"><img src="images/web/nyuad3.jpg" alt="NYUAD Hackathon 2024" loading="lazy"><span class="hand">NYUAD Hackathon 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="7"><img src="images/web/mdx2.jpg" alt="MDX Case Study Challenge 2023" loading="lazy"><span class="hand">MDX Case Study Challenge 2023</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="8"><img src="images/web/rta2.jpg" alt="RTA Sustainability Hackathon 2023" loading="lazy"><span class="hand">RTA Sustainability Hackathon 2023</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="0" aria-hidden="true" tabindex="-1"><img src="images/web/gotech1.jpg" alt="GOTECH 2025: 4th internationally" loading="lazy"><span class="hand">GOTECH 2025: 4th internationally</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="1" aria-hidden="true" tabindex="-1"><img src="images/web/mdxresearch2.jpg" alt="MDX Research Competition 2025" loading="lazy"><span class="hand">MDX Research Competition 2025</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="2" aria-hidden="true" tabindex="-1"><img src="images/web/nyuad5.jpg" alt="NYUAD Hackathon 2024" loading="lazy"><span class="hand">NYUAD Hackathon 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="3" aria-hidden="true" tabindex="-1"><img src="images/web/mdx3.jpg" alt="MDX Research Competition 2024" loading="lazy"><span class="hand">MDX Research Competition 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="4" aria-hidden="true" tabindex="-1"><img src="images/web/nexus1.jpg" alt="NEXUS 2.0, 2024" loading="lazy"><span class="hand">NEXUS 2.0, 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="5" aria-hidden="true" tabindex="-1"><img src="images/web/thinktank1.jpg" alt="RTA Think Tank 2024" loading="lazy"><span class="hand">RTA Think Tank 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="6" aria-hidden="true" tabindex="-1"><img src="images/web/nyuad3.jpg" alt="NYUAD Hackathon 2024" loading="lazy"><span class="hand">NYUAD Hackathon 2024</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="7" aria-hidden="true" tabindex="-1"><img src="images/web/mdx2.jpg" alt="MDX Case Study Challenge 2023" loading="lazy"><span class="hand">MDX Case Study Challenge 2023</span></button>
+                    <button class="moment" data-gallery="images/web/gotech1.jpg|images/web/mdxresearch2.jpg|images/web/nyuad5.jpg|images/web/mdx3.jpg|images/web/nexus1.jpg|images/web/thinktank1.jpg|images/web/nyuad3.jpg|images/web/mdx2.jpg|images/web/rta2.jpg" data-index="8" aria-hidden="true" tabindex="-1"><img src="images/web/rta2.jpg" alt="RTA Sustainability Hackathon 2023" loading="lazy"><span class="hand">RTA Sustainability Hackathon 2023</span></button>
+                </div>
+            </div>
+        </section>
+
+        <!--ACHIEVEMENTS-->
+
+        <section class="section achievements" id="achievements">
+            <div class="wrap">
+                <div class="head-row" data-reveal>
+                    <div>
+                        <p class="kicker">Achievements</p>
+                        <h2 class="section-title">Competitions, hackathons and honours.</h2>
+                    </div>
+                    <svg class="head-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.68 13.69 12 11.93l2.31 1.76-.88-2.85L15.75 9h-2.84L12 6.19 11.09 9H8.25l2.31 1.84-.88 2.85zM20 10c0-4.42-3.58-8-8-8s-8 3.58-8 8c0 2.03.76 3.87 2 5.28V23l6-2 6 2v-7.72c1.24-1.41 2-3.25 2-5.28zm-8-6c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6 2.69-6 6-6z"/></svg>
+                </div>
+
+                <div class="year-group">
+                    <h3 class="year" data-reveal>2025</h3>
+                    <ul class="awards">
+                        <li class="award" id="a-mdxresearch2" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-mdxresearch2">
+                                <img src="images/mdx%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">Track Winner, 3rd Undergraduate MDX Student Research Competition (Track AI)</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-mdxresearch2" role="region" aria-label="Track Winner, 3rd Undergraduate MDX Student Research Competition (Track AI)">
+                                <div class="award-inner">
+                                    <h4>Track Winner in MDX International Undergraduate Student Research Competition 2025</h4>
+                                    <p>MDX International Undergraduate Student Research Competition 2025, held on January 16, 2025, at Middlesex University Dubai, brought together students from various disciplines to present innovative research under the theme &quot;Human Centric Innovation in the Era of AI&quot; exploring how emerging technologies can be harnessed to enhance human potential, ethical decision-making and inclusive progress. The competition involved abstract submissions, followed by in-person presentations in the finale, where selected students showcased their research.</p>
+                                    <p>I was honored to be awarded Track Winner in Track 'Artificial Intelligence' for my research paper, &quot;Tranquil Touch: Smart Gloves for Anxiety Management&quot;. Representing Amity University Dubai was an incredible experience, and I am grateful to the organizers and mentors for their support and insights.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/mdxresearch2.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/mdxresearch2.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-gotech" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-gotech">
+                                <img src="images/spe%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">1st in the UAE and 4th internationally, International AI Hackathon II</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-gotech" role="region" aria-label="1st in the UAE and 4th internationally, International AI Hackathon II">
+                                <div class="award-inner">
+                                    <h4>1st Winner in UAE and 4th Winner in International AI Hackathon II Held During GOTECH 2025</h4>
+                                    <p>The International AI Hackathon II, held as part of the GOTECH Conference in Dubai, UAE, brought together participants from around the world to develop innovative AI solutions for a specific challenge, &quot;AI Surface Network Production Flow Behaviour Prediction and Optimisation&quot;.</p>
+                                    <p>Over a three-month development period, we built a model using a Random Forest Regressor combined with time-series forecast visualization to analyze production trends and support data-driven decision-making. The project was recognized as one of the winning solutions, ranking 4th internationally and 1st in the UAE, and we had the opportunity to present our work at the GOTECH Conference. This experience was highly enriching, offering both technical growth and valuable exposure to industry-driven AI applications.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/gotech1.jpg|images/web/gotech2.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/gotech1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/gotech1.jpg|images/web/gotech2.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/gotech2.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-icsc" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-icsc">
+                                <img src="images/icsc%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">Bronze Honour, International Computer Science Competition</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-icsc" role="region" aria-label="Bronze Honour, International Computer Science Competition">
+                                <div class="award-inner">
+                                    <h4>Bronze Honour in the International Computer Science Competition 2025</h4>
+                                    <p>The International Computer Science Competition (ICSC) 2025 was a global, multi-round competition designed to assess core computer science knowledge and problem-solving skills. The competition consisted of three stages, a qualification round, pre-final, and final round covering topics such as neural networks, logic, object-oriented programming, and Python programming.</p>
+                                    <p>I qualified through all rounds and reached the final stage, where I ranked among the top 8% of participants worldwide, earning the Bronze Honor Award. This experience strengthened my theoretical foundations and reinforced my interest in competitive problem-solving and applied computer science.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/icsc.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/icsc.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="year-group">
+                    <h3 class="year" data-reveal>2024</h3>
+                    <ul class="awards">
+                        <li class="award" id="a-iymc" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-iymc">
+                                <img src="images/iymc%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">Bronze Honour, International Youth Math Challenge</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-iymc" role="region" aria-label="Bronze Honour, International Youth Math Challenge">
+                                <div class="award-inner">
+                                    <h4>Bronze Honour in the International Youth Math Challenge 2024</h4>
+                                    <p>The International Youth Math Challenge (IYMC) 2024 was a multi-stage global competition consisting of a qualification round, pre-final, and final round. In each round, we had to solve mathematical problems from various topics and different difficulty levels. I advanced through all stages and was awarded the Bronze Honour in the final round, ranking among the top 15% of participants worldwide. This competition strengthened my problem-solving skills and mathematical reasoning across a wide range of topics.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/iymc.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/iymc.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-mdxresearch" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-mdxresearch">
+                                <img src="images/mdx%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">Track Winner, MDX International Undergraduate Student Research Competition (Track IT)</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-mdxresearch" role="region" aria-label="Track Winner, MDX International Undergraduate Student Research Competition (Track IT)">
+                                <div class="award-inner">
+                                    <h4>Track Winner in MDX International Undergraduate Student Research Competition 2024</h4>
+                                    <p>MDX International Undergraduate Student Research Competition 2024, held on December 5, 2024, at Middlesex University Dubai, brought together students from various disciplines to present innovative research under the theme &quot;Towards a Sustainable Future,&quot; aligned with the UN’s 2030 Agenda. The competition involved abstract submissions, followed by in-person presentations in the finale, where selected students showcased their research.</p>
+                                    <p>I was honored to be awarded Track Winner – IT for my research paper, &quot;IoT-Driven Real-Time Carbon Emission Monitoring and Optimization for Heavy Vehicles in the Supply Chain.&quot; My research highlighted the overlooked impact of road freight transport on carbon emissions and proposed an IoT-based framework for real-time monitoring, along with a machine learning model for predictive maintenance. Representing Amity University Dubai was an incredible experience, and I am grateful to the organizers and mentors for their support and insights.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/mdx3.jpg|images/web/mdx2-png.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/mdx3.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/mdx3.jpg|images/web/mdx2-png.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/mdx2-png.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-nexus" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-nexus">
+                                <img src="images/amity%20logo.jpg" alt="" loading="lazy">
+                                <span class="award-title">1st Runner Up, NEXUS 2.0 National Inter-University Student Research Competition</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-nexus" role="region" aria-label="1st Runner Up, NEXUS 2.0 National Inter-University Student Research Competition">
+                                <div class="award-inner">
+                                    <h4>1st Runner Up in NEXUS 2.0 - A National Level Inter-University Student Research Competition 2024</h4>
+                                    <p>Nexus 2.0 – National Level Inter-University Student Research Competition 2024, organized by Amity University Dubai, brought together students from various universities to present innovative research across multiple disciplines. Our paper, &quot;Path Planning for Autonomous Mobile Robots Using A* Algorithm&quot; secured the 1st Runner-Up position under Track 3 – Technology Applications in Mechanical, Automation, and Civil Structures.</p>
+                                    <p>In collaboration with my co-author, Kareena Mueenuddin, we focused our research on enhancing the A* Algorithm for efficient navigation in Autonomous Mobile Robots (AMRs), particularly in complex and dynamic environments. Through MATLAB simulations, we demonstrated how our approach improved path planning and obstacle avoidance, making AMRs more adaptable to real-world scenarios. This competition was an incredible learning experience, and I am grateful for the opportunity to represent my university.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/nexus1.jpg|images/web/nexus3.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/nexus1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/nexus1.jpg|images/web/nexus3.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/nexus3.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-nyuad" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-nyuad">
+                                <img src="images/nyuad%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">NYUAD Hackathon for Social Good in the Arab World</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-nyuad" role="region" aria-label="NYUAD Hackathon for Social Good in the Arab World">
+                                <div class="award-inner">
+                                    <h4>12th NYUAD Hackathon for Social Good in the Arab World</h4>
+                                    <p>The NYUAD Hackathon for Social Good in the Arab World convened a diverse group of 200 participants from across the globe, selected from a competitive pool of over 1000 applicants. Hosted at New York University Abu Dhabi, the hackathon focused on the intersection of quantum computing and the United Nations Sustainable Development Goals (UNSDGs). With an intensive four-day timeline, participants delved into workshops led by QWorld, gaining insights into quantum cryptography, encryption techniques, and quantum machine learning.</p>
+                                    <p>Teaming up with fellow innovators from around the world, my colleagues and I embarked on a mission to develop a cutting-edge solution. Our project centered on creating a web application leveraging quantum computing to predict diabetes, blending quantum machine learning algorithms with advanced encryption methods. Over the course of the hackathon, we worked tirelessly to refine our concept, drawing inspiration from the diverse perspectives and expertise of our team members.</p>
+                                    <p>The culminating moment arrived as we presented our project on stage, receiving valuable feedback from mentors and judges. Beyond the accolades, the hackathon provided a transformative experience, showcasing the immense potential of technology to address pressing societal challenges. It was a testament to the power of collaboration and innovation, leaving an indelible mark on my journey of personal and professional growth.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/nyuad5.jpg|images/web/nyuad3.jpg|images/web/nyuad2.jpg|images/web/nyuad4.jpg|images/web/nyuad1.jpg|images/web/nyuad6.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/nyuad5.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/nyuad5.jpg|images/web/nyuad3.jpg|images/web/nyuad2.jpg|images/web/nyuad4.jpg|images/web/nyuad1.jpg|images/web/nyuad6.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/nyuad3.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/nyuad5.jpg|images/web/nyuad3.jpg|images/web/nyuad2.jpg|images/web/nyuad4.jpg|images/web/nyuad1.jpg|images/web/nyuad6.jpg" data-index="2" aria-label="View photo 3"><img src="images/web/nyuad2.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/nyuad5.jpg|images/web/nyuad3.jpg|images/web/nyuad2.jpg|images/web/nyuad4.jpg|images/web/nyuad1.jpg|images/web/nyuad6.jpg" data-index="3" aria-label="View photo 4"><img src="images/web/nyuad4.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/nyuad5.jpg|images/web/nyuad3.jpg|images/web/nyuad2.jpg|images/web/nyuad4.jpg|images/web/nyuad1.jpg|images/web/nyuad6.jpg" data-index="4" aria-label="View photo 5"><img src="images/web/nyuad1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/nyuad5.jpg|images/web/nyuad3.jpg|images/web/nyuad2.jpg|images/web/nyuad4.jpg|images/web/nyuad1.jpg|images/web/nyuad6.jpg" data-index="5" aria-label="View photo 6"><img src="images/web/nyuad6.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-thinktank" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-thinktank">
+                                <img src="images/rta%20logo.jpg" alt="" loading="lazy">
+                                <span class="award-title">Presenter, RTA Dubai's Think Tank Initiative</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-thinktank" role="region" aria-label="Presenter, RTA Dubai's Think Tank Initiative">
+                                <div class="award-inner">
+                                    <h4>Presenter in RTA Dubai's Think Tank Initiative</h4>
+                                    <p>The Think Tank, hosted by RTA at Birmingham University, was a pivotal event where innovation thrived. Among 12 distinguished teams, our presentation of Enviromove stood out. Enviromove isn't just a tech solution; it's a paradigm shift towards sustainable smart mobility, rooted in citizen-centric principles. Over a span of two intense weeks, our team meticulously crafted Enviromove. The judges' positive feedback affirmed our dedication. This is just the beginning; Enviromove holds immense potential for further development, and our team is committed to realizing it.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/thinktank1.jpg|images/web/thinktank2.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/thinktank1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/thinktank1.jpg|images/web/thinktank2.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/thinktank2.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="year-group">
+                    <h3 class="year" data-reveal>2023</h3>
+                    <ul class="awards">
+                        <li class="award" id="a-unihack" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-unihack">
+                                <img src="images/unihack%20logo.jpg" alt="" loading="lazy">
+                                <span class="award-title">Track Winner, Unihack 2023 for Climate Action</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-unihack" role="region" aria-label="Track Winner, Unihack 2023 for Climate Action">
+                                <div class="award-inner">
+                                    <h4>Track Winner in Unihack 2023 for Climate Action</h4>
+                                    <p>Unihack 2023 is a global hackathon organized by ProjectSet.</p>
+                                    <p>I had participated in the Unihack 2023 individually and won in the Climate Action Track.</p>
+                                    <p>It was a 2-week competition, the first round being a poster making round where I had to explain my idea in a well-balanced poster presentation. Upon qualifying this round, for the finale, I had to present my idea as a pitch through a well-put presentation.</p>
+                                    <p>Overall, it was a wonderful journey of learning for me. It was insightful, enriching and extremely informative which I am happy to have been a part of.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/unihack1.jpg|images/web/unihack2.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/unihack1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/unihack1.jpg|images/web/unihack2.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/unihack2.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-mdx" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-mdx">
+                                <img src="images/mdx%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">Finalist, Inter-University Business Case Study Competition</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-mdx" role="region" aria-label="Finalist, Inter-University Business Case Study Competition">
+                                <div class="award-inner">
+                                    <h4>Finalist in Inter-University Business Case Study Competition 2023</h4>
+                                    <p>Inter-University Business Case Study Competition 2023 was organized by Middlesex University Dubai.</p>
+                                    <p>I had participated in the Inter-University Business Case Study Competition with my teammates from the Engineering Department of my university and got qualified to the finals.</p>
+                                    <p>The competition delved into various aspects of the Global Ecommerce Market, with special focus on the UAE. The qualifying round had about 5 case study questions about the business and sustainability related aspects of the ecommerce and grocery market. It required hours and days of research for us to arrive at our final answers and fortunately, it was worth the effort as we were one of the 5 teams out of the 63 participated teams that got qualified for finals.</p>
+                                    <p>In the final round of the competition, we were provided with a similar set of 5 case study questions revolving around the business sector and ecommerce market and we had to present our solutions through a well-put presentation and pitch ourselves in front of the judges.</p>
+                                    <p>It was in itself a huge honour to be a finalist of the Business Case Study Competition with no academic background in business. It was truly a team effort as we sat day and night brainstorming and polishing our solutions.</p>
+                                    <p>This experience provided me with valuable insights into the dynamics of the Business World and the Ecommerce Market. As an IT student, this journey has been an incredible learning experience for me, broadening my understanding of the business world and the current trends.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/mdx2.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/mdx2.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-bcc" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-bcc">
+                                <img src="images/curtin%20logo.png" alt="" loading="lazy">
+                                <span class="award-title">Finalist, Inter-University Business Cup Challenge</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-bcc" role="region" aria-label="Finalist, Inter-University Business Cup Challenge">
+                                <div class="award-inner">
+                                    <h4>Finalist in Inter-University Business Cup Challenge 2023</h4>
+                                    <p>Inter-University Business Cup Challenge 2023 was a 3 level challenge spanning over 3 weeks organized by Curtin University Dubai.</p>
+                                    <p>I had participated in the Inter-University Business Case Study Competition with my teammates from the Engineering Department of my university and got qualified to the finals.</p>
+                                    <p>The competition delved into various aspects of the Global Ecommerce Market, with special focus on the UAE. The qualifying round had about 5 case study questions about the business and sustainability related aspects of the ecommerce and grocery market. It required hours and days of research for us to arrive at our final answers and fortunately, it was worth the effort as we were one of the 5 teams out of the 63 participated teams that got qualified for finals.</p>
+                                    <p>In the final round of the competition, we were provided with a similar set of 5 case study questions revolving around the business sector and ecommerce market and we had to present our solutions through a well-put presentation and pitch ourselves in front of the judges.</p>
+                                    <p>It was in itself a huge honour to be a finalist of the Business Case Study Competition with no academic background in business. It was truly a team effort as we sat day and night brainstorming and polishing our solutions.</p>
+                                    <p>This experience provided me with valuable insights into the dynamics of the Business World and the Ecommerce Market. As an IT student, this journey has been an incredible learning experience for me, broadening my understanding of the business world and the current trends.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/bcc.jpg|images/web/bcc1.jpg|images/web/bcc2.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/bcc.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/bcc.jpg|images/web/bcc1.jpg|images/web/bcc2.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/bcc1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/bcc.jpg|images/web/bcc1.jpg|images/web/bcc2.jpg" data-index="2" aria-label="View photo 3"><img src="images/web/bcc2.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="award" id="a-rta" data-reveal>
+                            <button class="award-head" aria-expanded="false" aria-controls="p-rta">
+                                <img src="images/rta%20logo.jpg" alt="" loading="lazy">
+                                <span class="award-title">Finalist, RTA Sustainability Hackathon</span>
+                                <span class="award-toggle" aria-hidden="true"></span>
+                            </button>
+                            <div class="award-panel" id="p-rta" role="region" aria-label="Finalist, RTA Sustainability Hackathon">
+                                <div class="award-inner">
+                                    <h4>Finalist in RTA Sustainability Hackathon</h4>
+                                    <p>The RTA Sustainability Hackathon, organized by Unipreneur.inc, RTA Dubai, and GITEX YouthX, was a remarkable event dedicated to innovation. Amidst the energy of the hackathon, our team quickly formed, fueled by a shared passion for sustainable transportation. With two weeks at our disposal, we delved into crafting our solution, guided by the theme of sustainable transportation. The culmination of our efforts resulted in The Green Step, an innovative application promoting walkability and advocating for public transportation usage. Presenting our solution was an exhilarating experience, met with positive feedback from the judges. Participating in the hackathon was not just about competition; it was an opportunity for growth and collaboration, leaving us with invaluable insights and memories.</p>
+                                    <div class="photos">
+                                    <button class="photo" data-gallery="images/web/rta1.jpg|images/web/rta2.jpg" data-index="0" aria-label="View photo 1"><img src="images/web/rta1.jpg" alt="" loading="lazy"></button>
+                                    <button class="photo" data-gallery="images/web/rta1.jpg|images/web/rta2.jpg" data-index="1" aria-label="View photo 2"><img src="images/web/rta2.jpg" alt="" loading="lazy"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!--CONTACT-->
+
+        <section class="contact" id="contact">
+            <div class="wrap contact-grid">
+                <div class="contact-info">
+                    <p class="hand contact-hi" data-reveal>say hi!</p>
+                    <h2 class="contact-title" data-reveal>Let's build or research something together.</h2>
+                    <p data-reveal>Questions, collaborations or just a hello, I'm always open to meeting new people.</p>
+                    <a class="email" href="mailto:hajarasabnam@gmail.com" data-reveal>hajarasabnam@gmail.com <i class="arrow" aria-hidden="true"></i></a>
+                    <div class="socials" data-reveal>
+                        <a href="https://www.linkedin.com/in/hajara-sabnam-kareem-navaz-32a11b234/" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.96c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4V9.75Z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://www.instagram.com/hajarasabnam" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4Zm0 7.75a3.05 3.05 0 1 1 0-6.1 3.05 3.05 0 0 1 0 6.1ZM17 5.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2ZM21.94 8.1c-.07-1.5-.41-2.83-1.51-3.93S17.99 2.73 16.5 2.66C14.95 2.57 9.05 2.57 7.5 2.66 6.01 2.73 4.68 3.07 3.57 4.17S2.13 6.6 2.06 8.1c-.09 1.55-.09 6.25 0 7.8.07 1.5.41 2.83 1.51 3.93s2.44 1.44 3.93 1.51c1.55.09 7.45.09 9 0 1.49-.07 2.82-.41 3.93-1.51s1.44-2.43 1.51-3.93c.09-1.55.09-6.25 0-7.8Zm-2.04 9.45a3.2 3.2 0 0 1-1.8 1.8c-1.25.5-4.21.38-5.6.38s-4.35.11-5.6-.38a3.2 3.2 0 0 1-1.8-1.8c-.5-1.25-.38-4.21-.38-5.6s-.11-4.35.38-5.6a3.2 3.2 0 0 1 1.8-1.8c1.25-.5 4.21-.38 5.6-.38s4.35-.11 5.6.38a3.2 3.2 0 0 1 1.8 1.8c.5 1.25.38 4.21.38 5.6s.12 4.35-.38 5.6Z"/></svg>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm" novalidate data-reveal>
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+                        <span class="error" id="name-error"></span>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                        <span class="error" id="email-error"></span>
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="btn btn-accent" id="submit">Send message <i class="arrow" aria-hidden="true"></i></button>
+                    <p class="form-status" id="formStatus" role="status"></p>
+                </form>
+            </div>
+
+            <footer class="site-footer">
+                <p>&copy; <span id="year">2025</span> Hajara Sabnam &middot; Dubai</p>
+                <a href="#home">Back to top <i class="arrow arrow-up" aria-hidden="true"></i></a>
+            </footer>
+        </section>
+    </main>
+
+    <!--IMAGE VIEWER-->
+
+    <dialog class="viewer" id="viewer" aria-label="Image viewer">
+        <img id="viewerImg" src="" alt="">
+        <button class="viewer-btn viewer-close" id="viewerClose" aria-label="Close">&times;</button>
+        <button class="viewer-btn viewer-prev" id="viewerPrev" aria-label="Previous image">&#8249;</button>
+        <button class="viewer-btn viewer-next" id="viewerNext" aria-label="Next image">&#8250;</button>
+        <span class="viewer-count" id="viewerCount"></span>
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
-

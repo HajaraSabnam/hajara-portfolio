@@ -1,228 +1,251 @@
 const supabaseUrl = "https://jmxrcnxygyvbrbzxnher.supabase.co";
 const supabaseKey = "sb_publishable_JU_CiBRevCBpJ4Twk7Jddg_10keBxy9";
 
+const client = window.supabase ? supabase.createClient(supabaseUrl, supabaseKey) : null;
 
-const client = supabase.createClient(supabaseUrl, supabaseKey);
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $ = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
-// Transition Animation 
+$("#year").textContent = new Date().getFullYear();
 
-AOS.init({
-    offset: 100,
-    duration: 900,
+// Header state and reading progress follow the scroll
+
+const header = $(".site-header");
+const progress = $(".progress");
+let scrollQueued = false;
+
+function onScroll() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    header.classList.toggle("is-scrolled", window.scrollY > 8);
+    progress.style.setProperty("--p", max > 0 ? window.scrollY / max : 0);
+
+    scrollQueued = false;
+}
+
+onScroll();
+window.addEventListener("scroll", () => {
+    if (scrollQueued) return;
+    scrollQueued = true;
+    requestAnimationFrame(onScroll);
+}, { passive: true });
+window.addEventListener("resize", onScroll);
+
+// Mobile menu
+
+const menuBtn = $("#menuBtn");
+
+function setMenu(open) {
+    document.body.classList.toggle("nav-open", open);
+    menuBtn.setAttribute("aria-expanded", open);
+    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+}
+
+menuBtn.addEventListener("click", () => setMenu(!document.body.classList.contains("nav-open")));
+$$(".nav a").forEach(link => link.addEventListener("click", () => setMenu(false)));
+document.addEventListener("keydown", e => {
+    if (e.key === "Escape") setMenu(false);
 });
 
-// Typing Effect Animation 
+// Active section indicator in the nav
 
-if (typeof Typed !== "undefined" && document.querySelector(".anim")) {
-    var typingEffect = new Typed(".anim", {
-        strings: ["Hajara Sabnam", "A Tech Enthusiast", "A Coder"],
-        loop: true,
-        typeSpeed: 100,
-        backSpeed: 80,
-        backDelay: 1200
+const navLinks = $$(".nav a");
+const indicator = $(".nav-indicator");
+
+function moveIndicator(link) {
+    if (!link) {
+        indicator.classList.remove("is-on");
+        return;
+    }
+    indicator.style.setProperty("--x", link.offsetLeft + 12 + "px");
+    indicator.style.setProperty("--w", (link.offsetWidth - 24) / 100);
+    indicator.classList.add("is-on");
+}
+
+const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        const active = navLinks.find(a => a.getAttribute("href") === "#" + id);
+        navLinks.forEach(a => a.classList.toggle("is-active", a === active));
+        moveIndicator(active);
     });
-}
+}, { rootMargin: "-45% 0px -50% 0px" });
 
-// Profile Box Animation 
+$$("main > section").forEach(s => sectionObserver.observe(s));
+window.addEventListener("resize", () => moveIndicator($(".nav a.is-active")));
 
-function openProfileBox() {
-    var profileBox = document.getElementById("myProfileBox");
-    profileBox.style.right = "3%";
-}
-    
-function closeProfileBox() {
-    var profileBox = document.getElementById("myProfileBox");
-    profileBox.style.right = "-600px"; 
-}
-    
-function openmenu() {
-    var navbar = document.getElementById("navbar");
-    navbar.classList.toggle("active");
-    
-    var screenWidth = window.innerWidth || document.documentElement.clientWidth;
-    
-    if (screenWidth <= 950) {
-        navbar.classList.toggle("vertical");
-    } else {
-        navbar.classList.remove("vertical");
-    }
-}
-    
-// View Cetificate - Cetificate Modal in Work Experiences
+// Scroll reveal, staggered among siblings
 
-function viewCertificate(certPath) {
-    const modal = document.getElementById("certModal");
-    const modalImg = document.getElementById("certImage");
-    
-    if (modal && modalImg && certPath) {
-        modalImg.src = certPath;
-        modal.style.display = "flex";
-        
-        setTimeout(() => {
-            modal.classList.add("show");
-        }, 10);
-    }
-}
+const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        entry.target.dispatchEvent(new Event("reveal"));
+        revealObserver.unobserve(entry.target);
+    });
+}, { rootMargin: "0px 0px -8% 0px" });
 
-function viewCertificateMultiple(certPaths) {
-    const modal = document.getElementById("certModal");
-    const modalImg = document.getElementById("certImage");
-
-    if (!modal || !modalImg || !certPaths || certPaths.length === 0) return;
-
-    currentCerts = certPaths;
-    currentCertIndex = 0;
-    modalImg.src = currentCerts[currentCertIndex];
-
-    modal.style.display = "flex";
-    setTimeout(() => modal.classList.add("show"), 10);
-
-    addCertNavButtons();
-}
-
-function addCertNavButtons() {
-    const modal = document.getElementById("certModal");
-
-    document.querySelectorAll(".cert-nav-btn").forEach(btn => btn.remove());
-
-    if (currentCerts.length <= 1) return;
-
-    const prevBtn = document.createElement("button");
-    prevBtn.textContent = "<";
-    prevBtn.className = "cert-nav-btn prev";
-    prevBtn.onclick = (e) => {
-        e.stopPropagation(); 
-        showCert(currentCertIndex - 1);
-    };
-    modal.appendChild(prevBtn);
-
-    const nextBtn = document.createElement("button");
-    nextBtn.textContent = ">";
-    nextBtn.className = "cert-nav-btn next";
-    nextBtn.onclick = (e) => {
-        e.stopPropagation();  
-        showCert(currentCertIndex + 1);
-    };
-    modal.appendChild(nextBtn);
-}
-
-function showCert(index) {
-    const modalImg = document.getElementById("certImage");
-
-    if (index < 0) index = currentCerts.length - 1;
-    if (index >= currentCerts.length) index = 0;
-
-    currentCertIndex = index;
-    modalImg.src = currentCerts[currentCertIndex];
-}
-
-function closeCertModal() {
-    const modal = document.getElementById("certModal");
-    if (modal) {
-        modal.classList.remove("show");
-        setTimeout(() => {
-            modal.style.display = "none";
-            document.querySelectorAll(".cert-nav-btn").forEach(btn => btn.remove());
-        }, 300);
-    }
-}
-
-// function closeCertModal() {
-//     const modal = document.getElementById("certModal");
-//     if (modal) {
-//         modal.classList.remove("show");
-//         setTimeout(() => {
-//             modal.style.display = "none";
-//         }, 300); 
-//     }
-// }
-
-document.addEventListener("click", function(e) {
-    const modal = document.getElementById("certModal");
-    const modalImg = document.getElementById("certImage");
-    
-    if (modal && e.target === modal) {
-        closeCertModal();
-    }
+$$("[data-reveal]").forEach(el => {
+    const siblings = $$(":scope > [data-reveal]", el.parentElement);
+    el.style.setProperty("--d", Math.min(siblings.indexOf(el), 5) * 0.08 + "s");
+    revealObserver.observe(el);
 });
 
-document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") {
-        closeCertModal();
-    }
+// Research numbers count up the first time they appear
+
+$(".stats").addEventListener("reveal", () => {
+    $$(".stats [data-count]").forEach(num => {
+        const target = Number(num.dataset.count);
+        if (reduceMotion) return;
+        const start = performance.now();
+        const step = now => {
+            const t = Math.min((now - start) / 1400, 1);
+            num.textContent = Math.round(target * (1 - Math.pow(1 - t, 4)));
+            if (t < 1) requestAnimationFrame(step);
+        };
+        num.textContent = "0";
+        requestAnimationFrame(step);
+    });
+}, { once: true });
+
+// Topic marquee needs a second copy to loop seamlessly
+
+const marquee = $(".marquee-track");
+marquee.innerHTML += marquee.innerHTML;
+
+// Achievements accordion; #a-<name> links open the matching entry
+
+function setAward(award, open) {
+    award.classList.toggle("is-open", open);
+    $(".award-head", award).setAttribute("aria-expanded", open);
+}
+
+$$(".award").forEach(award => {
+    $(".award-head", award).addEventListener("click", () => {
+        setAward(award, !award.classList.contains("is-open"));
+    });
 });
 
-// Form Validation
+function openFromHash() {
+    const target = location.hash && $(location.hash);
+    if (!target || !target.classList.contains("award")) return;
+    setAward(target, true);
+    target.classList.add("is-in");
+    setTimeout(() => target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" }), 100);
+}
 
-function validateForm(event) {
+openFromHash();
+window.addEventListener("hashchange", openFromHash);
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+// Image viewer for certificates and achievement photos
 
-    const nameError = document.getElementById("name-error");
-    const emailError = document.getElementById("email-error");
-    const messageError = document.getElementById("message-error");
+const viewer = $("#viewer");
+const viewerImg = $("#viewerImg");
+const viewerCount = $("#viewerCount");
+let gallery = [];
+let galleryIndex = 0;
 
-    nameError.textContent = "";
-    emailError.textContent = "";
-    messageError.textContent = "";
+function showImage(index) {
+    galleryIndex = (index + gallery.length) % gallery.length;
+    viewerImg.classList.add("is-swapping");
+    const next = new Image();
+    next.onload = next.onerror = () => {
+        viewerImg.src = gallery[galleryIndex];
+        requestAnimationFrame(() => requestAnimationFrame(() => viewerImg.classList.remove("is-swapping")));
+    };
+    next.src = gallery[galleryIndex];
+    viewerCount.textContent = `${galleryIndex + 1} / ${gallery.length}`;
+}
 
+$$("[data-gallery]").forEach(btn => {
+    btn.addEventListener("click", () => {
+        gallery = btn.dataset.gallery.split("|");
+        viewer.classList.toggle("single", gallery.length === 1);
+        const award = btn.closest(".award");
+        const img = $("img", btn);
+        viewerImg.alt = award ? $(".award-title", award).textContent : img ? img.alt : "Certificate";
+        viewerImg.classList.add("is-swapping");
+        viewerImg.removeAttribute("src");
+        viewer.showModal();
+        showImage(Number(btn.dataset.index || 0));
+    });
+});
+
+$("#viewerClose").addEventListener("click", () => viewer.close());
+$("#viewerPrev").addEventListener("click", () => showImage(galleryIndex - 1));
+$("#viewerNext").addEventListener("click", () => showImage(galleryIndex + 1));
+viewer.addEventListener("click", e => {
+    if (e.target === viewer) viewer.close();
+});
+viewer.addEventListener("keydown", e => {
+    if (gallery.length < 2) return;
+    if (e.key === "ArrowLeft") showImage(galleryIndex - 1);
+    if (e.key === "ArrowRight") showImage(galleryIndex + 1);
+});
+
+// Contact form
+
+const form = $("#contactForm");
+const status = $("#formStatus");
+
+function setError(id, message) {
+    $(`#${id}-error`).textContent = message;
+    $(`#${id}`).closest(".field").classList.toggle("has-error", Boolean(message));
+}
+
+function validateForm() {
+    const name = $("#name").value.trim();
+    const email = $("#email").value.trim();
+    const message = $("#message").value.trim();
     let isValid = true;
 
+    setError("name", "");
+    setError("email", "");
+    setError("message", "");
+
     if (name === "" || /\d/.test(name)) {
-        nameError.textContent = "Please enter your name properly.";
+        setError("name", "Please enter your name properly.");
         isValid = false;
     }
-
-    if (email === "" || !email.includes("@")) {
-        emailError.textContent = "Please enter a valid email address.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        setError("email", "Please enter a valid email address.");
         isValid = false;
     }
-
     if (message === "") {
-        messageError.textContent = "Please enter your message.";
+        setError("message", "Please enter your message.");
         isValid = false;
     }
 
-    if (isValid) {
-        alert('Thank you for your message!');
-    }
-
-    return isValid;  
+    return isValid ? { name, email, message } : null;
 }
 
-// document.getElementById("contactForm").addEventListener("submit", function(event) {
-    
-//     if (!validateForm(event)) {
-//         event.preventDefault();  
-//     }
-// });
+form.addEventListener("submit", async e => {
+    e.preventDefault();
+    status.className = "form-status";
+    status.textContent = "";
 
-document.getElementById("contactForm").addEventListener("submit", async function (event) {
-    event.preventDefault();
+    const values = validateForm();
+    if (!values) return;
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+    const submit = $("#submit");
+    submit.disabled = true;
+    submit.textContent = "Sending...";
 
-    if (!validateForm()) return;
+    const { error } = client
+        ? await client.from("contact_form").insert([values])
+        : { error: new Error("Supabase failed to load") };
 
-    const { error } = await client
-        .from("contact_form")
-        .insert([
-            {
-                name: name,
-                email: email,
-                message: message
-            }
-        ]);
+    submit.disabled = false;
+    submit.textContent = "Send message";
 
     if (error) {
         console.log(error);
-        alert("Error sending message");
+        status.classList.add("fail");
+        status.textContent = "Sorry, your message couldn't be sent. Please email me directly instead.";
     } else {
-        alert("Message sent successfully!");
-        document.getElementById("contactForm").reset();
+        status.classList.add("ok");
+        status.textContent = "Thank you! Your message has been sent.";
+        form.reset();
     }
 });
