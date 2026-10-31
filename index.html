@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#fdfdfe">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@500..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,100,0&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@500..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -154,11 +154,10 @@
             <div class="wrap">
                 <div class="research-head">
                     <div>
-                        <p class="kicker" data-reveal>Research</p>
+                        <p class="kicker kicker-noted" data-reveal>Research <span class="hand research-note"><svg viewBox="0 0 70 30" aria-hidden="true"><path pathLength="1" d="M66 22 C 50 28, 22 26, 6 12"/><path pathLength="1" d="M4 22 L5 11 L16 9"/></svg>my favourite part</span></p>
                         <h2 class="section-title" data-reveal>Published research and work in progress.</h2>
                     </div>
                     <p class="research-intro" data-reveal>Here is everything I've published so far.</p>
-                    <p class="hand research-note" data-reveal>my favourite part <svg viewBox="0 0 60 40" aria-hidden="true"><path pathLength="1" d="M4 6 C 20 6, 40 14, 48 32"/><path pathLength="1" d="M38 28 L48 33 L52 22"/></svg></p>
                 </div>
 
                 <ul class="stats" data-reveal>
@@ -268,61 +267,45 @@
                     <p class="exp-total"><span>2+</span> years of experience</p>
                 </div>
 
-                <ol class="jobs" data-reveal>
+                <ol class="jobs box" data-reveal>
                     <li class="job is-current">
-                        <div class="job-card">
-                            <div class="job-top">
-                                <img class="job-logo" src="images/elchai.png" alt="" loading="lazy">
-                                <div class="job-title">
-                                    <h3>AI Engineer</h3>
-                                    <p class="job-org">Elchai Group</p>
-                                </div>
-                                <span class="job-when">Mar 2026 to Present</span>
-                            </div>
-                            <ul class="job-points job-points-stack"><li>Leading the AI Agent Development team</li><li>Developing AI agents and optimizing agentic workflows</li><li>Building data workflows and pipelines for agent development</li><li>Delivering AI-driven solutions for business applications</li></ul>
+                        <p class="job-when">Mar 2026 to Present</p>
+                        <img class="job-logo" src="images/elchai.png" alt="" loading="lazy">
+                        <div class="job-info">
+                            <h3>AI Engineer</h3>
+                            <p class="job-org">Elchai Group</p>
+                            <p class="job-skills">Leading the AI Agent Development team &middot; Developing AI agents and optimizing agentic workflows &middot; Building data workflows and pipelines for agent development &middot; Delivering AI-driven solutions for business applications</p>
                         </div>
                     </li>
                     <li class="job">
-                        <div class="job-card">
-                            <div class="job-top">
-                                <img class="job-logo" src="images/dewa.png" alt="" loading="lazy">
-                                <div class="job-title">
-                                    <h3>AI &amp; IoT Research Intern</h3>
-                                    <p class="job-org">DEWA R&amp;D Center</p>
-                                </div>
-                                <span class="job-when">Feb 2025 to Nov 2025</span>
-                            </div>
-                            <ul class="job-points"><li>Android (Java, Kotlin, XML)</li><li>ML models in Python</li><li>UI/UX in Figma</li><li>Research publication</li></ul>
-                            <button class="cert-btn" data-gallery="images/web/dewac.jpg">View certificate <i class="arrow" aria-hidden="true"></i></button>
+                        <p class="job-when">Feb 2025 to Nov 2025</p>
+                        <img class="job-logo" src="images/dewa.png" alt="" loading="lazy">
+                        <div class="job-info">
+                            <h3>AI &amp; IoT Research Intern</h3>
+                            <p class="job-org">DEWA R&amp;D Center</p>
+                            <p class="job-skills">Android (Java, Kotlin, XML) &middot; ML models in Python &middot; UI/UX in Figma &middot; Research publication</p>
                         </div>
+                        <button class="cert-btn" data-gallery="images/web/dewac.jpg">View certificate <i class="arrow" aria-hidden="true"></i></button>
                     </li>
                     <li class="job">
-                        <div class="job-card">
-                            <div class="job-top">
-                                <img class="job-logo" src="images/betaIT.png" alt="" loading="lazy">
-                                <div class="job-title">
-                                    <h3>IT Research Intern</h3>
-                                    <p class="job-org">Beta Information Technology, Dubai</p>
-                                </div>
-                                <span class="job-when">Jun 2024 to Aug 2024</span>
-                            </div>
-                            <ul class="job-points"><li>ML model development</li><li>Cybersecurity research</li><li>Presentation</li></ul>
-                            <button class="cert-btn" data-gallery="images/web/betac.jpg">View certificate <i class="arrow" aria-hidden="true"></i></button>
+                        <p class="job-when">Jun 2024 to Aug 2024</p>
+                        <img class="job-logo" src="images/betaIT.png" alt="" loading="lazy">
+                        <div class="job-info">
+                            <h3>IT Research Intern</h3>
+                            <p class="job-org">Beta Information Technology, Dubai</p>
+                            <p class="job-skills">ML model development &middot; Cybersecurity research &middot; Presentation</p>
                         </div>
+                        <button class="cert-btn" data-gallery="images/web/betac.jpg">View certificate <i class="arrow" aria-hidden="true"></i></button>
                     </li>
                     <li class="job">
-                        <div class="job-card">
-                            <div class="job-top">
-                                <img class="job-logo" src="images/dvs.jpg" alt="" loading="lazy">
-                                <div class="job-title">
-                                    <h3>Software Development Intern</h3>
-                                    <p class="job-org">Digital Value Stream, Dubai</p>
-                                </div>
-                                <span class="job-when">Jan 2024 to Oct 2024</span>
-                            </div>
-                            <ul class="job-points"><li>Figma prototyping</li><li>Front-end development</li><li>Software research</li><li>Next.js</li></ul>
-                            <button class="cert-btn" data-gallery="images/web/dvsc2.jpg|images/web/dvsc.jpg">View certificates <i class="arrow" aria-hidden="true"></i></button>
+                        <p class="job-when">Jan 2024 to Oct 2024</p>
+                        <img class="job-logo" src="images/dvs.jpg" alt="" loading="lazy">
+                        <div class="job-info">
+                            <h3>Software Development Intern</h3>
+                            <p class="job-org">Digital Value Stream, Dubai</p>
+                            <p class="job-skills">Figma prototyping &middot; Front-end development &middot; Software research &middot; Next.js</p>
                         </div>
+                        <button class="cert-btn" data-gallery="images/web/dvsc2.jpg|images/web/dvsc.jpg">View certificates <i class="arrow" aria-hidden="true"></i></button>
                     </li>
                 </ol>
             </div>
