@@ -295,57 +295,81 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     margin-top: 2.25rem;
 }
 
-.polaroid {
+.portrait {
     position: relative;
     justify-self: center;
-    width: min(100%, 22rem);
+    width: min(100%, 24rem);
     margin: 0;
-    padding: 0.8rem 0.8rem 3.5rem;
-    background: oklch(1 0 0);
-    box-shadow: 0 1px 2px oklch(0.2 0.01 265 / 0.08), 0 20px 50px -12px oklch(0.2 0.01 265 / 0.25);
-    transform: rotate(2deg);
-    transition: transform 0.8s var(--ease);
 }
-.polaroid:hover { transform: rotate(0deg); }
-.polaroid img {
+.portrait::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(150deg, oklch(0.84 0.09 235), oklch(0.85 0.1 295));
+    translate: -1rem 1.25rem;
+    transition: translate 0.9s var(--ease);
+}
+.portrait-frame {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 0.6rem solid oklch(1 0 0);
+    box-shadow: 0 24px 50px -24px oklch(0.3 0.06 260 / 0.4);
+}
+.portrait-frame img {
+    display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 4.4;
+    aspect-ratio: 1;
     object-fit: cover;
-    object-position: 50% 15%;
+    object-position: 58% 22%;
+    scale: 1.02;
+    transition: scale 1.2s var(--ease);
 }
-.polaroid figcaption {
+.portrait:hover::before { translate: -0.5rem 0.75rem; }
+.portrait:hover .portrait-frame img { scale: 1.07; }
+.portrait-ring {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0.9rem;
-    text-align: center;
+    z-index: 2;
+    inset: -8%;
+    width: 116%;
+    overflow: visible;
+    rotate: 14deg;
+    pointer-events: none;
+}
+.portrait-ring path {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw 1.6s var(--ease) 1s forwards;
+}
+.portrait figcaption {
+    position: absolute;
+    z-index: 2;
+    right: -2rem;
+    bottom: -2.6rem;
     font-size: 1.5rem;
-    color: var(--ink-2);
-}
-.tape {
-    position: absolute;
-    top: -0.9rem;
-    left: 50%;
-    width: 7rem;
-    height: 1.8rem;
-    translate: -50% 0;
-    rotate: -4deg;
-    background: oklch(0.93 0.05 85 / 0.75);
-    box-shadow: 0 1px 2px oklch(0.2 0.01 265 / 0.08);
+    color: var(--accent-ink);
+    rotate: -6deg;
 }
 
 .doodle { position: absolute; overflow: visible; }
 .doodle-star {
-    top: -1.6rem;
-    right: -1.6rem;
+    z-index: 2;
+    top: -0.5rem;
+    right: 0.5rem;
     width: 3rem;
     fill: var(--accent);
     opacity: 0.9;
 }
 .doodle-loop {
-    left: -6.5rem;
-    bottom: 5rem;
+    left: -8.5rem;
+    bottom: 4rem;
     width: 7rem;
 }
 .doodle-loop path { animation: draw 1.4s var(--ease) 1.6s forwards; }
@@ -361,7 +385,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .js .hero-text > :nth-child(2) { animation-delay: 0.18s; }
 .js .hero-text > :nth-child(3) { animation-delay: 0.32s; }
 .js .hero-text > :nth-child(4) { animation-delay: 0.42s; }
-.js .polaroid[data-load] { translate: 0 60px; animation-delay: 0.3s; animation-duration: 1.4s; }
+.js .portrait[data-load] { translate: 0 60px; animation-delay: 0.3s; animation-duration: 1.4s; }
 @keyframes rise { to { opacity: 1; translate: 0 0; } }
 
 /* ---------- Marquee ---------- */
@@ -1086,7 +1110,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
     .hero { min-height: 0; padding-bottom: 4.5rem; }
     .hero-inner { grid-template-columns: 1fr; }
-    .polaroid { width: min(78%, 18rem); justify-self: center; margin-top: 1rem; }
+    .portrait { width: min(70%, 16rem); margin: 1.5rem 0 2.5rem; }
+    .portrait figcaption { right: -0.5rem; font-size: 1.3rem; }
     .doodle-loop { display: none; }
 
     .about-grid, .about-lower, .contact-grid, .research-head { grid-template-columns: 1fr; }
@@ -1129,7 +1154,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
         transition-delay: 0s !important;
     }
     .js [data-reveal], .js [data-load] { opacity: 1; translate: 0 0; }
-    .scribble path, .doodle-loop path, .research-note path { stroke-dashoffset: 0; }
+    .scribble path, .doodle-loop path, .research-note path, .portrait-ring path { stroke-dashoffset: 0; }
     .marquee-track, .moments-track { animation: none; }
     .moments-strip { overflow-x: auto; }
 }
